@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctedc5thhssj2"]
+[gd_scene load_steps=13 format=3 uid="uid://ctedc5thhssj2"]
 
 [ext_resource type="Texture2D" uid="uid://cg75f7xpl4hwl" path="res://ASSETS/Art/frog_idle.png" id="1_08503"]
+[ext_resource type="Script" path="res://SCRIPTS/frog.gd" id="1_dr1ba"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iypsk"]
 atlas = ExtResource("1_08503")
@@ -72,11 +73,12 @@ radius = 48.0
 [node name="Frog" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_dr1ba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fns6b")
 autoplay = "default"
-frame_progress = 0.337013
+frame_progress = 0.146113
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_14s52")

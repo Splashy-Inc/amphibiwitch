@@ -40,4 +40,5 @@ func _on_attack_time_timeout() -> void:
 	attacking = false
 
 func _on_net_attack_area_body_entered(body: Node2D) -> void:
-	print(body)
+	if body is Frog:
+		body.on_hit()
