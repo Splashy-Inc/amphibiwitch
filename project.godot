@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="2D Game Template"
+config/name="Amphibiwitch"
 run/main_scene="res://SCENES/screen_manager.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://SplashySplashScreen.png"
@@ -22,12 +22,11 @@ Globals="*res://SCRIPTS/globals.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
 
 [gui]
 
