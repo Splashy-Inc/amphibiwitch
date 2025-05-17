@@ -29,17 +29,17 @@ offset_top = 18.0
 offset_right = 60.0
 offset_bottom = 39.0
 
-[node name="Anemone" type="Sprite2D" parent="."]
-position = Vector2(600, 32)
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1873, 40)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_xharn")
 
 [node name="info_label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 19.0
-offset_right = 553.0
-offset_bottom = 45.0
+offset_left = 1689.0
+offset_top = 27.0
+offset_right = 1826.0
+offset_bottom = 72.0
 theme_override_font_sizes/font_size = 32
 text = "10"
 horizontal_alignment = 2

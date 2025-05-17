@@ -17,8 +17,8 @@ script = ExtResource("1_kmxbu")
 [node name="MenuContent" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(640, 360)
 layout_mode = 0
-offset_right = 342.0
-offset_bottom = 311.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 theme_override_constants/separation = 10
 alignment = 1
 
