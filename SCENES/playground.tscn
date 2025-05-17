@@ -11,6 +11,11 @@
 script = ExtResource("1_5e8d0")
 mobile_controls = NodePath("MobileControls")
 
+[node name="WorldModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="WorldLight" type="DirectionalLight2D" parent="."]
+
 [node name="TileMapBackground" parent="." instance=ExtResource("2_o64ee")]
 
 [node name="TileMapLayer" parent="TileMapBackground" index="0"]
