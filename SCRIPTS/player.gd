@@ -5,23 +5,31 @@ class_name Player
 @onready var net_attack_area: Area2D = $NetAttackArea
 @onready var net_collider: CollisionShape2D = $NetAttackArea/CollisionShape2D
 @onready var attack_time: Timer = $NetAttackArea/AttackTime
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var net: Node2D = $Tool/Net
+@onready var staff: Staff = $Tool/Staff
 
 const SPEED = 300.0
 
 var attacking := false
+var direction := Vector2.ZERO
 
 func _ready() -> void:
 	net_attack_area.hide()
 
 func _physics_process(delta: float) -> void:
 	if not attacking:
+		staff.active = not Input.is_action_pressed("light")
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction := Input.get_vector("left", "right", "up", "down").normalized()
-		velocity = direction * SPEED
+		direction = direction.lerp(Input.get_vector("left", "right", "up", "down").normalized(), .1)
 		if direction:
+			animation_player.play("move")
 			rotation = -direction.angle_to(Vector2.UP)
-
+		else:
+			animation_player.play("idle")
+		
+		velocity = direction * SPEED
 		move_and_slide()
 
 func _input(event: InputEvent) -> void:

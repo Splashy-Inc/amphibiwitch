@@ -15,6 +15,7 @@ mobile_controls = NodePath("MobileControls")
 color = Color(0, 0, 0, 1)
 
 [node name="WorldLight" type="DirectionalLight2D" parent="."]
+editor_only = true
 
 [node name="TileMapBackground" parent="." instance=ExtResource("2_o64ee")]
 
@@ -34,8 +35,9 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAIAAAAAAAEAAAADAAIAAAAAAAIAAAADAAI
 [node name="Player" type="Node" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("3_7v63e")]
-z_index = 1
 position = Vector2(933, 524)
+
+[node name="Camera2D" type="Camera2D" parent="Player/Player"]
 
 [node name="Frogs" type="Node" parent="."]
 

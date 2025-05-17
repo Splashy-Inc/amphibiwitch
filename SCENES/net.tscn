@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgoa58t7jc0uw"]
+
+[ext_resource type="Texture2D" uid="uid://dhlojflhw11l0" path="res://ASSETS/Art/net.png" id="1_kxwng"]
+
+[node name="Net" type="Node2D"]
+visible = false
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kxwng")
