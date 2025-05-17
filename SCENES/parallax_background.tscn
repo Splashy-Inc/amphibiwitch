@@ -5,6 +5,7 @@
 [node name="ParallaxBackground" type="Parallax2D"]
 repeat_size = Vector2(640, 360)
 autoscroll = Vector2(100, 100)
+repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(319.5, 180.5)
