@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://do6vv53psm4aw"]
+[gd_scene load_steps=15 format=3 uid="uid://do6vv53psm4aw"]
 
 [ext_resource type="Texture2D" uid="uid://7jc7ssh4k8w8" path="res://ASSETS/Art/player_idle.png" id="1_4i36l"]
 [ext_resource type="Script" path="res://SCRIPTS/player.gd" id="1_m7osi"]
@@ -70,14 +70,41 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1qrl0"]
 radius = 48.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rb82s"]
+radius = 24.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8jbok"]
+size = Vector2(48, 48)
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_m7osi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h2eb6")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.762692
+frame_progress = 0.878261
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1qrl0")
+
+[node name="NetAttackArea" type="Area2D" parent="."]
+position = Vector2(0, -88)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NetAttackArea"]
+shape = SubResource("CircleShape2D_rb82s")
+disabled = true
+
+[node name="AttackTime" type="Timer" parent="NetAttackArea"]
+wait_time = 0.25
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NetAttackArea"]
+texture = SubResource("PlaceholderTexture2D_8jbok")
+
+[connection signal="body_entered" from="NetAttackArea" to="." method="_on_net_attack_area_body_entered"]
+[connection signal="timeout" from="NetAttackArea/AttackTime" to="." method="_on_attack_time_timeout"]
