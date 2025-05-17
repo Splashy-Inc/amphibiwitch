@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://do6vv53psm4aw"]
+[gd_scene load_steps=15 format=3 uid="uid://do6vv53psm4aw"]
 
-[ext_resource type="Texture2D" uid="uid://7jc7ssh4k8w8" path="res://ASSETS/Art/player_idle.png" id="1_4i36l"]
+[ext_resource type="Texture2D" uid="uid://du4s28sxwxp3o" path="res://ASSETS/Art/player_idle.png" id="1_4i36l"]
 [ext_resource type="Script" path="res://SCRIPTS/player.gd" id="1_m7osi"]
 [ext_resource type="Shader" path="res://flashlight.gdshader" id="3_8gu05"]
 
@@ -20,22 +20,6 @@ region = Rect2(256, 0, 128, 128)
 atlas = ExtResource("1_4i36l")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j3hek"]
-atlas = ExtResource("1_4i36l")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ty8ym"]
-atlas = ExtResource("1_4i36l")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eqfau"]
-atlas = ExtResource("1_4i36l")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ffu0s"]
-atlas = ExtResource("1_4i36l")
-region = Rect2(896, 0, 128, 128)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_h2eb6"]
 animations = [{
 "frames": [{
@@ -50,18 +34,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_msmbx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j3hek")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ty8ym")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eqfau")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ffu0s")
 }],
 "loop": true,
 "name": &"idle",
