@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="1_yc684"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7p61"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y5hcc"]
 texture = ExtResource("1_yc684")
 0:0/0 = 0
 1:0/0 = 0
@@ -70,7 +70,7 @@ texture = ExtResource("1_yc684")
 7:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_3jiyq"]
-sources/0 = SubResource("TileSetAtlasSource_q7p61")
+sources/0 = SubResource("TileSetAtlasSource_y5hcc")
 
 [node name="TileMapBackground" type="Node2D"]
 
