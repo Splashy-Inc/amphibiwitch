@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://do6vv53psm4aw"]
+
+[ext_resource type="Texture2D" uid="uid://7jc7ssh4k8w8" path="res://ASSETS/Art/player_idle.png" id="1_4i36l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tequt"]
+atlas = ExtResource("1_4i36l")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5h3a"]
+atlas = ExtResource("1_4i36l")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g376b"]
+atlas = ExtResource("1_4i36l")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msmbx"]
+atlas = ExtResource("1_4i36l")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3hek"]
+atlas = ExtResource("1_4i36l")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty8ym"]
+atlas = ExtResource("1_4i36l")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqfau"]
+atlas = ExtResource("1_4i36l")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffu0s"]
+atlas = ExtResource("1_4i36l")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h2eb6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tequt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5h3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g376b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msmbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3hek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty8ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqfau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffu0s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1qrl0"]
+radius = 48.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h2eb6")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.41824
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1qrl0")
