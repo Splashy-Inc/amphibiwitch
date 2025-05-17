@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://cavw65m6hlnw3"]
+
+[ext_resource type="Script" path="res://Dialogs/dialog_data.gd" id="1_ryqk6"]
+
+[resource]
+script = ExtResource("1_ryqk6")
+label = "Example"
+dialog_text = Array[String](["This is example dialog text. Click \"Continue\" to advance", "You can add custom buttons to the \"End Buttons\" array to allow for things like dialog decisions.", "If no end buttons are assigned, a default will be used. Click \"Continue\" again to end the dialog."])

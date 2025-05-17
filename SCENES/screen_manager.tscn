@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxq56d6rma7gn"]
+
+[ext_resource type="Script" path="res://SCRIPTS/screen_manager.gd" id="1_7yicb"]
+[ext_resource type="PackedScene" uid="uid://do7dpbgd6ku6n" path="res://SCENES/GUI/hud.tscn" id="2_3khgq"]
+[ext_resource type="PackedScene" uid="uid://dhvgc0glasyim" path="res://SCENES/playground.tscn" id="2_ovxmg"]
+
+[node name="ScreenManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_7yicb")
+level_scene = ExtResource("2_ovxmg")
+
+[node name="HUD" parent="." instance=ExtResource("2_3khgq")]
+
+[connection signal="main_menu_pressed" from="HUD" to="." method="_on_main_menu_pressed"]
+[connection signal="play_pressed" from="HUD" to="." method="_on_play_pressed"]
+[connection signal="quit_pressed" from="HUD" to="." method="_on_quit_pressed"]
+[connection signal="restart_pressed" from="HUD" to="." method="_on_restart_pressed"]

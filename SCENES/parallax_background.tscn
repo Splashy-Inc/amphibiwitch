@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx3s73knm5n1u"]
+
+[ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="1_h3kik"]
+
+[node name="ParallaxBackground" type="Parallax2D"]
+repeat_size = Vector2(640, 360)
+autoscroll = Vector2(100, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(319.5, 180.5)
+scale = Vector2(4.984, 2.8)
+texture = ExtResource("1_h3kik")
