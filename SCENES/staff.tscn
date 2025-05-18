@@ -137,6 +137,7 @@ scale = Vector2(1.5, 1.5)
 texture = SubResource("GradientTexture2D_hdb2i")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ActiveLightArea"]
+visible = false
 position = Vector2(-75, -106)
 rotation = -0.654498
 scale = Vector2(1.67, 1.67)

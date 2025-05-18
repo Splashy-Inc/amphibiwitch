@@ -6,6 +6,8 @@ class_name Staff
 @onready var active_area: CollisionPolygon2D = $ActiveLightArea/CollisionPolygon2D
 @onready var passive_light: PointLight2D = $PassiveLight
 
+const energy_use_per_second = .5
+var energy := 1.0
 
 var active := false
 
@@ -15,8 +17,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	active_light.visible = active
-	active_area.disabled = not active
+	var energy_mod = 1.0
+	if active:
+		energy_mod = -1.0
+	passive_light.energy = clamp(passive_light.energy + delta * energy_mod * energy_use_per_second, 0.0, 1.0)
+	active_light.visible = active and passive_light.energy > 0.0
+	active_area.disabled = not active_light.visible
+	
 
 
 func _on_active_light_area_body_entered(body: Node2D) -> void:
