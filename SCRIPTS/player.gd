@@ -6,7 +6,7 @@ class_name Player
 @onready var net: Node2D = $Tool/Net
 @onready var staff: Staff = $Tool/Staff
 
-const SPEED = 300.0
+const SPEED = 500.0
 
 @export var attacking := false
 var direction := Vector2.ZERO

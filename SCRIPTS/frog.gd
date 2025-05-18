@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Frog
 
-const SPEED = 200.0
+const SPEED = 300.0
 
 var is_lit := false
 
