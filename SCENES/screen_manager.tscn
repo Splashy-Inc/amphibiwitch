@@ -17,7 +17,7 @@ level_scene = ExtResource("2_ovxmg")
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="SFXManager"]
 stream = ExtResource("5_emujf")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
 
 [connection signal="main_menu_pressed" from="HUD" to="." method="_on_main_menu_pressed"]

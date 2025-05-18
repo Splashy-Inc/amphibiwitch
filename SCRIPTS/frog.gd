@@ -7,7 +7,9 @@ const SPEED = 300.0
 var is_lit := false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var eye_shine: Node2D = $EyeShine
+@onready var sfx_manager: SFXManager = $SFXManager
 
 func _physics_process(delta: float) -> void:
 	animated_sprite_2d.modulate.a = move_toward(animated_sprite_2d.modulate.a, float(is_lit), delta)
@@ -23,6 +25,10 @@ func _physics_process(delta: float) -> void:
 
 func on_hit():
 	if animated_sprite_2d.modulate.a > 0.0:
+		visible = false
+		collision_shape_2d.disabled = true
+		sfx_manager.play("Hit")
+		await sfx_manager.sfx_finished
 		queue_free()
 
 func set_lit(new_lit: bool):
