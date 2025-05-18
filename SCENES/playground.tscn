@@ -89,7 +89,28 @@ position = Vector2(1748, 1186)
 [node name="Fireflies" type="Node" parent="."]
 
 [node name="Firefly" parent="Fireflies" instance=ExtResource("5_svg8i")]
-position = Vector2(267, 241)
+position = Vector2(267, 244)
+
+[node name="Firefly2" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(724, 793)
+
+[node name="Firefly3" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(394, 1803)
+
+[node name="Firefly4" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(1131, 1608)
+
+[node name="Firefly5" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(1517, 1132)
+
+[node name="Firefly6" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(1641, 230)
+
+[node name="Firefly7" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(2260, 1757)
+
+[node name="Firefly8" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(2210, 793)
 
 [node name="MobileControls" parent="." instance=ExtResource("7_uhrci")]
 visible = false
