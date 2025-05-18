@@ -75,17 +75,6 @@ texture = ExtResource("1_qdlpt")
 [sub_resource type="TileSet" id="TileSet_3jiyq"]
 sources/0 = SubResource("TileSetAtlasSource_y5hcc")
 
-[sub_resource type="Gradient" id="Gradient_xlx5v"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_hdb2i"]
-gradient = SubResource("Gradient_xlx5v")
-width = 256
-height = 512
-fill = 1
-fill_from = Vector2(0.521368, 0.405983)
-fill_to = Vector2(0.487179, 0)
-
 [sub_resource type="Gradient" id="Gradient_5jo1n"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
@@ -96,6 +85,17 @@ height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_xlx5v"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hdb2i"]
+gradient = SubResource("Gradient_xlx5v")
+width = 256
+height = 512
+fill = 1
+fill_from = Vector2(0.521368, 0.405983)
+fill_to = Vector2(0.487179, 0)
 
 [node name="Staff" type="Node2D"]
 script = ExtResource("1_l6354")
@@ -112,6 +112,11 @@ tile_set = SubResource("TileSet_3jiyq")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 3
 texture = ExtResource("1_sswp8")
+
+[node name="PassiveLight" type="PointLight2D" parent="."]
+position = Vector2(9, -20)
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_p4ihi")
 
 [node name="ActiveLightArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -136,11 +141,6 @@ position = Vector2(-75, -106)
 rotation = -0.654498
 scale = Vector2(1.67, 1.67)
 polygon = PackedVector2Array(-2, -237, -2, -236, -6.2, -236, -10.2, -234, -13.3, -234, -19.3, -230, -21.4, -230, -25.4, -226, -27.4, -226, -42.4, -211, -44, -211, -44, -208.4, -46.4, -206, -47.6, -206, -49.6, -202, -50.6, -202, -56.6, -191, -57.7, -191, -68.6, -166, -69.7, -166, -74.8, -149, -75.8, -149, -78.8, -135, -79.9, -135, -81.9, -122, -82.9, -122, -85.9, -99, -87, -99, -87, -91, -88, -91, -88, -81, -89, -81, -89, -15.9, -84, 14.2, -84, 20.2, -81, 29, -81, 34.2, -73, 58, -73, 61.2, -67, 73.2, -67, 76.3, -58, 92.3, -58, 94.4, -53, 100.3, -53, 102.4, -44, 112.3, -44, 114.4, -33, 124.4, -33, 126, -30.4, 126, -28, 128.4, -28, 129.6, -22, 132.6, -22, 133.7, -11, 137.6, -11, 138.8, -1.1, 141, 12.2, 141, 23, 137, 26.3, 137, 33.3, 132, 35.4, 132, 41.4, 126, 43.4, 126, 52.4, 116, 54, 116, 54, 113.4, 56.4, 111, 57.6, 111, 59.6, 107, 60.6, 107, 68.6, 93, 69.7, 93, 78.6, 72, 79.8, 72, 80.8, 67, 81.8, 67, 87.8, 46, 88.8, 46, 94.8, 15, 95.9, 15, 97.9, -6, 99, -6, 99, -17, 100, -17, 100, -33, 101, -33, 100, -62, 100, -79.1, 96, -104.2, 96, -110.1, 89, -137.3, 89, -141.2, 82, -159.2, 82, -162.3, 78, -169.4, 78, -172.3, 70, -186.4, 70, -188.4, 68.4, -190, 67.6, -190, 67, -191.2, 67, -193.4, 64, -196.4, 64, -198.4, 59, -203.4, 59, -205.5, 54, -209.5, 54, -211.4, 44, -220.5, 44, -222, 41.4, -222, 39, -224.4, 39, -225.6, 33, -228.6, 33, -229.7, 22, -233.7, 22, -234.9, 13, -235.9, 13, -237)
-
-[node name="PassiveLight" type="PointLight2D" parent="."]
-position = Vector2(9, -20)
-range_item_cull_mask = 2
-texture = SubResource("GradientTexture2D_p4ihi")
 
 [connection signal="body_entered" from="ActiveLightArea" to="." method="_on_active_light_area_body_entered"]
 [connection signal="body_exited" from="ActiveLightArea" to="." method="_on_active_light_area_body_exited"]

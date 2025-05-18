@@ -1,3 +1,48 @@
-[gd_scene format=3 uid="uid://dtrxpwxa5y3r"]
+[gd_scene load_steps=7 format=3 uid="uid://c2qo820c6svoo"]
+
+[ext_resource type="Texture2D" uid="uid://beb2ya8fefyvb" path="res://ASSETS/Art/firefly.png" id="1_bpeie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfwnd"]
+atlas = ExtResource("1_bpeie")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvs1f"]
+atlas = ExtResource("1_bpeie")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dg7is"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfwnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvs1f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_axqho"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rrrod"]
+gradient = SubResource("Gradient_axqho")
+fill = 1
+fill_from = Vector2(0.513761, 0.509174)
+fill_to = Vector2(1, 0.518349)
 
 [node name="Firefly" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dg7is")
+autoplay = "default"
+frame = 1
+frame_progress = 0.231764
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 29)
+color = Color(0.980392, 0.835294, 0.329412, 1)
+texture = SubResource("GradientTexture2D_rrrod")
