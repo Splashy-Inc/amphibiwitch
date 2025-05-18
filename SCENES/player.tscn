@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://do6vv53psm4aw"]
+[gd_scene load_steps=29 format=3 uid="uid://do6vv53psm4aw"]
 
 [ext_resource type="Texture2D" uid="uid://du4s28sxwxp3o" path="res://ASSETS/Art/player_idle.png" id="1_4i36l"]
 [ext_resource type="Script" path="res://SCRIPTS/player.gd" id="1_m7osi"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://s3o1x51lqguu" path="res://ASSETS/Art/player_move.png" id="5_fwf0l"]
 [ext_resource type="PackedScene" uid="uid://cmiraoyeq5xh6" path="res://SCENES/sfx_manager.tscn" id="6_t1lfv"]
 [ext_resource type="AudioStream" uid="uid://r5g0jchmdq38" path="res://ASSETS/Audio/net_swing.ogg" id="7_kj7bk"]
+[ext_resource type="AudioStream" uid="uid://bnjk33cphl6dl" path="res://ASSETS/Audio/step_1.ogg" id="8_mllky"]
+[ext_resource type="AudioStream" uid="uid://jo2wf1nvarjd" path="res://ASSETS/Audio/step_2.ogg" id="9_7k310"]
+[ext_resource type="AudioStream" uid="uid://nuy6wap0rsdf" path="res://ASSETS/Audio/step_3.ogg" id="10_d21lm"]
+[ext_resource type="AudioStream" uid="uid://bxt8jgpktd4r0" path="res://ASSETS/Audio/step_4.ogg" id="11_kyhkv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tequt"]
 atlas = ExtResource("1_4i36l")
@@ -231,6 +235,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_bjd88"]
 resource_name = "move"
+length = 0.4
 loop_mode = 1
 tracks/0/type = "method"
 tracks/0/imported = false
@@ -243,6 +248,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"move", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXManager")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["Step"],
+"method": &"play"
+}, {
+"args": ["Step"],
 "method": &"play"
 }]
 }
@@ -259,6 +281,13 @@ _data = {
 random_pitch = 1.05
 streams_count = 1
 stream_0/stream = ExtResource("7_kj7bk")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2wy6g"]
+streams_count = 4
+stream_0/stream = ExtResource("8_mllky")
+stream_1/stream = ExtResource("9_7k310")
+stream_2/stream = ExtResource("10_d21lm")
+stream_3/stream = ExtResource("11_kyhkv")
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
@@ -295,4 +324,6 @@ autoplay = "idle"
 
 [node name="Swing" type="AudioStreamPlayer" parent="SFXManager"]
 stream = SubResource("AudioStreamRandomizer_6thap")
-volume_db = -5.0
+
+[node name="Step" type="AudioStreamPlayer" parent="SFXManager"]
+stream = SubResource("AudioStreamRandomizer_2wy6g")
