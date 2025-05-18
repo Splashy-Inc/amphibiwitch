@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=4 uid="uid://d1fnfg5c0hmib"]
+[gd_scene load_steps=2 format=4 uid="uid://b7600w3ihvnlg"]
 
 [ext_resource type="TileSet" uid="uid://kmm5yhihinxe" path="res://SCENES/Tileset/game_tilemap.tres" id="1_3ylms"]
 

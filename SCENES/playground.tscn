@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=8 format=3 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
-[ext_resource type="PackedScene" uid="uid://d1fnfg5c0hmib" path="res://SCENES/MainMenu_tilemap_background.tscn" id="2_o64ee"]
-[ext_resource type="PackedScene" path="res://SCENES/player.tscn" id="3_7v63e"]
-[ext_resource type="PackedScene" path="res://SCENES/frog.tscn" id="4_vxm8d"]
+[ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
+[ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
+[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/frog.tscn" id="4_vxm8d"]
 [ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
@@ -18,27 +18,7 @@ color = Color(0, 0, 0, 1)
 [node name="WorldLight" type="DirectionalLight2D" parent="."]
 energy = 0.1
 
-[node name="TileMapBackground" parent="." instance=ExtResource("2_o64ee")]
-light_mask = 3
-
-[node name="Boarder" parent="TileMapBackground/Terrain" index="0"]
-light_mask = 3
-
-[node name="Grass" parent="TileMapBackground/Terrain" index="1"]
-light_mask = 3
-
-[node name="WalkOver" parent="TileMapBackground/Terrain" index="2"]
-tile_map_data = PackedByteArray("AAALAAIAAQAGAAMAAAAMAAUAAQAEAAEAAAAEAAIAAQAGAAIAAAABAAEAAQAEAAEAAAADAAkAAQAEAAEAAAAEAAcAAQAEAAEAAAAFAAUAAQAEAAEAAAAFAAQAAQAEAAEAAAAIAAQAAQAEAAMAAAAJAAQAAQAEAAEAAAAKAAUAAQAEAAEAAAALAAUAAQAGAAMAAAANAAUAAQAEAAEAAAAQAAUAAQAEAAEAAAAIAA0AAQAEAAEAAAAJAA0AAQAEAAEAAAAJAA4AAQAHAAEAAAAMAA4AAQAEAAEAAAANAA4AAQAHAAIAAAAOAA4AAQAEAAEAAAAPAA8AAQAEAAEAAAAQAA8AAQAEAAEAAAARAA0AAQAEAAIAAAASAAoAAQAEAAEAAAASAAkAAQAEAAEAAAATAA8AAQAEAAIAAAAPAAsAAQAEAAIAAAANAAsAAQAEAAIAAAAMAAoAAQAEAAIAAAAKAAkAAQAEAAIAAAAJAAkAAQAEAAIAAAAHAAEAAQAEAAMAAAAHAAIAAQAEAAMAAAAIAAMAAQAEAAMAAAAHAAYAAQAEAAMAAAACAAcAAQAEAAMAAAABAAQAAQAEAAMAAAAQAAIAAQAEAAMAAAASAAUAAQAEAAMAAAAUAAUAAQAEAAMAAAAEAA4AAQAEAAMAAAAEAAsAAQAEAAMAAAAQAAsAAQAGAAIAAAAUAAwAAQAGAAIAAAACAA4AAQAGAAIAAAALAAgAAQAHAAIAAAAHAA0AAQAHAAIAAAAUABAAAQAHAAIAAAASAA8AAQAHAAIAAAAHAAUAAQAHAAIAAAAHAAMAAQAHAAMAAAANAAEAAQAHAAMAAAAHAAgAAQAHAAMAAAARAAkAAQAHAAMAAAACAAsAAQAHAAMAAAAOAA8AAQAHAAMAAAAGAAsAAQAGAAMAAAAHAA4AAQAGAAMAAAACAAwAAQAGAAMAAAASAAgAAQAGAAMAAAASAAYAAQAGAAMAAAARAAIAAQAHAAAAAAAPAAUAAQAHAAAAAAATAAYAAQAHAAAAAAANAAMAAQAFAAAAAAASAAQAAQAFAAAAAAAJAAIAAQAFAAEAAAAQAAgAAQAFAAAAAAARAAoAAQAFAAAAAAAUAAkAAQAGAAAAAAAUAAEAAQAHAAAAAAATAAwAAQAHAAAAAAARAAwAAQAHAAEAAAAOAA0AAQAHAAEAAAAPAA4AAQAHAAEAAAAJAAwAAQAHAAEAAAAGAA8AAQAHAAEAAAAEAA0AAQAHAAEAAAADAAoAAQAFAAIAAAAUAA8AAQAHAAEAAAAGAAkAAQAFAAEAAAAGAAUAAQAFAAEAAAABAAcAAQAFAAIAAAACAAMAAQAFAAIAAAAGAAEAAQAFAAIAAAAGAAwAAQAFAAMAAAAEAAYAAQAFAAMAAAABAAsAAQAFAAMAAAADAAUAAQAFAAIAAAALAAEAAQAFAAEAAAAKAAQAAQAFAAEAAAAGAAcAAQAFAAEAAAA=")
-
-[node name="Boundary" type="Node2D" parent="."]
-
-[node name="TopWall" type="StaticBody2D" parent="Boundary"]
-
-[node name="LeftWall" type="StaticBody2D" parent="Boundary"]
-
-[node name="RightWall" type="StaticBody2D" parent="Boundary"]
-
-[node name="BottomWall" type="StaticBody2D" parent="Boundary"]
+[node name="TileMapBackground" parent="." instance=ExtResource("2_fetls")]
 
 [node name="Player" type="Node" parent="."]
 
@@ -119,5 +99,3 @@ visible = false
 visible = false
 
 [node name="Node2D" type="Node2D" parent="."]
-
-[editable path="TileMapBackground"]

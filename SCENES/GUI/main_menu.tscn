@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://SCRIPTS/main_menu.gd" id="1_vkagb"]
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="2_y3ir5"]
 [ext_resource type="FontFile" uid="uid://di1ynwh6doxnf" path="res://ASSETS/Font/m5x7.ttf" id="3_mnfv6"]
-[ext_resource type="PackedScene" uid="uid://d1fnfg5c0hmib" path="res://SCENES/MainMenu_tilemap_background.tscn" id="3_npyma"]
+[ext_resource type="PackedScene" uid="uid://b7600w3ihvnlg" path="res://SCENES/MainMenu_tilemap_background.tscn" id="3_npyma"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nqa2c"]
 font = ExtResource("3_mnfv6")
