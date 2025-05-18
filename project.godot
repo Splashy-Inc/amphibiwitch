@@ -28,6 +28,14 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
+[file_customization]
+
+folder_colors={
+"res://ASSETS/": "orange",
+"res://SCENES/": "green",
+"res://SCRIPTS/": "pink"
+}
+
 [gui]
 
 theme/custom_font="res://ASSETS/Font/m5x7.ttf"
