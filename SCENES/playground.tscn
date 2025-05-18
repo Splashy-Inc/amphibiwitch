@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=8 format=4 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="PackedScene" uid="uid://d1fnfg5c0hmib" path="res://SCENES/tilemap_background.tscn" id="2_o64ee"]
 [ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
 [ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/frog.tscn" id="4_vxm8d"]
+[ext_resource type="PackedScene" uid="uid://c2qo820c6svoo" path="res://SCENES/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
 
@@ -84,6 +85,11 @@ position = Vector2(2337, 792)
 
 [node name="Frog12" parent="Frogs" instance=ExtResource("4_vxm8d")]
 position = Vector2(1748, 1186)
+
+[node name="Fireflies" type="Node" parent="."]
+
+[node name="Firefly" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(267, 241)
 
 [node name="MobileControls" parent="." instance=ExtResource("7_uhrci")]
 visible = false
