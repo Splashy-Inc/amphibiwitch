@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://dtrxpwxa5y3r"]
+[gd_scene load_steps=5 format=3 uid="uid://dtrxpwxa5y3r"]
+
+[ext_resource type="Texture2D" uid="uid://beb2ya8fefyvb" path="res://ASSETS/Art/firefly.png" id="1_bpeie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfwnd"]
+atlas = ExtResource("1_bpeie")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvs1f"]
+atlas = ExtResource("1_bpeie")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dg7is"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfwnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvs1f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Firefly" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dg7is")
+autoplay = "default"
+frame_progress = 0.383912
