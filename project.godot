@@ -32,6 +32,14 @@ window/stretch/mode="canvas_items"
 
 Player=""
 
+[file_customization]
+
+folder_colors={
+"res://ASSETS/": "orange",
+"res://SCENES/": "green",
+"res://SCRIPTS/": "pink"
+}
+
 [gui]
 
 theme/custom_font="res://ASSETS/Font/m5x7.ttf"
