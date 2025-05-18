@@ -15,6 +15,7 @@ run/main_scene="res://SCENES/screen_manager.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://SplashySplashScreen.png"
 boot_splash/fullsize=false
+config/icon="res://ASSETS/Art/icon.png"
 
 [autoload]
 
