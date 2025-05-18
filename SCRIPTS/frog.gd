@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 			velocity = direction * SPEED
 			rotation = -direction.angle_to(Vector2.UP)
 	else:
-		velocity = velocity.lerp(Vector2.ZERO, delta)
+		velocity = velocity.lerp(Vector2.ZERO, delta * 3)
 
 	move_and_slide()
 
@@ -24,6 +24,4 @@ func on_hit():
 
 func set_lit(new_lit: bool):
 	if new_lit != is_lit:
-		if not new_lit:
-			await get_tree().create_timer(.5)
 		is_lit = new_lit
