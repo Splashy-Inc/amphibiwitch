@@ -8,11 +8,13 @@ var is_lit := false
 
 func _physics_process(delta: float) -> void:
 	modulate.a = move_toward(modulate.a, float(is_lit), delta)
-	#var direction := Input.get_axis("ui_left", "ui_right")
-	#if direction:
-		#velocity.x = direction * SPEED
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
+	if is_lit:
+		var direction := -global_position.direction_to(get_tree().get_first_node_in_group("Player").global_position)
+		if direction:
+			velocity = direction * SPEED
+			rotation = -direction.angle_to(Vector2.UP)
+	else:
+		velocity = velocity.lerp(Vector2.ZERO, delta)
 
 	move_and_slide()
 
