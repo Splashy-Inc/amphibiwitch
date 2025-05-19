@@ -88,31 +88,33 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Quit"
 
-[node name="Fireflies" type="Node" parent="."]
+[node name="Fireflies" type="Node2D" parent="MenuContent"]
 
-[node name="Firefly" parent="Fireflies" instance=ExtResource("5_wju8h")]
+[node name="Firefly" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
 position = Vector2(290, 735)
 scale = Vector2(1.5, 1.5)
 
-[node name="Firefly6" parent="Fireflies" instance=ExtResource("5_wju8h")]
+[node name="Firefly6" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
 position = Vector2(-331, 126)
 rotation = 0.832522
 scale = Vector2(1.5, 1.5)
 
-[node name="Firefly2" parent="Fireflies" instance=ExtResource("5_wju8h")]
+[node name="Firefly2" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
 position = Vector2(1926, 217)
-scale = Vector2(-1.5, -1.5)
+rotation = -2.67559
+scale = Vector2(1.5, 1.5)
 
-[node name="Firefly5" parent="Fireflies" instance=ExtResource("5_wju8h")]
+[node name="Firefly5" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
 position = Vector2(2509, 578)
-scale = Vector2(-1.5, -1.5)
+rotation = -2.67559
+scale = Vector2(1.5, 1.5)
 
-[node name="Firefly3" parent="Fireflies" instance=ExtResource("5_wju8h")]
+[node name="Firefly3" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
 position = Vector2(720, 18.0001)
-rotation = -1.69297
-scale = Vector2(-1, -1)
+rotation = 1.44862
+scale = Vector2(1, 1)
 
-[node name="Firefly4" parent="Fireflies" instance=ExtResource("5_wju8h")]
+[node name="Firefly4" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
 position = Vector2(1583, 691)
 rotation = -1.69297
 scale = Vector2(1, 1)

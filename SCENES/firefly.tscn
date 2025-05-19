@@ -40,6 +40,9 @@ fill_to = Vector2(1, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ii0q"]
 radius = 48.0
 
+[sub_resource type="Animation" id="Animation_ppjr4"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_xk8ja"]
 resource_name = "new_animation"
 length = 40.0
@@ -68,9 +71,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.466003, 2.04902, 3.91128, 5.2133, 0.466003]
 }
-
-[sub_resource type="Animation" id="Animation_ppjr4"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v1jxe"]
 _data = {
