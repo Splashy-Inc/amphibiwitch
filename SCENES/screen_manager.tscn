@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxq56d6rma7gn"]
+[gd_scene load_steps=6 format=3 uid="uid://bxq56d6rma7gn"]
 
 [ext_resource type="Script" path="res://SCRIPTS/screen_manager.gd" id="1_7yicb"]
 [ext_resource type="PackedScene" uid="uid://do7dpbgd6ku6n" path="res://SCENES/GUI/hud.tscn" id="2_3khgq"]
 [ext_resource type="PackedScene" uid="uid://dhvgc0glasyim" path="res://SCENES/playground.tscn" id="2_ovxmg"]
+[ext_resource type="PackedScene" uid="uid://cmiraoyeq5xh6" path="res://SCENES/sfx_manager.tscn" id="4_wgil8"]
+[ext_resource type="AudioStream" uid="uid://c8ncyyswf1n3j" path="res://ASSETS/Audio/background_theme.mp3" id="5_emujf"]
 
 [node name="ScreenManager" type="Node"]
 process_mode = 3
@@ -10,6 +12,13 @@ script = ExtResource("1_7yicb")
 level_scene = ExtResource("2_ovxmg")
 
 [node name="HUD" parent="." instance=ExtResource("2_3khgq")]
+
+[node name="SFXManager" parent="." instance=ExtResource("4_wgil8")]
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="SFXManager"]
+stream = ExtResource("5_emujf")
+volume_db = -25.0
+autoplay = true
 
 [connection signal="main_menu_pressed" from="HUD" to="." method="_on_main_menu_pressed"]
 [connection signal="play_pressed" from="HUD" to="." method="_on_play_pressed"]

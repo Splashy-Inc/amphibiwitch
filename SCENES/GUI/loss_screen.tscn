@@ -45,6 +45,7 @@ theme_override_styles/normal = ExtResource("1_kt3cy")
 text = "Restart Level"
 
 [node name="QuitButton" type="Button" parent="MenuContent/MenuButtons"]
+visible = false
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18

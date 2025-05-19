@@ -1,28 +1,105 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=8 format=3 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
-[ext_resource type="PackedScene" uid="uid://dx3s73knm5n1u" path="res://SCENES/parallax_background.tscn" id="2_ffhdr"]
-[ext_resource type="PackedScene" uid="uid://d1fnfg5c0hmib" path="res://SCENES/tilemap_background.tscn" id="2_o64ee"]
-[ext_resource type="PackedScene" uid="uid://cwr6cg26cwtpw" path="res://SCENES/DialogSystem/dialog_box.tscn" id="2_xgpxw"]
-[ext_resource type="Resource" uid="uid://cavw65m6hlnw3" path="res://Dialogs/example_dialog_data.tres" id="3_5ii31"]
-[ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="3_vq471"]
+[ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
+[ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
+[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/frog.tscn" id="4_vxm8d"]
+[ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
 
-[node name="Playground" type="Node" node_paths=PackedStringArray("dialog_box", "mobile_controls")]
+[node name="Playground" type="Node" node_paths=PackedStringArray("mobile_controls")]
 script = ExtResource("1_5e8d0")
-dialog_box = NodePath("DialogBox")
 mobile_controls = NodePath("MobileControls")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("2_ffhdr")]
+[node name="WorldModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
 
-[node name="TileMapBackground" parent="." instance=ExtResource("2_o64ee")]
+[node name="WorldLight" type="DirectionalLight2D" parent="."]
+energy = 0.1
 
-[node name="DialogBox" parent="." instance=ExtResource("2_xgpxw")]
-left_texture = ExtResource("3_vq471")
-right_texture = ExtResource("3_vq471")
-dialog_data = ExtResource("3_5ii31")
+[node name="TileMapBackground" parent="." instance=ExtResource("2_fetls")]
+
+[node name="Player" type="Node" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("3_7v63e")]
+position = Vector2(933, 524)
+
+[node name="Camera2D" type="Camera2D" parent="Player/Player"]
+
+[node name="Frogs" type="Node" parent="."]
+
+[node name="Frog" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(574, 385)
+rotation = 1.5708
+
+[node name="Frog2" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(1710, 603)
+
+[node name="Frog3" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(270, 915)
+
+[node name="Frog4" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(1254, 1001)
+
+[node name="Frog5" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(379, 1597)
+
+[node name="Frog6" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(2367, 1355)
+
+[node name="Frog7" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(1180, 1423)
+
+[node name="Frog8" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(1900, 1694)
+
+[node name="Frog9" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(905, 1775)
+
+[node name="Frog10" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(2494, 271)
+
+[node name="Frog11" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(2337, 792)
+
+[node name="Frog12" parent="Frogs" instance=ExtResource("4_vxm8d")]
+position = Vector2(1748, 1186)
+
+[node name="Fireflies" type="Node" parent="."]
+
+[node name="Firefly" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(267, 244)
+rotation = 0.928515
+
+[node name="Firefly2" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(724, 793)
+scale = Vector2(-0.5, -0.5)
+
+[node name="Firefly3" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(394, 1803)
+
+[node name="Firefly4" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(1131, 1608)
+
+[node name="Firefly5" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(1517, 1132)
+scale = Vector2(-0.5, -0.5)
+
+[node name="Firefly6" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(1641, 230)
+rotation = 0.851721
+
+[node name="Firefly7" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(2260, 1757)
+scale = Vector2(-0.5, -0.5)
+
+[node name="Firefly8" parent="Fireflies" instance=ExtResource("5_svg8i")]
+position = Vector2(2210, 793)
+rotation = -0.459022
 
 [node name="MobileControls" parent="." instance=ExtResource("7_uhrci")]
 
 [node name="LevelUI" parent="." instance=ExtResource("8_y8n3e")]
+
+[node name="Node2D" type="Node2D" parent="."]

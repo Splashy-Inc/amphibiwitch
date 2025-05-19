@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bwumlnb4c1o0r"]
+
+[node name="FlashlightShape" type="Polygon2D"]
+polygon = PackedVector2Array(0, 0, -256, -512, 256, -512)

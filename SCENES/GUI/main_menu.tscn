@@ -1,13 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://k7ghjsy8g1k0"]
+[gd_scene load_steps=7 format=3 uid="uid://k7ghjsy8g1k0"]
 
 [ext_resource type="Script" path="res://SCRIPTS/main_menu.gd" id="1_vkagb"]
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="2_y3ir5"]
+[ext_resource type="FontFile" uid="uid://di1ynwh6doxnf" path="res://ASSETS/Font/m5x7.ttf" id="3_mnfv6"]
+[ext_resource type="PackedScene" uid="uid://b7600w3ihvnlg" path="res://SCENES/MainMenu_tilemap_background.tscn" id="3_npyma"]
+[ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_wju8h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqa2c"]
+font = ExtResource("3_mnfv6")
+font_size = 300
+font_color = Color(0.552941, 0.560784, 0.701961, 1)
+outline_size = 20
+outline_color = Color(0.231373, 0.180392, 0.376471, 1)
+shadow_size = 20
+shadow_color = Color(0.172549, 0.133333, 0.278431, 0.643137)
+shadow_offset = Vector2(10, 10)
 
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(640, 360)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_vkagb")
+
+[node name="XMainMenuTileMapBackground" parent="." instance=ExtResource("3_npyma")]
 
 [node name="MenuContent" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(640, 360)
@@ -19,15 +34,21 @@ alignment = 1
 
 [node name="Title" type="Label" parent="MenuContent"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
-text = "Game Title
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 160
+text = "AMPHIBIWITCH
 "
+label_settings = SubResource("LabelSettings_nqa2c")
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="MenuContent"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Game Subtitle"
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.701961, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.133333, 0.278431, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "Let's Make A Minigame!"
 horizontal_alignment = 1
 
 [node name="MenuButtons" type="VBoxContainer" parent="MenuContent"]
@@ -38,26 +59,65 @@ theme_override_constants/separation = 10
 [node name="PlayButton" type="Button" parent="MenuContent/MenuButtons"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 18
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.347047, 0.279059, 0.544755, 1)
+theme_override_fonts/font = ExtResource("3_mnfv6")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Play"
 
 [node name="ControlsButton" type="Button" parent="MenuContent/MenuButtons"]
-custom_minimum_size = Vector2(100, 20)
+visible = false
+custom_minimum_size = Vector2(167, 20)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 18
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.347047, 0.279059, 0.544755, 1)
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Controls"
 
 [node name="QuitButton" type="Button" parent="MenuContent/MenuButtons"]
+visible = false
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 18
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.347047, 0.279059, 0.544755, 1)
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Quit"
+
+[node name="Fireflies" type="Node2D" parent="MenuContent"]
+
+[node name="Firefly" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(290, 735)
+scale = Vector2(1.5, 1.5)
+
+[node name="Firefly6" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(-331, 126)
+rotation = 0.832522
+scale = Vector2(1.5, 1.5)
+
+[node name="Firefly2" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(1926, 217)
+rotation = -2.67559
+scale = Vector2(1.5, 1.5)
+
+[node name="Firefly5" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(2509, 578)
+rotation = -2.67559
+scale = Vector2(1.5, 1.5)
+
+[node name="Firefly3" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(720, 18.0001)
+rotation = 1.44862
+scale = Vector2(1, 1)
+
+[node name="Firefly4" parent="MenuContent/Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(1583, 691)
+rotation = -1.69297
+scale = Vector2(1, 1)
 
 [connection signal="pressed" from="MenuContent/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/ControlsButton" to="." method="_on_controls_button_pressed"]

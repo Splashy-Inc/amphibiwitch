@@ -24,7 +24,7 @@ alignment = 1
 
 [node name="Title" type="Label" parent="MenuContent"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 100
 text = "Paused"
 horizontal_alignment = 1
 
@@ -36,34 +36,36 @@ theme_override_constants/separation = 10
 [node name="ResumeButton" type="Button" parent="MenuContent/MenuButtons"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 18
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_1q666")
 text = "Resume"
 
 [node name="RestartButton" type="Button" parent="MenuContent/MenuButtons"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 18
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_1q666")
 text = "Restart"
 
 [node name="ControlsButton" type="Button" parent="MenuContent/MenuButtons"]
+visible = false
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 18
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_1q666")
 text = "Controls"
 
 [node name="MainMenuButton" type="Button" parent="MenuContent/MenuButtons"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 18
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_1q666")
 text = "Main Menu"
+icon_alignment = 1
 
 [connection signal="pressed" from="MenuContent/MenuButtons/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/RestartButton" to="." method="_on_restart_button_pressed"]
