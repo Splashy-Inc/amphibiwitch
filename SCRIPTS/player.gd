@@ -19,6 +19,8 @@ func _physics_process(delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		direction = direction.lerp(Input.get_vector("left", "right", "up", "down").normalized(), .1)
+		if direction == Vector2.ZERO and Globals.joystick:
+			direction = Globals.joystick.direction
 		if direction:
 			animation_player.play("move")
 			rotation = -direction.angle_to(Vector2.UP)
@@ -30,6 +32,8 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("net") and attacking == false:
+		if (OS.has_feature("web_android") or OS.has_feature("web_ios")) and event is InputEventMouse:
+			return
 		attacking = true
 		_use_net()
 
