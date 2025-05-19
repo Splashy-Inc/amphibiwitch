@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://k7ghjsy8g1k0"]
+[gd_scene load_steps=7 format=3 uid="uid://k7ghjsy8g1k0"]
 
 [ext_resource type="Script" path="res://SCRIPTS/main_menu.gd" id="1_vkagb"]
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="2_y3ir5"]
 [ext_resource type="FontFile" uid="uid://di1ynwh6doxnf" path="res://ASSETS/Font/m5x7.ttf" id="3_mnfv6"]
 [ext_resource type="PackedScene" uid="uid://b7600w3ihvnlg" path="res://SCENES/MainMenu_tilemap_background.tscn" id="3_npyma"]
+[ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_wju8h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nqa2c"]
 font = ExtResource("3_mnfv6")
@@ -86,6 +87,35 @@ theme_override_colors/font_color = Color(0.347047, 0.279059, 0.544755, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Quit"
+
+[node name="Fireflies" type="Node" parent="."]
+
+[node name="Firefly" parent="Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(290, 735)
+scale = Vector2(1.5, 1.5)
+
+[node name="Firefly6" parent="Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(-331, 126)
+rotation = 0.832522
+scale = Vector2(1.5, 1.5)
+
+[node name="Firefly2" parent="Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(1926, 217)
+scale = Vector2(-1.5, -1.5)
+
+[node name="Firefly5" parent="Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(2509, 578)
+scale = Vector2(-1.5, -1.5)
+
+[node name="Firefly3" parent="Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(720, 18.0001)
+rotation = -1.69297
+scale = Vector2(-1, -1)
+
+[node name="Firefly4" parent="Fireflies" instance=ExtResource("5_wju8h")]
+position = Vector2(1583, 691)
+rotation = -1.69297
+scale = Vector2(1, 1)
 
 [connection signal="pressed" from="MenuContent/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/ControlsButton" to="." method="_on_controls_button_pressed"]
