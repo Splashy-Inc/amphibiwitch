@@ -16,11 +16,11 @@ func _physics_process(delta: float) -> void:
 	staff.active = Input.is_action_pressed("light") and not attacking
 	
 	if not attacking:
-		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
-		direction = direction.lerp(Input.get_vector("left", "right", "up", "down").normalized(), .1)
-		if direction == Vector2.ZERO and Globals.joystick:
+		if Globals.is_mobile and Globals.joystick:
 			direction = Globals.joystick.direction
+		else:
+			direction = direction.lerp(Input.get_vector("left", "right", "up", "down").normalized(), .1)
+		
 		if direction:
 			animation_player.play("move")
 			rotation = -direction.angle_to(Vector2.UP)
