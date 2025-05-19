@@ -5,6 +5,7 @@ class_name Staff
 @onready var active_light: PointLight2D = $ActiveLightArea/ActiveLight
 @onready var active_area: CollisionPolygon2D = $ActiveLightArea/CollisionPolygon2D
 @onready var passive_light: PointLight2D = $PassiveLight
+@onready var active_sound: AudioStreamPlayer = $ActiveSound
 
 const energy_use_per_second = .3
 
@@ -23,6 +24,8 @@ func _process(delta: float) -> void:
 	active_light.energy = passive_light.energy
 	active_light.visible = active and passive_light.energy > 0.0
 	active_area.disabled = not active_light.visible
+	if active_sound.playing != active_light.visible:
+		active_sound.playing = active_light.visible
 	
 
 

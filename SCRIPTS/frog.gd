@@ -11,6 +11,9 @@ var is_lit := false
 @onready var eye_shine: Node2D = $EyeShine
 @onready var sfx_manager: SFXManager = $SFXManager
 
+func _ready() -> void:
+	$RibbitTimer.wait_time = randf_range(0.5, 1.0)
+
 func _physics_process(delta: float) -> void:
 	animated_sprite_2d.modulate.a = move_toward(animated_sprite_2d.modulate.a, float(is_lit), delta)
 	if is_lit:
@@ -35,3 +38,7 @@ func set_lit(new_lit: bool):
 	if new_lit != is_lit:
 		is_lit = new_lit
 	eye_shine.visible = is_lit
+
+func _on_ribbit_timer_timeout() -> void:
+	if randi_range(0, 10) == 0:
+		sfx_manager.play("Ribbit")

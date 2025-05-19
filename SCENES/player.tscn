@@ -327,3 +327,6 @@ stream = SubResource("AudioStreamRandomizer_6thap")
 
 [node name="Step" type="AudioStreamPlayer" parent="SFXManager"]
 stream = SubResource("AudioStreamRandomizer_2wy6g")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
