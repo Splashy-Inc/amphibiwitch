@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
-[ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
+[ext_resource type="PackedScene" path="res://SCENES/player.tscn" id="3_7v63e"]
 [ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/frog.tscn" id="4_vxm8d"]
 [ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
@@ -70,9 +70,11 @@ position = Vector2(1748, 1186)
 
 [node name="Firefly" parent="Fireflies" instance=ExtResource("5_svg8i")]
 position = Vector2(267, 244)
+rotation = 0.928515
 
 [node name="Firefly2" parent="Fireflies" instance=ExtResource("5_svg8i")]
 position = Vector2(724, 793)
+scale = Vector2(-0.5, -0.5)
 
 [node name="Firefly3" parent="Fireflies" instance=ExtResource("5_svg8i")]
 position = Vector2(394, 1803)
@@ -82,15 +84,19 @@ position = Vector2(1131, 1608)
 
 [node name="Firefly5" parent="Fireflies" instance=ExtResource("5_svg8i")]
 position = Vector2(1517, 1132)
+scale = Vector2(-0.5, -0.5)
 
 [node name="Firefly6" parent="Fireflies" instance=ExtResource("5_svg8i")]
 position = Vector2(1641, 230)
+rotation = 0.851721
 
 [node name="Firefly7" parent="Fireflies" instance=ExtResource("5_svg8i")]
 position = Vector2(2260, 1757)
+scale = Vector2(-0.5, -0.5)
 
 [node name="Firefly8" parent="Fireflies" instance=ExtResource("5_svg8i")]
 position = Vector2(2210, 793)
+rotation = -0.459022
 
 [node name="MobileControls" parent="." instance=ExtResource("7_uhrci")]
 
