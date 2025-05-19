@@ -93,9 +93,7 @@ position = Vector2(2260, 1757)
 position = Vector2(2210, 793)
 
 [node name="MobileControls" parent="." instance=ExtResource("7_uhrci")]
-visible = false
 
 [node name="LevelUI" parent="." instance=ExtResource("8_y8n3e")]
-visible = false
 
 [node name="Node2D" type="Node2D" parent="."]

@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Frog
 
+signal died
+
 const SPEED = 300.0
 
 var is_lit := false
@@ -13,6 +15,8 @@ var is_lit := false
 
 func _ready() -> void:
 	$RibbitTimer.wait_time = randf_range(0.5, 1.0)
+	died.connect(Globals._on_frog_died)
+	
 
 func _physics_process(delta: float) -> void:
 	animated_sprite_2d.modulate.a = move_toward(animated_sprite_2d.modulate.a, float(is_lit), delta)
@@ -28,6 +32,7 @@ func _physics_process(delta: float) -> void:
 
 func on_hit():
 	if animated_sprite_2d.modulate.a > 0.0:
+		died.emit()
 		visible = false
 		collision_shape_2d.disabled = true
 		sfx_manager.play("Hit")

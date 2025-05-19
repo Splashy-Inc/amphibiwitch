@@ -66,6 +66,7 @@ theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Play"
 
 [node name="ControlsButton" type="Button" parent="MenuContent/MenuButtons"]
+visible = false
 custom_minimum_size = Vector2(167, 20)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -76,6 +77,7 @@ theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Controls"
 
 [node name="QuitButton" type="Button" parent="MenuContent/MenuButtons"]
+visible = false
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 size_flags_horizontal = 4

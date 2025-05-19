@@ -8,7 +8,8 @@ var joypad_connected := false
 
 var joystick: JoyStick
 
-var info = 10 # Example info to track for level UI
+var info = 0 # Example info to track for level UI
+var goal_frogs = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,4 +25,7 @@ func _on_joy_connection_changed(device, connected):
 
 func update_info(new_info):
 	info = new_info
-	info_updated.emit(info)
+	info_updated.emit(str(info) + "/" + str(goal_frogs))
+
+func _on_frog_died():
+	update_info(info + 1)

@@ -18,12 +18,9 @@ func _on_info_updated(new_info):
 	text = str(new_info)
 "
 
-[node name="LevelUI" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="LevelUI" type="CanvasLayer"]
 
 [node name="PauseButton" parent="." instance=ExtResource("1_l6r4l")]
-layout_mode = 0
 offset_left = 22.0
 offset_top = 18.0
 offset_right = 60.0
@@ -36,7 +33,6 @@ texture = ExtResource("2_xad2d")
 hframes = 8
 
 [node name="info_label" type="Label" parent="."]
-layout_mode = 0
 offset_left = 1631.0
 offset_top = 40.0
 offset_right = 1768.0
