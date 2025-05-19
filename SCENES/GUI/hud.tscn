@@ -11,6 +11,7 @@
 script = ExtResource("1_w38b1")
 
 [node name="MenuScreens" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -29,6 +30,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 
 [node name="ControlsScreen" parent="MenuScreens" instance=ExtResource("4_sgjn6")]
+visible = false
 
 [node name="WinScreen" parent="MenuScreens" instance=ExtResource("6_s7jfo")]
 visible = false
