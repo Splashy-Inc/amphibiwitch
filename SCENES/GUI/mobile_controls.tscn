@@ -1,17 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b77mh17y84d50"]
+[gd_scene load_steps=7 format=3 uid="uid://b77mh17y84d50"]
 
 [ext_resource type="Script" path="res://SCRIPTS/mobile_controls.gd" id="1_qatij"]
 [ext_resource type="PackedScene" uid="uid://doayqux8rw3nv" path="res://SCENES/GUI/joystick.tscn" id="1_x3fcn"]
-[ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="3_tmh5b"]
-
-[sub_resource type="Gradient" id="Gradient_6dmps"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_trene"]
-gradient = SubResource("Gradient_6dmps")
-width = 128
-height = 128
-fill_from = Vector2(0.100917, 0.146789)
-fill_to = Vector2(1, 1)
+[ext_resource type="Texture2D" uid="uid://cy5vwxtwr6kat" path="res://ASSETS/Art/Buttons/button_net_idle.png" id="3_uhcr8"]
+[ext_resource type="Texture2D" uid="uid://bgbj6hmvn03sc" path="res://ASSETS/Art/Buttons/button_net_pressed.png" id="4_gf6h6"]
+[ext_resource type="Texture2D" uid="uid://cu30nmiluxwo7" path="res://ASSETS/Art/Buttons/button_staff_idle.png" id="5_yvd3u"]
+[ext_resource type="Texture2D" uid="uid://blmr12hmgpfs1" path="res://ASSETS/Art/Buttons/button_staff_pressed.png" id="6_dpaeq"]
 
 [node name="MobileControls" type="Control"]
 layout_mode = 3
@@ -29,10 +23,20 @@ grow_vertical = 2
 script = ExtResource("1_qatij")
 
 [node name="Joystick" parent="." instance=ExtResource("1_x3fcn")]
-position = Vector2(80, 280)
+position = Vector2(-394, 504)
+scale = Vector2(2.5, 2.5)
 
-[node name="Button1" type="TouchScreenButton" parent="."]
-position = Vector2(528, 248)
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("3_tmh5b")
-texture_pressed = SubResource("GradientTexture2D_trene")
+[node name="Net" type="TouchScreenButton" parent="."]
+position = Vector2(850, 456)
+scale = Vector2(1.75, 1.75)
+texture_normal = ExtResource("3_uhcr8")
+texture_pressed = ExtResource("4_gf6h6")
+
+[node name="Light" type="TouchScreenButton" parent="."]
+position = Vector2(1023, 244)
+scale = Vector2(1.75, 1.75)
+texture_normal = ExtResource("5_yvd3u")
+texture_pressed = ExtResource("6_dpaeq")
+
+[connection signal="pressed" from="Net" to="." method="_on_net_pressed"]
+[connection signal="pressed" from="Light" to="." method="_on_light_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvp1lppkqj5qi"]
 
 [ext_resource type="PackedScene" uid="uid://l63bub3q0j7s" path="res://SCENES/GUI/pause_button.tscn" id="1_l6r4l"]
-[ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="1_xharn"]
+[ext_resource type="Texture2D" uid="uid://8eapac1qwmdi" path="res://ASSETS/Art/frog_idle.png" id="2_xad2d"]
 
 [sub_resource type="GDScript" id="GDScript_prxe1"]
 script/source = "extends Label
@@ -28,19 +28,20 @@ offset_left = 22.0
 offset_top = 18.0
 offset_right = 60.0
 offset_bottom = 39.0
+theme_override_font_sizes/font_size = 75
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(1873, 40)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_xharn")
+[node name="FrogIcon" type="Sprite2D" parent="."]
+position = Vector2(1852, 67)
+texture = ExtResource("2_xad2d")
+hframes = 8
 
 [node name="info_label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1689.0
-offset_top = 27.0
-offset_right = 1826.0
-offset_bottom = 72.0
-theme_override_font_sizes/font_size = 32
+offset_left = 1631.0
+offset_top = 40.0
+offset_right = 1768.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 75
 text = "10"
 horizontal_alignment = 2
 script = SubResource("GDScript_prxe1")
