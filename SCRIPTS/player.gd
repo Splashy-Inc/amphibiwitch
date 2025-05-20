@@ -7,7 +7,7 @@ class_name Player
 @onready var staff: Staff = $Tool/Staff
 
 const SPEED = 500.0
-var speed_mod = 1.0
+@export var speed_mod := 1.0
 
 @export var attacking := false
 var direction := Vector2.ZERO
@@ -32,9 +32,9 @@ func _physics_process(delta: float) -> void:
 			speed_mod = 0.0
 			animation_player.play("idle")
 		
-		velocity = direction * SPEED * speed_mod
+	velocity = direction * SPEED * speed_mod
 		
-		move_and_slide()
+	move_and_slide()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("net") and attacking == false:
