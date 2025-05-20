@@ -14,7 +14,7 @@ var direction := Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	
-	staff.active = Input.is_action_pressed("light") and not attacking
+	staff.active = Input.is_action_pressed("light")
 	
 	if not attacking:
 		var new_direction = Vector2.ZERO
