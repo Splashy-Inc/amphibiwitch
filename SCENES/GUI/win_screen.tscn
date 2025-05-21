@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://v65h1k4msxhb"]
+[gd_scene load_steps=4 format=3 uid="uid://v65h1k4msxhb"]
 
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="1_mm3s4"]
 [ext_resource type="Script" path="res://SCRIPTS/win_screen.gd" id="1_ypahy"]
+[ext_resource type="StyleBox" uid="uid://b5bcx1v43ydd3" path="res://button_box_focus.tres" id="2_woi4d"]
 
 [node name="WinScreen" type="Control"]
 custom_minimum_size = Vector2(640, 360)
@@ -40,6 +41,7 @@ theme_override_constants/separation = 20
 custom_minimum_size = Vector2(101, 20)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_woi4d")
 theme_override_styles/normal = ExtResource("1_mm3s4")
 text = "Main Menu"
 
@@ -47,6 +49,7 @@ text = "Main Menu"
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_woi4d")
 theme_override_styles/normal = ExtResource("1_mm3s4")
 text = "Restart Level"
 
@@ -55,9 +58,11 @@ visible = false
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_woi4d")
 theme_override_styles/normal = ExtResource("1_mm3s4")
 text = "Quit"
 
 [connection signal="pressed" from="MenuContent/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="visibility_changed" from="MenuContent/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_visibility_changed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]

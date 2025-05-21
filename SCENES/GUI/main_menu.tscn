@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://k7ghjsy8g1k0"]
+[gd_scene load_steps=17 format=3 uid="uid://k7ghjsy8g1k0"]
 
 [ext_resource type="Script" path="res://SCRIPTS/main_menu.gd" id="1_vkagb"]
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="2_y3ir5"]
 [ext_resource type="FontFile" uid="uid://di1ynwh6doxnf" path="res://ASSETS/Font/m5x7.ttf" id="3_mnfv6"]
 [ext_resource type="PackedScene" uid="uid://b7600w3ihvnlg" path="res://SCENES/MainMenu_tilemap_background.tscn" id="3_npyma"]
+[ext_resource type="StyleBox" uid="uid://b5bcx1v43ydd3" path="res://button_box_focus.tres" id="4_84i8b"]
 [ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_wju8h"]
 [ext_resource type="Texture2D" uid="uid://w1hpwnxyhxto" path="res://SCENES/passive_light.tres" id="6_3lo0l"]
 [ext_resource type="Shader" path="res://light.gdshader" id="6_4j71s"]
@@ -93,6 +94,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.347047, 0.279059, 0.544755, 1)
 theme_override_fonts/font = ExtResource("3_mnfv6")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("4_84i8b")
 theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Play"
 
@@ -110,6 +112,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.347047, 0.279059, 0.544755, 1)
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("4_84i8b")
 theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Controls"
 
@@ -121,6 +124,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.347047, 0.279059, 0.544755, 1)
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("4_84i8b")
 theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Quit"
 
@@ -170,5 +174,6 @@ position = Vector2(1352, 1227)
 texture = SubResource("PlaceholderTexture2D_nwgo6")
 
 [connection signal="pressed" from="MenuContent/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="visibility_changed" from="MenuContent/MenuButtons/PlayButton" to="." method="_on_play_button_visibility_changed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]

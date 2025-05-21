@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3sldi7g5fcg6"]
+[gd_scene load_steps=4 format=3 uid="uid://c3sldi7g5fcg6"]
 
 [ext_resource type="Script" path="res://SCRIPTS/pause_menu.gd" id="1_kmxbu"]
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="2_1q666"]
+[ext_resource type="StyleBox" uid="uid://b5bcx1v43ydd3" path="res://button_box_focus.tres" id="2_yel7w"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -38,6 +39,7 @@ custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_yel7w")
 theme_override_styles/normal = ExtResource("2_1q666")
 text = "Resume"
 
@@ -46,6 +48,7 @@ custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_yel7w")
 theme_override_styles/normal = ExtResource("2_1q666")
 text = "Restart"
 
@@ -55,6 +58,7 @@ custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_yel7w")
 theme_override_styles/normal = ExtResource("2_1q666")
 text = "Controls"
 
@@ -63,11 +67,13 @@ custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_yel7w")
 theme_override_styles/normal = ExtResource("2_1q666")
 text = "Main Menu"
 icon_alignment = 1
 
 [connection signal="pressed" from="MenuContent/MenuButtons/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="visibility_changed" from="MenuContent/MenuButtons/ResumeButton" to="." method="_on_resume_button_visibility_changed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
