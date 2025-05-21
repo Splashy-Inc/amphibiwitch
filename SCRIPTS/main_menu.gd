@@ -6,7 +6,7 @@ signal button_pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,7 +24,8 @@ func _on_quit_button_pressed():
 func _on_level_select_button_pressed():
 	button_pressed.emit("Level")
 
-
 func _on_play_button_visibility_changed() -> void:
-	if play_button.visible and Globals.joypad_connected:
+	if visible:
+		if not is_node_ready():
+			await ready
 		play_button.grab_focus()
