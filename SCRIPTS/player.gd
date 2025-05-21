@@ -7,28 +7,34 @@ class_name Player
 @onready var staff: Staff = $Tool/Staff
 
 const SPEED = 500.0
+@export var speed_mod := 1.0
 
 @export var attacking := false
 var direction := Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	
-	staff.active = Input.is_action_pressed("light") and not attacking
+	staff.active = Input.is_action_pressed("light")
 	
 	if not attacking:
+		var new_direction = Vector2.ZERO
 		if Globals.is_mobile and Globals.joystick:
-			direction = Globals.joystick.direction
+			new_direction = Globals.joystick.direction
 		else:
-			direction = direction.lerp(Input.get_vector("left", "right", "up", "down").normalized(), .1)
+			new_direction = Input.get_vector("left", "right", "up", "down")
 		
-		if direction:
+		if new_direction and new_direction != Vector2.ZERO:
+			speed_mod = 1.0
+			direction = direction.lerp(new_direction.normalized(), .1)
 			animation_player.play("move")
 			rotation = -direction.angle_to(Vector2.UP)
 		else:
+			speed_mod = 0.0
 			animation_player.play("idle")
 		
-		velocity = direction * SPEED
-		move_and_slide()
+	velocity = direction * SPEED * speed_mod
+		
+	move_and_slide()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("net") and attacking == false:
