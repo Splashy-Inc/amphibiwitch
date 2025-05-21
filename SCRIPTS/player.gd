@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		if new_direction and new_direction != Vector2.ZERO:
 			speed_mod = 1.0
 			if Globals.is_mobile:
-				direction = new_direction
+				direction = new_direction.normalized()
 			else:
 				direction = direction.lerp(new_direction.normalized(), .1)
 			animation_player.play("move")
