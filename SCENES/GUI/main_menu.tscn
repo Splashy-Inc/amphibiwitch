@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://k7ghjsy8g1k0"]
+[gd_scene load_steps=16 format=3 uid="uid://k7ghjsy8g1k0"]
 
 [ext_resource type="Script" path="res://SCRIPTS/main_menu.gd" id="1_vkagb"]
 [ext_resource type="StyleBox" uid="uid://1mss4twkxib3" path="res://button_box.tres" id="2_y3ir5"]
 [ext_resource type="FontFile" uid="uid://di1ynwh6doxnf" path="res://ASSETS/Font/m5x7.ttf" id="3_mnfv6"]
 [ext_resource type="PackedScene" uid="uid://b7600w3ihvnlg" path="res://SCENES/MainMenu_tilemap_background.tscn" id="3_npyma"]
 [ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_wju8h"]
+[ext_resource type="Texture2D" uid="uid://w1hpwnxyhxto" path="res://SCENES/passive_light.tres" id="6_3lo0l"]
+[ext_resource type="Shader" path="res://light.gdshader" id="6_4j71s"]
+[ext_resource type="Shader" path="res://world_light.gdshader" id="7_08fn7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nqa2c"]
 font = ExtResource("3_mnfv6")
@@ -15,6 +18,33 @@ outline_color = Color(0.231373, 0.180392, 0.376471, 1)
 shadow_size = 20
 shadow_color = Color(0.172549, 0.133333, 0.278431, 0.643137)
 shadow_offset = Vector2(10, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31ixc"]
+shader = ExtResource("6_4j71s")
+shader_parameter/modulate = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lnph"]
+shader = ExtResource("6_4j71s")
+shader_parameter/modulate = 1.0
+
+[sub_resource type="Gradient" id="Gradient_xlx5v"]
+offsets = PackedFloat32Array(0.457143, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uyl3k"]
+gradient = SubResource("Gradient_xlx5v")
+width = 256
+height = 512
+fill = 1
+fill_from = Vector2(0.521368, 0.405983)
+fill_to = Vector2(0.487179, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5l7l8"]
+shader = ExtResource("7_08fn7")
+shader_parameter/world_light_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nwgo6"]
+size = Vector2(5000, 4000)
 
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(640, 360)
@@ -65,6 +95,12 @@ theme_override_fonts/font = ExtResource("3_mnfv6")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("2_y3ir5")
 text = "Play"
+
+[node name="PassiveLightSprite" type="Sprite2D" parent="MenuContent/MenuButtons/PlayButton"]
+z_index = 12
+material = SubResource("ShaderMaterial_31ixc")
+position = Vector2(50, 21)
+texture = ExtResource("6_3lo0l")
 
 [node name="ControlsButton" type="Button" parent="MenuContent/MenuButtons"]
 visible = false
@@ -118,6 +154,20 @@ scale = Vector2(1, 1)
 position = Vector2(1583, 691)
 rotation = -1.69297
 scale = Vector2(1, 1)
+
+[node name="ActiveLightSprite" type="Sprite2D" parent="MenuContent"]
+z_index = 11
+material = SubResource("ShaderMaterial_8lnph")
+position = Vector2(748, 513)
+rotation = 1.5708
+scale = Vector2(-2.47459, 4.11177)
+texture = SubResource("GradientTexture2D_uyl3k")
+
+[node name="WorldLightSprite" type="Sprite2D" parent="."]
+z_index = 10
+material = SubResource("ShaderMaterial_5l7l8")
+position = Vector2(1352, 1227)
+texture = SubResource("PlaceholderTexture2D_nwgo6")
 
 [connection signal="pressed" from="MenuContent/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuContent/MenuButtons/ControlsButton" to="." method="_on_controls_button_pressed"]
