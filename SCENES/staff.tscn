@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://vgklta6kvogj"]
+[gd_scene load_steps=14 format=4 uid="uid://vgklta6kvogj"]
 
 [ext_resource type="Script" path="res://SCRIPTS/staff.gd" id="1_l6354"]
 [ext_resource type="Texture2D" uid="uid://b4n6irf1jephl" path="res://icon.svg" id="1_qdlpt"]
 [ext_resource type="Texture2D" uid="uid://chame0653mo4c" path="res://ASSETS/Art/staff.png" id="1_sswp8"]
 [ext_resource type="Texture2D" uid="uid://d0ndhw46d2s4r" path="res://SCENES/active_light_texture.tres" id="4_360uc"]
+[ext_resource type="Texture2D" uid="uid://w1hpwnxyhxto" path="res://SCENES/passive_light.tres" id="4_ggqr7"]
+[ext_resource type="Shader" path="res://light.gdshader" id="5_6bqmo"]
 [ext_resource type="AudioStream" uid="uid://b5fep0qqjvstp" path="res://ASSETS/Audio/staff_active.ogg" id="5_h5ium"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y5hcc"]
@@ -76,22 +78,19 @@ texture = ExtResource("1_qdlpt")
 [sub_resource type="TileSet" id="TileSet_3jiyq"]
 sources/0 = SubResource("TileSetAtlasSource_y5hcc")
 
-[sub_resource type="Gradient" id="Gradient_5jo1n"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sejfs"]
+shader = ExtResource("5_6bqmo")
+shader_parameter/modulate = 1.0
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p4ihi"]
-gradient = SubResource("Gradient_5jo1n")
-width = 256
-height = 256
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0, 0.5)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nr7np"]
+shader = ExtResource("5_6bqmo")
+shader_parameter/modulate = 1.0
 
-[sub_resource type="Gradient" id="Gradient_xlx5v"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+[sub_resource type="Gradient" id="Gradient_2v4ng"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hdb2i"]
-gradient = SubResource("Gradient_xlx5v")
+gradient = SubResource("Gradient_2v4ng")
 width = 256
 height = 512
 fill = 1
@@ -115,24 +114,33 @@ light_mask = 3
 texture = ExtResource("1_sswp8")
 
 [node name="PassiveLight" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(9, -20)
 color = Color(0.403922, 0.807843, 0.654902, 1)
 range_item_cull_mask = 2
-texture = SubResource("GradientTexture2D_p4ihi")
+texture = ExtResource("4_ggqr7")
+
+[node name="PassiveLightSprite" type="Sprite2D" parent="."]
+z_index = 12
+material = SubResource("ShaderMaterial_sejfs")
+position = Vector2(9, -20)
+texture = ExtResource("4_ggqr7")
 
 [node name="ActiveLightArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
 [node name="ActiveLight" type="PointLight2D" parent="ActiveLightArea"]
+visible = false
 position = Vector2(-75, -106)
 rotation = -0.654362
 shadow_item_cull_mask = 2
 texture = ExtResource("4_360uc")
 texture_scale = 1.5
 
-[node name="Sprite2D" type="Sprite2D" parent="ActiveLightArea"]
-visible = false
+[node name="ActiveLightSprite" type="Sprite2D" parent="ActiveLightArea"]
+z_index = 11
+material = SubResource("ShaderMaterial_nr7np")
 position = Vector2(-75, -106)
 rotation = -0.654498
 scale = Vector2(1.5, 1.5)

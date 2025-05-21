@@ -1,21 +1,36 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=12 format=3 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
+[ext_resource type="Shader" path="res://world_light.gdshader" id="2_k1kh8"]
 [ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
 [ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/frog.tscn" id="4_vxm8d"]
 [ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mwxo7"]
+shader = ExtResource("2_k1kh8")
+shader_parameter/world_light_color = Color(0, 0, 0, 0.901961)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkt2g"]
+shader = ExtResource("2_k1kh8")
+shader_parameter/world_light_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ikir6"]
+size = Vector2(5000, 4000)
+
 [node name="Playground" type="Node" node_paths=PackedStringArray("mobile_controls")]
 script = ExtResource("1_5e8d0")
 mobile_controls = NodePath("MobileControls")
 
 [node name="WorldModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_mwxo7")
 
 [node name="WorldLight" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.1
 
 [node name="TileMapBackground" parent="." instance=ExtResource("2_fetls")]
@@ -102,4 +117,8 @@ rotation = -0.459022
 
 [node name="LevelUI" parent="." instance=ExtResource("8_y8n3e")]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="WorldLightSprite" type="Sprite2D" parent="."]
+z_index = 10
+material = SubResource("ShaderMaterial_kkt2g")
+position = Vector2(1352, 1227)
+texture = SubResource("PlaceholderTexture2D_ikir6")
