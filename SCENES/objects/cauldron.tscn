@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://cd5tokqq2iyj8"]
+
+[ext_resource type="Texture2D" uid="uid://blbucdqvpywob" path="res://ASSETS/Art/cauldron/FireSprite.png" id="1_dqloc"]
+[ext_resource type="Texture2D" uid="uid://dbbul4jjtjivs" path="res://ASSETS/Art/cauldron/culdronin.png" id="2_o7dwb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5im3g"]
+atlas = ExtResource("1_dqloc")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p28ip"]
+atlas = ExtResource("1_dqloc")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doumj"]
+atlas = ExtResource("1_dqloc")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtlnj"]
+atlas = ExtResource("1_dqloc")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epa5q"]
+atlas = ExtResource("1_dqloc")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s8o8"]
+atlas = ExtResource("1_dqloc")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6er2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5im3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p28ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doumj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtlnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epa5q")
+}],
+"loop": true,
+"name": &"fire_on",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s8o8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Cauldron" type="StaticBody2D"]
+z_index = 2
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m6er2")
+animation = &"fire_on"
+autoplay = "fire_on"
+frame_progress = 0.931516
+
+[node name="Pot" type="Sprite2D" parent="."]
+texture = ExtResource("2_o7dwb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, -83.3, -6, -81.6, -35.1, -74, -37.5, -74, -65.5, -58, -68.1, -58, -79, -42, -80.4, -42, -85, -29.4, -85, -28.5, -92.3, -26, -97.6, -26, -106.6, -20, -108.1, -20, -115.1, -9, -117.2, -9, -116, 2.2, -116, 8.8, -111, 13.8, -111, 16.2, -97, 24.1, -97, 26.6, -90.9, 25, -89.7, 25, -85.7, 28, -84.4, 28, -81, 38.3, -81, 39.7, -69, 54.7, -69, 56.2, -37, 72.2, -37, 73.6, -21, 77.5, -21, 79, 19.4, 79, 55.4, 65, 56.8, 65, 65.7, 57, 68.1, 57, 79, 41, 80.4, 41, 85, 28.4, 85, 27.6, 97.4, 25, 100.8, 25, 109.7, 17, 111.2, 17, 115.2, 9, 117, 9, 117, -6.5, 113, -13.5, 113, -15.9, 102, -25, 102, -27, 88.1, -27, 69, -55.7, 69, -57.2, 39, -72.3, 39, -73.5, 21, -78.5, 21, -79.8)
