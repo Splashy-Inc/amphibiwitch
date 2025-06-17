@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=13 format=3 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
 [ext_resource type="Shader" path="res://world_light.gdshader" id="2_k1kh8"]
 [ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
 [ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/frog.tscn" id="4_vxm8d"]
+[ext_resource type="PackedScene" uid="uid://del3wbaurtdpc" path="res://SCENES/newt_pink.tscn" id="5_gu2hs"]
 [ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
@@ -41,6 +42,26 @@ energy = 0.1
 position = Vector2(933, 524)
 
 [node name="Camera2D" type="Camera2D" parent="Player/Player"]
+
+[node name="Newt" type="Node" parent="."]
+
+[node name="NewtPink" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(501, 721)
+
+[node name="NewtPink2" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(725, 1449)
+
+[node name="NewtPink3" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(1713, 1903)
+
+[node name="NewtPink4" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(191, 438)
+
+[node name="NewtPink5" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(2067, 628)
+
+[node name="NewtPink6" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(919, 329)
 
 [node name="Frogs" type="Node" parent="."]
 
