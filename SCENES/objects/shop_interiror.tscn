@@ -9,7 +9,7 @@
 [node name="Structure" type="TileMapLayer" parent="."]
 
 [node name="Mirror" parent="." instance=ExtResource("1_81irv")]
-position = Vector2(132, 125)
+position = Vector2(151, 187)
 
 [node name="Cauldron" parent="." instance=ExtResource("2_ii0jy")]
 position = Vector2(946, 565)

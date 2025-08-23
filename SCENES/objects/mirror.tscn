@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" path="res://SCRIPTS/mirror.gd" id="1_q2pea"]
 [ext_resource type="PackedScene" uid="uid://baxmxumrgu2p4" path="res://SCENES/interaction_control.tscn" id="2_37ne0"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_t3nw1"]
-size = Vector2(64, 128)
+[ext_resource type="Texture2D" uid="uid://dpojeqaxcn4mm" path="res://ASSETS/Art/MagicMirror.png" id="2_acpds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp2hn"]
-size = Vector2(64, 128)
+size = Vector2(128, 256)
 
 [node name="Mirror" type="StaticBody2D"]
 collision_layer = 9
@@ -15,13 +13,12 @@ collision_mask = 0
 script = ExtResource("1_q2pea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_t3nw1")
+texture = ExtResource("2_acpds")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wp2hn")
 
 [node name="InteractionControl" parent="." instance=ExtResource("2_37ne0")]
-offset_left = -63.0
-offset_top = -100.0
-offset_right = 63.0
-offset_bottom = -74.0
+offset_left = 90.0
+offset_top = -13.0
+offset_right = 216.0
