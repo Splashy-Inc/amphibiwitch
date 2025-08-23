@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
 [ext_resource type="Shader" path="res://world_light.gdshader" id="2_k1kh8"]
 [ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
-[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/creatures/frog.tscn" id="4_vxm8d"]
-[ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/creatures/firefly.tscn" id="5_svg8i"]
+[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/frog.tscn" id="4_vxm8d"]
+[ext_resource type="PackedScene" uid="uid://del3wbaurtdpc" path="res://SCENES/newt_pink.tscn" id="5_gu2hs"]
+[ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
-[ext_resource type="PackedScene" uid="uid://cd5tokqq2iyj8" path="res://SCENES/objects/cauldron.tscn" id="9_71atx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mwxo7"]
 shader = ExtResource("2_k1kh8")
@@ -42,6 +42,26 @@ energy = 0.1
 position = Vector2(933, 524)
 
 [node name="Camera2D" type="Camera2D" parent="Player/Player"]
+
+[node name="Newt" type="Node" parent="."]
+
+[node name="NewtPink" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(501, 721)
+
+[node name="NewtPink2" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(725, 1449)
+
+[node name="NewtPink3" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(1713, 1903)
+
+[node name="NewtPink4" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(191, 438)
+
+[node name="NewtPink5" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(2067, 628)
+
+[node name="NewtPink6" parent="Newt" instance=ExtResource("5_gu2hs")]
+position = Vector2(919, 329)
 
 [node name="Frogs" type="Node" parent="."]
 
@@ -113,9 +133,6 @@ scale = Vector2(-0.5, -0.5)
 [node name="Firefly8" parent="Fireflies" instance=ExtResource("5_svg8i")]
 position = Vector2(2210, 793)
 rotation = -0.459022
-
-[node name="Cauldron" parent="." instance=ExtResource("9_71atx")]
-position = Vector2(1304, 1187)
 
 [node name="MobileControls" parent="." instance=ExtResource("7_uhrci")]
 

@@ -1,0 +1,129 @@
+[gd_scene load_steps=18 format=3 uid="uid://del3wbaurtdpc"]
+
+[ext_resource type="Script" path="res://SCRIPTS/frog.gd" id="1_e3f1u"]
+[ext_resource type="Texture2D" uid="uid://cyp6wf6mc8qd" path="res://ASSETS/Art/newt_pink.png" id="2_c6cdh"]
+[ext_resource type="PackedScene" uid="uid://cmiraoyeq5xh6" path="res://SCENES/sfx_manager.tscn" id="3_vmeyv"]
+[ext_resource type="AudioStream" uid="uid://dhngdn2k5w7ku" path="res://ASSETS/Audio/frog_hit.ogg" id="4_5esfh"]
+[ext_resource type="AudioStream" uid="uid://dp0acn12lh2au" path="res://ASSETS/Audio/frog_idle.ogg" id="5_85qk2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfsde"]
+atlas = ExtResource("2_c6cdh")
+region = Rect2(0, 0, 87, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n70wp"]
+atlas = ExtResource("2_c6cdh")
+region = Rect2(87, 0, 87, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ctm1"]
+atlas = ExtResource("2_c6cdh")
+region = Rect2(174, 0, 87, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbejx"]
+atlas = ExtResource("2_c6cdh")
+region = Rect2(261, 0, 87, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj7yl"]
+atlas = ExtResource("2_c6cdh")
+region = Rect2(348, 0, 87, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwlry"]
+atlas = ExtResource("2_c6cdh")
+region = Rect2(435, 0, 87, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaehw"]
+atlas = ExtResource("2_c6cdh")
+region = Rect2(522, 0, 87, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fns6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfsde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n70wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ctm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbejx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj7yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwlry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaehw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xnuhr"]
+radius = 26.0
+height = 176.0
+
+[sub_resource type="Gradient" id="Gradient_50fmm"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 1, 1, 0.792157, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jm0sb"]
+gradient = SubResource("Gradient_50fmm")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8g8cy"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("5_85qk2")
+
+[node name="NewtPink" type="CharacterBody2D" groups=["Frog"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_e3f1u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.57426
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_fns6b")
+autoplay = "default"
+frame_progress = 0.891882
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_xnuhr")
+
+[node name="EyeShine" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="EyeShine"]
+position = Vector2(-7.25, -69.75)
+scale = Vector2(0.40625, 0.40625)
+texture = SubResource("GradientTexture2D_jm0sb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="EyeShine"]
+position = Vector2(10.25, -69.75)
+scale = Vector2(0.40625, 0.40625)
+texture = SubResource("GradientTexture2D_jm0sb")
+
+[node name="SFXManager" parent="." instance=ExtResource("3_vmeyv")]
+
+[node name="Hit" type="AudioStreamPlayer" parent="SFXManager"]
+stream = ExtResource("4_5esfh")
+
+[node name="Ribbit" type="AudioStreamPlayer2D" parent="SFXManager"]
+stream = SubResource("AudioStreamRandomizer_8g8cy")
+max_distance = 600.0
+attenuation = 2.75
+
+[node name="RibbitTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="RibbitTimer" to="." method="_on_ribbit_timer_timeout"]
