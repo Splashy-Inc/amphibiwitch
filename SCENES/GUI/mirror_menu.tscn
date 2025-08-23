@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfv1pgn3koxby"]
+[gd_scene load_steps=3 format=3 uid="uid://dfv1pgn3koxby"]
 
 [ext_resource type="PackedScene" uid="uid://chuc0g2npcivk" path="res://SCENES/GUI/character_creation_book.tscn" id="1_ukrle"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr6pr"]
 
 [node name="MirrorMenu" type="CanvasLayer"]
 
@@ -8,13 +10,24 @@
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="CharacterCreationBook" parent="." instance=ExtResource("1_ukrle")]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hr6pr")
+
+[node name="CharacterCreationBook" parent="PanelContainer" instance=ExtResource("1_ukrle")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="DoneButton" type="Button" parent="."]
-offset_left = 1269.0
-offset_top = 966.0
-offset_right = 1369.0
-offset_bottom = 1006.0
+offset_left = 1247.0
+offset_top = 990.0
+offset_right = 1347.0
+offset_bottom = 1030.0
 theme_override_font_sizes/font_size = 32
 text = "Done"
 
