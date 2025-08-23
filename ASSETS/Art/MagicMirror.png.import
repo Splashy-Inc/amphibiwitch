@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dieqju5u4yqui"
-path="res://.godot/imported/accessories.png-383cd68990f524e2021a57d28ee62cfe.ctex"
+uid="uid://dpojeqaxcn4mm"
+path="res://.godot/imported/MagicMirror.png-a6538113ddec92a07647210fb6e6b371.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GIMP/accessories.png"
-dest_files=["res://.godot/imported/accessories.png-383cd68990f524e2021a57d28ee62cfe.ctex"]
+source_file="res://ASSETS/Art/MagicMirror.png"
+dest_files=["res://.godot/imported/MagicMirror.png-a6538113ddec92a07647210fb6e6b371.ctex"]
 
 [params]
 
