@@ -101,6 +101,7 @@ fill_to = Vector2(0.487179, 0)
 script = ExtResource("1_l6354")
 
 [node name="TileMapBackground" type="Node2D" parent="."]
+visible = false
 z_index = -999
 position = Vector2(-970, -475)
 

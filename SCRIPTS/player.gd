@@ -5,12 +5,15 @@ class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var net: Node2D = $Tool/Net
 @onready var staff: Staff = $Tool/Staff
+@onready var interaction_control: PanelContainer = $InteractionRange/InteractionControl
 
 const SPEED = 500.0
 @export var speed_mod := 1.0
 
 @export var attacking := false
 var direction := Vector2.ZERO
+
+var interaction_queue : Array[Node2D]
 
 func _physics_process(delta: float) -> void:
 	
@@ -49,3 +52,19 @@ func _input(event: InputEvent) -> void:
 
 func _use_net():
 	animation_player.play("attack")
+
+
+func _on_interaction_range_body_entered(body: Node2D) -> void:
+	if not body in interaction_queue:
+		interaction_queue.append(body)
+
+	if interaction_queue.front().has_method("show_control"):
+		interaction_queue.front().show_control()
+
+func _on_interaction_range_body_exited(body: Node2D) -> void:
+	interaction_queue.erase(body)
+	if body.has_method("hide_control"):
+		body.hide_control()
+	
+	if not interaction_queue.is_empty() and interaction_queue.front().has_method("show_control"):
+		interaction_queue.front().show_control()
