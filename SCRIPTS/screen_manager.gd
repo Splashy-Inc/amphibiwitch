@@ -1,5 +1,7 @@
 extends Node
 
+class_name ScreenManager
+
 @export var level_scene: PackedScene
 
 @onready var hud: HUD = $HUD
@@ -10,6 +12,8 @@ var paused = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	EventBus.menu_requested.connect(_on_menu_requested)
+	EventBus.screen_requested.connect(_on_screen_requested)
 	show_main_menu()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -102,3 +106,14 @@ func _set_level(new_level_scene: PackedScene):
 
 func _on_main_menu_pressed() -> void:
 	show_main_menu()
+
+func _on_menu_requested(menu_name: String):
+	_pause_play()
+	match menu_name:
+		"Mirror":
+			hud.show_mirror_menu()
+		_:
+			_resume_play()
+
+func _on_screen_requested(screen_scene: PackedScene):
+	_set_level(screen_scene)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=14 format=3 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
 [ext_resource type="Shader" path="res://world_light.gdshader" id="2_k1kh8"]
 [ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
+[ext_resource type="PackedScene" uid="uid://hkc0lptmyj2m" path="res://SCENES/objects/shop_exterior.tscn" id="4_45g5f"]
 [ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/creatures/frog.tscn" id="4_vxm8d"]
 [ext_resource type="PackedScene" uid="uid://del3wbaurtdpc" path="res://SCENES/newt_pink.tscn" id="5_gu2hs"]
 [ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/creatures/firefly.tscn" id="5_svg8i"]
@@ -36,6 +37,9 @@ energy = 0.1
 
 [node name="TileMapBackground" parent="." instance=ExtResource("2_fetls")]
 
+[node name="ShopExterior" parent="." instance=ExtResource("4_45g5f")]
+position = Vector2(936, 264)
+
 [node name="Player" type="Node" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("3_7v63e")]
@@ -61,7 +65,7 @@ position = Vector2(191, 438)
 position = Vector2(2067, 628)
 
 [node name="NewtPink6" parent="Newt" instance=ExtResource("5_gu2hs")]
-position = Vector2(919, 329)
+position = Vector2(1267, 750)
 
 [node name="Frogs" type="Node" parent="."]
 

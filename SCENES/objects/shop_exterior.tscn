@@ -1,8 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxbrjjjutpt6p"]
+[gd_scene load_steps=4 format=3 uid="uid://hkc0lptmyj2m"]
+
+[ext_resource type="PackedScene" uid="uid://cchqfrvn43tsq" path="res://SCENES/objects/door.tscn" id="1_ev2a1"]
+[ext_resource type="PackedScene" uid="uid://bhbck1yl65rjf" path="res://SCENES/objects/shop_interior.tscn" id="2_38jaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2gry"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uhlj"]
 
 [node name="ShopExterior" type="StaticBody2D"]
 collision_mask = 0
@@ -12,9 +13,5 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u2gry")
 
-[node name="Door" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Door"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-shape = SubResource("RectangleShape2D_1uhlj")
+[node name="Door" parent="." instance=ExtResource("1_ev2a1")]
+destination_screen = ExtResource("2_38jaq")
