@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvfee8rgxpafc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp2hn"]
+
+[node name="Mirror" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wp2hn")

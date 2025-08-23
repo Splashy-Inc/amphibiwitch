@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhbck1yl65rjf"]
+
+[ext_resource type="PackedScene" uid="uid://dvfee8rgxpafc" path="res://SCENES/objects/mirror.tscn" id="1_81irv"]
+[ext_resource type="PackedScene" uid="uid://cd5tokqq2iyj8" path="res://SCENES/objects/cauldron.tscn" id="2_ii0jy"]
+[ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_xripd"]
+
+[node name="ShopInteriror" type="Node"]
+
+[node name="Structure" type="TileMapLayer" parent="."]
+
+[node name="Mirror" parent="." instance=ExtResource("1_81irv")]
+position = Vector2(132, 125)
+
+[node name="Cauldron" parent="." instance=ExtResource("2_ii0jy")]
+position = Vector2(946, 565)
+
+[node name="Player" parent="." instance=ExtResource("3_xripd")]
+position = Vector2(960, 871)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)

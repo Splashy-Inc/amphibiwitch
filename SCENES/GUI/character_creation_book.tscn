@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://chuc0g2npcivk"]
+
+[node name="CharacterCreationBook" type="PanelContainer"]
+offset_left = 320.0
+offset_top = 180.0
+offset_right = 1600.0
+offset_bottom = 900.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/TabContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/TabContainer/PanelContainer2"]
+layout_mode = 2

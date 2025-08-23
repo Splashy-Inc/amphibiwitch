@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxbrjjjutpt6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2gry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uhlj"]
+
+[node name="ShopExterior" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u2gry")
+
+[node name="Door" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+shape = SubResource("RectangleShape2D_1uhlj")

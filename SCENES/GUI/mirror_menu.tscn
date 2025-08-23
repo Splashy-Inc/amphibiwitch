@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfv1pgn3koxby"]
+
+[ext_resource type="PackedScene" uid="uid://chuc0g2npcivk" path="res://SCENES/GUI/character_creation_book.tscn" id="1_ukrle"]
+
+[node name="MirrorMenu" type="CanvasLayer"]
+
+[node name="Background" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="CharacterCreationBook" parent="." instance=ExtResource("1_ukrle")]
+
+[node name="DoneButton" type="Button" parent="."]
+offset_left = 1269.0
+offset_top = 966.0
+offset_right = 1369.0
+offset_bottom = 1006.0
+theme_override_font_sizes/font_size = 32
+text = "Done"
+
+[node name="CancelButton" type="Button" parent="."]
+offset_left = 619.0
+offset_top = 973.0
+offset_right = 719.0
+offset_bottom = 1013.0
+theme_override_font_sizes/font_size = 32
+text = "Cancel"

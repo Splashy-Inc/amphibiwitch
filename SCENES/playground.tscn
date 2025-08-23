@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
 [ext_resource type="Shader" path="res://world_light.gdshader" id="2_k1kh8"]
 [ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
-[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/frog.tscn" id="4_vxm8d"]
+[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/creatures/frog.tscn" id="4_vxm8d"]
 [ext_resource type="PackedScene" uid="uid://del3wbaurtdpc" path="res://SCENES/newt_pink.tscn" id="5_gu2hs"]
-[ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_svg8i"]
+[ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/creatures/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
 
