@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cchqfrvn43tsq"]
+[gd_scene load_steps=6 format=3 uid="uid://cchqfrvn43tsq"]
 
 [ext_resource type="Script" path="res://SCRIPTS/door.gd" id="1_s8uhm"]
 [ext_resource type="PackedScene" uid="uid://baxmxumrgu2p4" path="res://SCENES/interaction_control.tscn" id="2_boykn"]
+[ext_resource type="Texture2D" uid="uid://ceddwxtdqmt1r" path="res://ASSETS/Art/Doors.png" id="2_wwa7u"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3ubaj"]
-size = Vector2(64, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wotkh"]
+atlas = ExtResource("2_wwa7u")
+region = Rect2(0, 128, 128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1uhlj"]
-size = Vector2(64, 128)
+size = Vector2(128, 128)
 
 [node name="Door" type="StaticBody2D"]
 collision_layer = 8
@@ -15,13 +17,13 @@ collision_mask = 0
 script = ExtResource("1_s8uhm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_3ubaj")
+texture = SubResource("AtlasTexture_wotkh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1uhlj")
 
 [node name="InteractionControl" parent="." instance=ExtResource("2_boykn")]
-offset_left = 52.0
+offset_left = 92.0
 offset_top = -14.0
-offset_right = 178.0
+offset_right = 218.0
 offset_bottom = 12.0

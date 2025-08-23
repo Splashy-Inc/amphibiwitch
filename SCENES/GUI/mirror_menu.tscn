@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfv1pgn3koxby"]
+[gd_scene load_steps=5 format=3 uid="uid://dfv1pgn3koxby"]
 
 [ext_resource type="Script" path="res://SCRIPTS/mirror_menu.gd" id="1_2rlhd"]
 [ext_resource type="PackedScene" uid="uid://chuc0g2npcivk" path="res://SCENES/GUI/character_creation_book.tscn" id="1_ukrle"]
-[ext_resource type="Theme" uid="uid://bw5ehvu3worsk" path="res://PurpleButton.tres" id="2_ealwu"]
+[ext_resource type="Theme" uid="uid://dq415i7a2gwkg" path="res://PurpleButton.tres" id="2_ealwu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr6pr"]
 
@@ -55,6 +55,7 @@ theme_override_font_sizes/font_size = 32
 text = "Cancel"
 
 [node name="CancelButton" type="Button" parent="CancelButton"]
+layout_mode = 0
 offset_left = 619.0
 offset_top = 973.0
 offset_right = 719.0
