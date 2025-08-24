@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b44df253v14c4"]
 
-[ext_resource type="PackedScene" path="res://SCENES/GUI/attribute_button.tscn" id="1_223e6"]
+[ext_resource type="PackedScene" uid="uid://clo8pye461qpj" path="res://SCENES/GUI/attribute_button.tscn" id="1_223e6"]
 [ext_resource type="Script" path="res://SCRIPTS/grid_page.gd" id="1_vuuh8"]
 [ext_resource type="Resource" uid="uid://cjvh865vnjsgk" path="res://Custom Resources/hair_list.tres" id="2_3spxr"]
 

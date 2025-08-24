@@ -1,10 +1,20 @@
-[gd_resource type="Resource" script_class="AttributeList" load_steps=5 format=3 uid="uid://dcja5elr25v03"]
+[gd_resource type="Resource" script_class="AttributeList" load_steps=15 format=3 uid="uid://dcja5elr25v03"]
 
 [ext_resource type="Script" path="res://Custom Resources/AttributeData.gd" id="1_u53uu"]
-[ext_resource type="Resource" uid="uid://c8e57b5afd1sj" path="res://Custom Resources/hair_black_1.tres" id="2_iavlb"]
-[ext_resource type="Resource" uid="uid://c8c8u34rxj1xm" path="res://Custom Resources/hair_black_2.tres" id="3_7ympu"]
+[ext_resource type="Resource" uid="uid://nno5dlsw2yek" path="res://Custom Resources/skintone_1.tres" id="2_odsxk"]
+[ext_resource type="Resource" uid="uid://dj3t7qs46ukb4" path="res://Custom Resources/skintone_2.tres" id="3_ypu0l"]
 [ext_resource type="Script" path="res://Custom Resources/AttributeList.gd" id="4_1hehu"]
+[ext_resource type="Resource" uid="uid://m0yabfcplpul" path="res://Custom Resources/skintone_3.tres" id="4_t0gje"]
+[ext_resource type="Resource" uid="uid://pfefk6tadsd1" path="res://Custom Resources/skintone_4.tres" id="5_numoh"]
+[ext_resource type="Resource" uid="uid://2533sssw3hwq" path="res://Custom Resources/skintone_5.tres" id="6_jvp4q"]
+[ext_resource type="Resource" uid="uid://cy7tb5jplji2b" path="res://Custom Resources/skintone_6.tres" id="7_wk5vg"]
+[ext_resource type="Resource" uid="uid://cob3px5bqmqhe" path="res://Custom Resources/skintone_7.tres" id="8_43mfu"]
+[ext_resource type="Resource" uid="uid://dbvy0diwce14k" path="res://Custom Resources/skintone_8.tres" id="9_fjux2"]
+[ext_resource type="Resource" uid="uid://c3fjeciihit0p" path="res://Custom Resources/skintone_9.tres" id="10_b0lfh"]
+[ext_resource type="Resource" uid="uid://dx1oeiapfhxx" path="res://Custom Resources/skintone_10.tres" id="11_yvqkn"]
+[ext_resource type="Resource" uid="uid://dslk40sr335iy" path="res://Custom Resources/skintone_11.tres" id="12_jnle6"]
+[ext_resource type="Resource" uid="uid://cr8ruxwf1jnk4" path="res://Custom Resources/skintone_12.tres" id="13_os26n"]
 
 [resource]
 script = ExtResource("4_1hehu")
-list = Array[ExtResource("1_u53uu")]([ExtResource("2_iavlb"), ExtResource("3_7ympu")])
+list = Array[ExtResource("1_u53uu")]([ExtResource("2_odsxk"), ExtResource("3_ypu0l"), ExtResource("4_t0gje"), ExtResource("5_numoh"), ExtResource("6_jvp4q"), ExtResource("7_wk5vg"), ExtResource("8_43mfu"), ExtResource("9_fjux2"), ExtResource("10_b0lfh"), ExtResource("11_yvqkn"), ExtResource("12_jnle6"), ExtResource("13_os26n")])
