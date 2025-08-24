@@ -34,32 +34,12 @@ layout_mode = 2
 
 [node name="DoneButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1247.0
-offset_top = 990.0
-offset_right = 1347.0
-offset_bottom = 1030.0
+offset_left = 832.0
+offset_top = 959.0
+offset_right = 1088.0
+offset_bottom = 1055.0
 theme = ExtResource("2_ealwu")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "Done"
-
-[node name="CancelButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 619.0
-offset_top = 973.0
-offset_right = 719.0
-offset_bottom = 1013.0
-theme = ExtResource("2_ealwu")
-theme_override_font_sizes/font_size = 32
-text = "Cancel"
-
-[node name="CancelButton" type="Button" parent="CancelButton"]
-layout_mode = 0
-offset_left = 619.0
-offset_top = 973.0
-offset_right = 719.0
-offset_bottom = 1013.0
-theme = ExtResource("2_ealwu")
-theme_override_font_sizes/font_size = 32
-text = "Cancel"
 
 [connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]
