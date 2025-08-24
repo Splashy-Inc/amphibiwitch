@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SkinToneData" load_steps=4 format=3 uid="uid://m0yabfcplpul"]
+[gd_resource type="Resource" script_class="SkinToneData" load_steps=4 format=3 uid="uid://d0s5kmbc60b2b"]
 
 [ext_resource type="Script" path="res://Custom Resources/SkinToneData.gd" id="1_m45rr"]
 [ext_resource type="Texture2D" uid="uid://imllclu4xesg" path="res://ASSETS/Art/player/SkinTone.png" id="2_q7sfl"]

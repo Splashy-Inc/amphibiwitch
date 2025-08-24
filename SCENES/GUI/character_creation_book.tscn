@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://chuc0g2npcivk"]
+[gd_scene load_steps=7 format=3 uid="uid://chuc0g2npcivk"]
 
 [ext_resource type="Texture2D" uid="uid://c8ctopullch6q" path="res://ASSETS/Art/BookCoverBackground.png" id="1_phqmc"]
 [ext_resource type="PackedScene" uid="uid://deqbk4tj75c4j" path="res://SCENES/GUI/grid_page.tscn" id="2_i3myh"]
 [ext_resource type="PackedScene" uid="uid://ukf7mh4gam8n" path="res://SCENES/GUI/appearance_viewer.tscn" id="2_p674a"]
 [ext_resource type="Resource" path="res://Custom Resources/shoes_list.tres" id="4_pbx4x"]
+[ext_resource type="Resource" path="res://Custom Resources/skintone_list.tres" id="5_voa41"]
+[ext_resource type="Resource" path="res://Custom Resources/accessories_list.tres" id="6_b1d2i"]
 
 [node name="CharacterCreationBook" type="PanelContainer"]
 offset_left = 320.0
@@ -42,14 +44,26 @@ layout_mode = 2
 size_flags_horizontal = 3
 current_tab = 0
 
-[node name="GridPage" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
-layout_mode = 2
-
-[node name="GridPage2" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
-visible = false
+[node name="Shoes" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
 layout_mode = 2
 attribute_list = ExtResource("4_pbx4x")
+
+[node name="Skin Tone" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
+visible = false
+layout_mode = 2
+attribute_list = ExtResource("5_voa41")
 metadata/_tab_index = 1
+
+[node name="Hair" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Accessory" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
+visible = false
+layout_mode = 2
+attribute_list = ExtResource("6_b1d2i")
+metadata/_tab_index = 3
 
 [node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
