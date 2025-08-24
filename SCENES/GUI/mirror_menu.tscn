@@ -1,17 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://crt5y4wdpivoj"]
+[gd_scene load_steps=5 format=3 uid="uid://dfv1pgn3koxby"]
 
-[ext_resource type="PackedScene" path="res://SCENES/GUI/character_creation_book.tscn" id="1_ukrle"]
-[ext_resource type="Theme" uid="uid://bw5ehvu3worsk" path="res://PurpleButton.tres" id="2_ealwu"]
+[ext_resource type="Script" path="res://SCRIPTS/mirror_menu.gd" id="1_2rlhd"]
+[ext_resource type="PackedScene" uid="uid://chuc0g2npcivk" path="res://SCENES/GUI/character_creation_book.tscn" id="1_ukrle"]
+[ext_resource type="Theme" uid="uid://dq415i7a2gwkg" path="res://PurpleButton.tres" id="2_ealwu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr6pr"]
 
-[node name="MirrorMenu" type="CanvasLayer"]
+[node name="MirrorMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2rlhd")
 
 [node name="Background" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,6 +35,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="DoneButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1247.0
 offset_top = 990.0
 offset_right = 1347.0
@@ -34,6 +45,7 @@ theme_override_font_sizes/font_size = 32
 text = "Done"
 
 [node name="CancelButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 619.0
 offset_top = 973.0
 offset_right = 719.0
@@ -43,6 +55,7 @@ theme_override_font_sizes/font_size = 32
 text = "Cancel"
 
 [node name="CancelButton" type="Button" parent="CancelButton"]
+layout_mode = 0
 offset_left = 619.0
 offset_top = 973.0
 offset_right = 719.0
@@ -50,3 +63,5 @@ offset_bottom = 1013.0
 theme = ExtResource("2_ealwu")
 theme_override_font_sizes/font_size = 32
 text = "Cancel"
+
+[connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]

@@ -1,17 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://c280pc1eo204"]
+[gd_scene load_steps=5 format=4 uid="uid://c280pc1eo204"]
 
-[ext_resource type="TileSet" uid="uid://bhq8s1l6mfujf" path="res://shop_tileset.tres" id="1_msvwg"]
-[ext_resource type="Texture2D" uid="uid://ceddwxtdqmt1r" path="res://ASSETS/Art/Doors.png" id="2_ihd6y"]
+[ext_resource type="TileSet" uid="uid://d0b5kyviocs6h" path="res://shop_tileset.tres" id="1_msvwg"]
+[ext_resource type="PackedScene" uid="uid://cchqfrvn43tsq" path="res://SCENES/objects/door.tscn" id="2_6uft2"]
+[ext_resource type="PackedScene" uid="uid://chd8q5gbhkuig" path="res://SCENES/objects/shop_interiror.tscn" id="3_jsy6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2gry"]
 size = Vector2(431, 384)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5frk0"]
-atlas = ExtResource("2_ihd6y")
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uhlj"]
-size = Vector2(129, 183)
 
 [node name="ShopExterior" type="StaticBody2D"]
 collision_mask = 0
@@ -29,13 +23,6 @@ rendering_quadrant_size = 128
 position = Vector2(64.5, -65)
 shape = SubResource("RectangleShape2D_u2gry")
 
-[node name="Door" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Door"]
+[node name="Door" parent="." instance=ExtResource("2_6uft2")]
 position = Vector2(64, 64)
-texture = SubResource("AtlasTexture_5frk0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(63.5, 90.5)
-shape = SubResource("RectangleShape2D_1uhlj")
-debug_color = Color(0.281514, 0.625742, 0.242085, 0.42)
+destination_screen = ExtResource("3_jsy6q")

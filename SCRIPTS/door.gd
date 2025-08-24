@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+@export var destination_screen : PackedScene
 @onready var interaction_control: PanelContainer = $InteractionControl
 
 # Called when the node enters the scene tree for the first time.
@@ -17,4 +18,5 @@ func hide_control():
 	interaction_control.hide()
 
 func interact():
-	EventBus.menu_requested.emit("Mirror")
+	if destination_screen:
+		EventBus.screen_requested.emit(destination_screen)
