@@ -115,5 +115,5 @@ func _on_menu_requested(menu_name: String):
 		_:
 			_resume_play()
 
-func _on_screen_requested(screen_scene: PackedScene):
-	_set_level(screen_scene)
+func _on_screen_requested(screen_path: String):
+	_set_level(load(screen_path))

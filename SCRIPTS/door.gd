@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var destination_screen : PackedScene
+@export_file("*.tscn") var destination_screen : String
 @onready var interaction_control: PanelContainer = $InteractionControl
 
 # Called when the node enters the scene tree for the first time.
