@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=3 uid="uid://ukf7mh4gam8n"]
+
+[ext_resource type="Script" path="res://SCRIPTS/appearance_viewer.gd" id="1_j8hyk"]
+[ext_resource type="Script" path="res://Custom Resources/AppearanceData.gd" id="2_ayshf"]
+[ext_resource type="Resource" uid="uid://c8e57b5afd1sj" path="res://Custom Resources/hair_black_1.tres" id="2_e0hol"]
+[ext_resource type="Texture2D" uid="uid://dgsbuu26cmimc" path="res://ASSETS/Art/player/shoes_basic.png" id="4_fddm6"]
+[ext_resource type="Texture2D" uid="uid://imllclu4xesg" path="res://ASSETS/Art/player/SkinTone.png" id="5_vf4pm"]
+[ext_resource type="Texture2D" uid="uid://okv2xwauatf3" path="res://ASSETS/Art/player/hair.png" id="6_mp4ws"]
+[ext_resource type="Texture2D" uid="uid://dieqju5u4yqui" path="res://ASSETS/Art/player/accessories.png" id="7_n2tig"]
+
+[sub_resource type="Resource" id="Resource_nrrbx"]
+script = ExtResource("2_ayshf")
+hair = ExtResource("2_e0hol")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6e8t"]
+atlas = ExtResource("5_vf4pm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng00p"]
+atlas = ExtResource("6_mp4ws")
+region = Rect2(0, 0, 512, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ykv4"]
+atlas = ExtResource("7_n2tig")
+region = Rect2(0, 0, 512, 128)
+
+[node name="AppearanceViewer" type="PanelContainer"]
+custom_minimum_size = Vector2(440, 600)
+size_flags_horizontal = 3
+script = ExtResource("1_j8hyk")
+appearance_data = SubResource("Resource_nrrbx")
+
+[node name="Character" type="Node2D" parent="."]
+position = Vector2(220, 300)
+scale = Vector2(3, 3)
+
+[node name="Shoes" type="Sprite2D" parent="Character"]
+position = Vector2(0, -38.3333)
+texture = ExtResource("4_fddm6")
+hframes = 8
+
+[node name="Skin" type="Sprite2D" parent="Character"]
+texture = SubResource("AtlasTexture_r6e8t")
+
+[node name="Hair" type="Sprite2D" parent="Character"]
+texture = SubResource("AtlasTexture_ng00p")
+hframes = 4
+
+[node name="Accessory" type="Sprite2D" parent="Character"]
+texture = SubResource("AtlasTexture_1ykv4")
+hframes = 4
