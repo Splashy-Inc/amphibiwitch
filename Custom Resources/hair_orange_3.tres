@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="HairData" load_steps=4 format=3 uid="uid://dw55muxe4fk6j"]
+[gd_resource type="Resource" script_class="HairData" load_steps=4 format=3 uid="uid://cu26kwp4ag5eh"]
 
 [ext_resource type="Script" path="res://Custom Resources/HairData.gd" id="1_x7irc"]
 [ext_resource type="Texture2D" uid="uid://okv2xwauatf3" path="res://ASSETS/Art/player/hair.png" id="2_1mvgb"]
