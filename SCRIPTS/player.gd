@@ -20,6 +20,7 @@ var interaction_queue : Array[Node2D]
 
 func _ready() -> void:
 	AppearanceEvents.appearance_changed.connect(_on_appearance_changed)
+	_on_appearance_changed(AppearanceEvents.get_current_appearance())
 
 func _physics_process(delta: float) -> void:
 	
