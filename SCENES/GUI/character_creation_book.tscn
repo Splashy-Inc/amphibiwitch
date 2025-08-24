@@ -1,15 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://chuc0g2npcivk"]
+[gd_scene load_steps=9 format=3 uid="uid://chuc0g2npcivk"]
 
 [ext_resource type="Texture2D" uid="uid://c8ctopullch6q" path="res://ASSETS/Art/BookCoverBackground.png" id="1_phqmc"]
 [ext_resource type="PackedScene" uid="uid://b44df253v14c4" path="res://SCENES/GUI/grid_page.tscn" id="2_i3myh"]
 [ext_resource type="PackedScene" uid="uid://ukf7mh4gam8n" path="res://SCENES/GUI/appearance_viewer.tscn" id="2_p674a"]
-[ext_resource type="Resource" path="res://Custom Resources/shoes_list.tres" id="4_pbx4x"]
+[ext_resource type="Texture2D" uid="uid://dpojeqaxcn4mm" path="res://ASSETS/Art/MagicMirror.png" id="3_kus0u"]
+[ext_resource type="Resource" uid="uid://qopx8gxu25ju" path="res://Custom Resources/shoes_list.tres" id="4_pbx4x"]
+[ext_resource type="Theme" uid="uid://ba4stlwskgiic" path="res://SCENES/GUI/pannel_container_basic.tres" id="5_ancn4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sj88f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kp7um"]
+texture = ExtResource("3_kus0u")
 
 [node name="CharacterCreationBook" type="PanelContainer"]
 offset_left = 320.0
 offset_top = 180.0
 offset_right = 1600.0
 offset_bottom = 900.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_sj88f")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
@@ -31,6 +39,8 @@ layout_mode = 2
 
 [node name="AppearanceViewer" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_p674a")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kp7um")
+theme_override_styles/panel = SubResource("StyleBoxTexture_kp7um")
 
 [node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
@@ -44,10 +54,12 @@ current_tab = 0
 
 [node name="GridPage" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
 layout_mode = 2
+theme = ExtResource("5_ancn4")
 
 [node name="GridPage2" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
 visible = false
 layout_mode = 2
+theme = ExtResource("5_ancn4")
 attribute_list = ExtResource("4_pbx4x")
 metadata/_tab_index = 1
 
