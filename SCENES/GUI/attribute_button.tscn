@@ -20,3 +20,5 @@ script = ExtResource("2_fs5ib")
 position = Vector2(48, 50)
 texture = SubResource("AtlasTexture_x0eky")
 hframes = 4
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

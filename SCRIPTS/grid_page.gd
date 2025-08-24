@@ -21,5 +21,4 @@ func add_attribute(attribute_data: AttributeData):
 	grid_container.add_child(new_button)
 	if not new_button.is_node_ready():
 		await new_button.ready
-	new_button.set_texture(attribute_data.sprite_sheet)
-	
+	new_button.set_attribute_data(attribute_data)

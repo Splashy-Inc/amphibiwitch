@@ -21,6 +21,7 @@ config/icon="res://ASSETS/Art/icon.png"
 
 Globals="*res://SCRIPTS/globals.gd"
 EventBus="*res://event_bus.gd"
+AppearanceEvents="*res://appearance_events.gd"
 
 [display]
 
