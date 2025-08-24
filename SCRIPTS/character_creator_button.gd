@@ -1,8 +1,10 @@
 extends Button
 
+class_name AttributeButton
+
 @export var attribute_data : AttributeData
 
-@onready var sprite: Sprite2D = $Texture
+@onready var sprite: Sprite2D = $Sprite
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,4 +17,4 @@ func _process(delta: float) -> void:
 	pass
 
 func set_texture(new_texture: Texture2D):
-	sprite.texture = attribute_data.sprite_sheet
+	sprite.texture = new_texture

@@ -16,7 +16,7 @@ custom_minimum_size = Vector2(96, 100)
 theme_override_styles/normal = SubResource("StyleBoxTexture_sumqm")
 script = ExtResource("2_fs5ib")
 
-[node name="Texture" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(48, 50)
 texture = SubResource("AtlasTexture_x0eky")
 hframes = 4
