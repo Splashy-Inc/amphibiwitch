@@ -1376,7 +1376,7 @@ autoplay = "hair_brown_1"
 [node name="Accessories" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lw21d")
 animation = &"accessories_04_move"
-frame_progress = 0.606088
+frame_progress = 0.643876
 
 [node name="Tool" type="Node2D" parent="."]
 
