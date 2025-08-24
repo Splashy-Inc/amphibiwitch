@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://chuc0g2npcivk"]
+[gd_scene load_steps=3 format=3 uid="uid://chuc0g2npcivk"]
 
 [ext_resource type="Texture2D" uid="uid://c8ctopullch6q" path="res://ASSETS/Art/BookCoverBackground.png" id="1_phqmc"]
+[ext_resource type="PackedScene" uid="uid://deqbk4tj75c4j" path="res://SCENES/GUI/grid_page.tscn" id="2_i3myh"]
 
 [node name="CharacterCreationBook" type="PanelContainer"]
 offset_left = 320.0
@@ -41,20 +42,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 current_tab = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/TabContainer"]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/TabContainer/PanelContainer"]
+[node name="GridPage" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
 layout_mode = 2
 
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/HBoxContainer/TabContainer"]
+[node name="GridPage2" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/TabContainer/PanelContainer2"]
-layout_mode = 2
 
 [node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)

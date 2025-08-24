@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://clo8pye461qpj"]
+
+[ext_resource type="Texture2D" uid="uid://bk7ba70dgqu33" path="res://ASSETS/Art/Buttons/Purple_Basic_Button.png" id="1_5nlou"]
+[ext_resource type="Texture2D" uid="uid://okv2xwauatf3" path="res://ASSETS/Art/hair.png" id="2_aulxw"]
+[ext_resource type="Script" path="res://SCRIPTS/character_creator_button.gd" id="2_fs5ib"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sumqm"]
+texture = ExtResource("1_5nlou")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4abj"]
+atlas = ExtResource("2_aulxw")
+region = Rect2(16, 12, 96, 100)
+
+[node name="AttributeButton" type="Button"]
+custom_minimum_size = Vector2(96, 100)
+theme_override_styles/normal = SubResource("StyleBoxTexture_sumqm")
+script = ExtResource("2_fs5ib")
+
+[node name="Texture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_j4abj")
