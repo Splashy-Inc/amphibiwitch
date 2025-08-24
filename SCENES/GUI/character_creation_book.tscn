@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://chuc0g2npcivk"]
+
+[ext_resource type="Texture2D" uid="uid://c8ctopullch6q" path="res://ASSETS/Art/BookCoverBackground.png" id="1_phqmc"]
+[ext_resource type="PackedScene" uid="uid://deqbk4tj75c4j" path="res://SCENES/GUI/grid_page.tscn" id="2_i3myh"]
+[ext_resource type="PackedScene" uid="uid://ukf7mh4gam8n" path="res://SCENES/GUI/appearance_viewer.tscn" id="2_p674a"]
+[ext_resource type="Texture2D" uid="uid://dpojeqaxcn4mm" path="res://ASSETS/Art/MagicMirror.png" id="3_kus0u"]
+[ext_resource type="Resource" path="res://Custom Resources/shoes_list.tres" id="4_pbx4x"]
+[ext_resource type="Theme" uid="uid://pmcqm2efgeou" path="res://SCENES/GUI/tab_basic.tres" id="4_w4lkt"]
+[ext_resource type="Resource" uid="uid://br7vja6f1k6lx" path="res://Custom Resources/skintone_list.tres" id="7_ck424"]
+[ext_resource type="Resource" uid="uid://dcs2qsqmbib88" path="res://Custom Resources/accessories_list.tres" id="8_dj55r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sj88f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kp7um"]
+texture = ExtResource("3_kus0u")
+
+[node name="CharacterCreationBook" type="PanelContainer"]
+offset_left = 320.0
+offset_top = 180.0
+offset_right = 1600.0
+offset_bottom = 900.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_sj88f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_phqmc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="AppearanceViewer" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_p674a")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kp7um")
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(440, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_w4lkt")
+theme_override_font_sizes/font_size = 32
+current_tab = 0
+
+[node name="Shoes" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
+layout_mode = 2
+theme = ExtResource("4_w4lkt")
+attribute_list = ExtResource("4_pbx4x")
+
+[node name="Skin Tone" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_w4lkt")
+attribute_list = ExtResource("7_ck424")
+metadata/_tab_index = 1
+
+[node name="Hair" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Accessories" parent="VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_i3myh")]
+visible = false
+layout_mode = 2
+attribute_list = ExtResource("8_dj55r")
+metadata/_tab_index = 3
+
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 164)
+layout_mode = 2

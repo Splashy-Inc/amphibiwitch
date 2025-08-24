@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=4 uid="uid://c280pc1eo204"]
+
+[ext_resource type="TileSet" uid="uid://d0b5kyviocs6h" path="res://shop_tileset.tres" id="1_msvwg"]
+[ext_resource type="PackedScene" uid="uid://cchqfrvn43tsq" path="res://SCENES/objects/door.tscn" id="2_6uft2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2gry"]
+size = Vector2(431, 384)
+
+[node name="ShopExterior" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAEAAAA=")
+tile_set = ExtResource("1_msvwg")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAAADAAEAAAABAAAAAAAEAAEAAAACAP//AAAFAAEAAAACAP7/AAAFAAEAAAD+////AAAFAAIAAAD+//7/AAAFAAIAAAD/////AAAFAAAAAAAAAP//AAAFAAAAAAABAP//AAAFAAAAAAABAP7/AAAFAAAAAAAAAP7/AAAFAAAAAAD///7/AAAFAAAAAAA=")
+tile_set = ExtResource("1_msvwg")
+rendering_quadrant_size = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64.5, -65)
+shape = SubResource("RectangleShape2D_u2gry")
+
+[node name="Door" parent="." instance=ExtResource("2_6uft2")]
+position = Vector2(64, 64)
+destination_screen = "res://SCENES/objects/shop_interiror.tscn"

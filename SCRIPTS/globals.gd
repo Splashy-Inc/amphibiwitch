@@ -2,6 +2,7 @@ extends Node
 
 signal info_updated
 
+var screen_manager : ScreenManager
 var cur_level_scene: PackedScene
 
 var joypad_connected := false
@@ -49,3 +50,6 @@ func update_info(new_info):
 
 func _on_frog_died():
 	update_info(info + 1)
+
+func _on_interactable_activated():
+	screen_manager

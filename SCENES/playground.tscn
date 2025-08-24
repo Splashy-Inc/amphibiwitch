@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=15 format=3 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
 [ext_resource type="Shader" path="res://world_light.gdshader" id="2_k1kh8"]
 [ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
-[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/frog.tscn" id="4_vxm8d"]
+[ext_resource type="PackedScene" uid="uid://c280pc1eo204" path="res://SCENES/objects/shop_exterior.tscn" id="4_45g5f"]
+[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/creatures/frog.tscn" id="4_vxm8d"]
 [ext_resource type="PackedScene" uid="uid://del3wbaurtdpc" path="res://SCENES/newt_pink.tscn" id="5_gu2hs"]
-[ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/firefly.tscn" id="5_svg8i"]
+[ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/creatures/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
+[ext_resource type="Texture2D" uid="uid://c7m7yi0s42858" path="res://ASSETS/Art/SignCatchFrogs.png" id="11_24gsa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mwxo7"]
 shader = ExtResource("2_k1kh8")
@@ -36,6 +38,9 @@ energy = 0.1
 
 [node name="TileMapBackground" parent="." instance=ExtResource("2_fetls")]
 
+[node name="ShopExterior" parent="." instance=ExtResource("4_45g5f")]
+position = Vector2(936, 264)
+
 [node name="Player" type="Node" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("3_7v63e")]
@@ -61,7 +66,7 @@ position = Vector2(191, 438)
 position = Vector2(2067, 628)
 
 [node name="NewtPink6" parent="Newt" instance=ExtResource("5_gu2hs")]
-position = Vector2(919, 329)
+position = Vector2(1267, 750)
 
 [node name="Frogs" type="Node" parent="."]
 
@@ -143,3 +148,7 @@ z_index = 10
 material = SubResource("ShaderMaterial_kkt2g")
 position = Vector2(1352, 1227)
 texture = SubResource("PlaceholderTexture2D_ikir6")
+
+[node name="SignCatchFrogs" type="Sprite2D" parent="."]
+position = Vector2(691, 549)
+texture = ExtResource("11_24gsa")

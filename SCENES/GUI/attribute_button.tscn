@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://clo8pye461qpj"]
+
+[ext_resource type="Theme" uid="uid://bclk05sd0fq2s" path="res://SCENES/GUI/beige_button.tres" id="1_hhgke"]
+[ext_resource type="Texture2D" uid="uid://okv2xwauatf3" path="res://ASSETS/Art/player/hair.png" id="2_aulxw"]
+[ext_resource type="Script" path="res://SCRIPTS/character_creator_button.gd" id="2_fs5ib"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0eky"]
+atlas = ExtResource("2_aulxw")
+region = Rect2(0, 0, 512, 128)
+
+[node name="AttributeButton" type="Button"]
+custom_minimum_size = Vector2(96, 100)
+scale = Vector2(1.25, 1.25)
+theme = ExtResource("1_hhgke")
+script = ExtResource("2_fs5ib")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(48, 50)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_x0eky")
+hframes = 4
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

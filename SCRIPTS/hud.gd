@@ -14,6 +14,7 @@ signal main_menu_pressed
 @onready var win_screen: Control = $MenuScreens/WinScreen
 @onready var loss_screen: Control = $MenuScreens/LossScreen
 @onready var pause_menu: Control = $MenuScreens/PauseMenu
+@onready var mirror_menu: Control = $MenuScreens/MirrorMenu
 
 enum Menus {
 	NONE,
@@ -22,6 +23,7 @@ enum Menus {
 	WIN,
 	LOSS,
 	PAUSE,
+	MIRROR,
 }
 
 var cur_menu := Menus.NONE
@@ -89,6 +91,12 @@ func show_loss_screen():
 	_clear_menu()
 	show_menu_screens()
 	loss_screen.show()
+
+func show_mirror_menu():
+	cur_menu = Menus.MIRROR
+	_clear_menu()
+	show_menu_screens()
+	mirror_menu.show()
 
 func _on_game_menu_button_pressed(type: String):
 	match type:

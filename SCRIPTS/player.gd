@@ -5,12 +5,22 @@ class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var net: Node2D = $Tool/Net
 @onready var staff: Staff = $Tool/Staff
+@onready var shoes: Sprite2D = $Shoes
+@onready var skin_tone:Sprite2D = $SkinTone
+@onready var hair: Sprite2D = $Hair
+@onready var accessories: Sprite2D = $Accessories
 
 const SPEED = 500.0
 @export var speed_mod := 1.0
 
 @export var attacking := false
 var direction := Vector2.ZERO
+
+var interaction_queue : Array[Node2D]
+
+func _ready() -> void:
+	AppearanceEvents.appearance_changed.connect(_on_appearance_changed)
+	_on_appearance_changed(AppearanceEvents.get_current_appearance())
 
 func _physics_process(delta: float) -> void:
 	
@@ -46,6 +56,31 @@ func _input(event: InputEvent) -> void:
 			return
 		attacking = true
 		_use_net()
+	elif (event.is_action_pressed("interact") or event.is_action_pressed("light")) and not interaction_queue.is_empty():
+		if interaction_queue.front().has_method("interact"):
+			interaction_queue.front().interact()
 
 func _use_net():
 	animation_player.play("attack")
+
+func _on_interaction_range_body_entered(body: Node2D) -> void:
+	if not body in interaction_queue:
+		interaction_queue.append(body)
+
+	if interaction_queue.front().has_method("show_control"):
+		interaction_queue.front().show_control()
+
+func _on_interaction_range_body_exited(body: Node2D) -> void:
+	interaction_queue.erase(body)
+	if body.has_method("hide_control"):
+		body.hide_control()
+	
+	if not interaction_queue.is_empty() and interaction_queue.front().has_method("show_control"):
+		interaction_queue.front().show_control()
+
+func _on_appearance_changed(new_appearance_data: AppearanceData):
+	if new_appearance_data:
+		shoes.texture = new_appearance_data.get_shoes_sprite_sheet()
+		skin_tone.texture = new_appearance_data.get_skin_sprite_sheet()
+		hair.texture = new_appearance_data.get_hair_sprite_sheet()
+		accessories.texture = new_appearance_data.get_accessory_sprite_sheet()

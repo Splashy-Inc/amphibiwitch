@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShoesData" load_steps=4 format=3 uid="uid://by7stw1u8gql3"]
+
+[ext_resource type="Script" path="res://Custom Resources/ShoesData.gd" id="1_wihv3"]
+[ext_resource type="Texture2D" uid="uid://dgsbuu26cmimc" path="res://ASSETS/Art/player/shoes_basic.png" id="2_ytknj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpgeq"]
+atlas = ExtResource("2_ytknj")
+
+[resource]
+script = ExtResource("1_wihv3")
+type = 0
+category = 0
+sprite_sheet = SubResource("AtlasTexture_fpgeq")
