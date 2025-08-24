@@ -6,6 +6,9 @@ extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for child in grid_container.get_children():
+		child.queue_free()
+	
 	for attribute in attribute_list.list:
 		add_attribute(attribute)
 
