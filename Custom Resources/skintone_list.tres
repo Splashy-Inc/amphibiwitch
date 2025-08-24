@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AttributeList" load_steps=5 format=3 uid="uid://dcja5elr25v03"]
+
+[ext_resource type="Script" path="res://Custom Resources/AttributeData.gd" id="1_u53uu"]
+[ext_resource type="Resource" uid="uid://c8e57b5afd1sj" path="res://Custom Resources/hair_black_1.tres" id="2_iavlb"]
+[ext_resource type="Resource" uid="uid://c8c8u34rxj1xm" path="res://Custom Resources/hair_black_2.tres" id="3_7ympu"]
+[ext_resource type="Script" path="res://Custom Resources/AttributeList.gd" id="4_1hehu"]
+
+[resource]
+script = ExtResource("4_1hehu")
+list = Array[ExtResource("1_u53uu")]([ExtResource("2_iavlb"), ExtResource("3_7ympu")])
