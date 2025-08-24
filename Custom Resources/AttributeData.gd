@@ -3,7 +3,7 @@ extends Resource
 class_name AttributeData
 
 @export var category : Category
-@export var textures : Array[Texture]
+@export var sprite_sheet : AtlasTexture
 
 enum Category {
 	SHOES,

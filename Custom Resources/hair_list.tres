@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AttributeList" load_steps=4 format=3 uid="uid://cjvh865vnjsgk"]
+
+[ext_resource type="Script" path="res://Custom Resources/AttributeData.gd" id="1_svg4o"]
+[ext_resource type="Resource" uid="uid://c8e57b5afd1sj" path="res://Custom Resources/hair_black_1.tres" id="2_v0gjq"]
+[ext_resource type="Script" path="res://Custom Resources/AttributeList.gd" id="2_yqb3m"]
+
+[resource]
+script = ExtResource("2_yqb3m")
+list = Array[ExtResource("1_svg4o")]([ExtResource("2_v0gjq")])

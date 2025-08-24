@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfv1pgn3koxby"]
 
 [ext_resource type="Script" path="res://SCRIPTS/mirror_menu.gd" id="1_2rlhd"]
-[ext_resource type="PackedScene" path="res://SCENES/GUI/character_creation_book.tscn" id="1_ukrle"]
+[ext_resource type="PackedScene" uid="uid://chuc0g2npcivk" path="res://SCENES/GUI/character_creation_book.tscn" id="1_ukrle"]
 [ext_resource type="Theme" uid="uid://dq415i7a2gwkg" path="res://PurpleButton.tres" id="2_ealwu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr6pr"]

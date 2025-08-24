@@ -6,6 +6,7 @@ class_name HairData
 @export var type : int
 
 enum HairColor {
+	NONE,
 	BLACK,
 	BLONDE,
 	BROWN,

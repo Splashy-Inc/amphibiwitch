@@ -1,23 +1,22 @@
 [gd_scene load_steps=6 format=3 uid="uid://clo8pye461qpj"]
 
 [ext_resource type="Texture2D" uid="uid://bk7ba70dgqu33" path="res://ASSETS/Art/Buttons/Purple_Basic_Button.png" id="1_5nlou"]
-[ext_resource type="Texture2D" uid="uid://okv2xwauatf3" path="res://ASSETS/Art/hair.png" id="2_aulxw"]
+[ext_resource type="Texture2D" uid="uid://okv2xwauatf3" path="res://ASSETS/Art/player/hair.png" id="2_aulxw"]
 [ext_resource type="Script" path="res://SCRIPTS/character_creator_button.gd" id="2_fs5ib"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sumqm"]
 texture = ExtResource("1_5nlou")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j4abj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0eky"]
 atlas = ExtResource("2_aulxw")
-region = Rect2(16, 12, 96, 100)
+region = Rect2(0, 0, 512, 128)
 
 [node name="AttributeButton" type="Button"]
 custom_minimum_size = Vector2(96, 100)
 theme_override_styles/normal = SubResource("StyleBoxTexture_sumqm")
 script = ExtResource("2_fs5ib")
 
-[node name="Texture" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_j4abj")
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(48, 50)
+texture = SubResource("AtlasTexture_x0eky")
+hframes = 4
