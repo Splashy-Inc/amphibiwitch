@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://chuc0g2npcivk"]
 
 [ext_resource type="Texture2D" uid="uid://c8ctopullch6q" path="res://ASSETS/Art/BookCoverBackground.png" id="1_phqmc"]
-[ext_resource type="PackedScene" uid="uid://deqbk4tj75c4j" path="res://SCENES/GUI/grid_page.tscn" id="2_i3myh"]
+[ext_resource type="PackedScene" uid="uid://b44df253v14c4" path="res://SCENES/GUI/grid_page.tscn" id="2_i3myh"]
 
 [node name="CharacterCreationBook" type="PanelContainer"]
 offset_left = 320.0

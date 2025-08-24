@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="HairData" load_steps=4 format=3 uid="uid://c8c8u34rxj1xm"]
+
+[ext_resource type="Script" path="res://Custom Resources/HairData.gd" id="1_62sue"]
+[ext_resource type="Texture2D" uid="uid://okv2xwauatf3" path="res://ASSETS/Art/player/hair.png" id="2_40hnp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0boh"]
+atlas = ExtResource("2_40hnp")
+region = Rect2(0, 1280, 512, 128)
+
+[resource]
+script = ExtResource("1_62sue")
+color = 1
+type = 2
+category = 2
+sprite_sheet = SubResource("AtlasTexture_x0boh")
