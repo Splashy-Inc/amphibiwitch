@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ShoesData" load_steps=4 format=3 uid="uid://d3o3on6yuyifs"]
+[gd_resource type="Resource" script_class="ShoesData" load_steps=4 format=3 uid="uid://dtlhljmm1ufdn"]
 
 [ext_resource type="Script" path="res://Custom Resources/ShoesData.gd" id="1_vp5hs"]
 [ext_resource type="Texture2D" uid="uid://dgsbuu26cmimc" path="res://ASSETS/Art/player/shoes_basic.png" id="2_jyyow"]
