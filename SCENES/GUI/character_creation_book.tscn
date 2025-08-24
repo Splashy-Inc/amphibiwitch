@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://deqbk4tj75c4j" path="res://SCENES/GUI/grid_page.tscn" id="2_i3myh"]
 [ext_resource type="PackedScene" uid="uid://ukf7mh4gam8n" path="res://SCENES/GUI/appearance_viewer.tscn" id="2_p674a"]
 [ext_resource type="Resource" path="res://Custom Resources/shoes_list.tres" id="4_pbx4x"]
-[ext_resource type="Resource" path="res://Custom Resources/skintone_list.tres" id="5_voa41"]
-[ext_resource type="Resource" path="res://Custom Resources/accessories_list.tres" id="6_b1d2i"]
+[ext_resource type="Resource" uid="uid://br7vja6f1k6lx" path="res://Custom Resources/skintone_list.tres" id="5_voa41"]
+[ext_resource type="Resource" uid="uid://dcs2qsqmbib88" path="res://Custom Resources/accessories_list.tres" id="6_b1d2i"]
 
 [node name="CharacterCreationBook" type="PanelContainer"]
-offset_left = 320.0
-offset_top = 180.0
-offset_right = 1600.0
-offset_bottom = 900.0
+offset_right = 1360.0
+offset_bottom = 844.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2

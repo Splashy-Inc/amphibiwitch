@@ -20,7 +20,7 @@ region = Rect2(0, 0, 512, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ykv4"]
 atlas = ExtResource("7_n2tig")
-region = Rect2(0, 0, 512, 128)
+region = Rect2(0, 0, 512, 256)
 
 [node name="AppearanceViewer" type="PanelContainer"]
 custom_minimum_size = Vector2(440, 600)
@@ -47,3 +47,4 @@ hframes = 4
 [node name="Accessory" type="Sprite2D" parent="Character"]
 texture = SubResource("AtlasTexture_1ykv4")
 hframes = 4
+vframes = 2

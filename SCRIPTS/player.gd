@@ -5,6 +5,10 @@ class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var net: Node2D = $Tool/Net
 @onready var staff: Staff = $Tool/Staff
+@onready var shoes: Sprite2D = $Shoes
+@onready var skin_tone:Sprite2D = $SkinTone
+@onready var hair: Sprite2D = $Hair
+@onready var accessories: Sprite2D = $Accessories
 
 const SPEED = 500.0
 @export var speed_mod := 1.0
@@ -13,6 +17,9 @@ const SPEED = 500.0
 var direction := Vector2.ZERO
 
 var interaction_queue : Array[Node2D]
+
+func _ready() -> void:
+	AppearanceEvents.appearance_changed.connect(_on_appearance_changed)
 
 func _physics_process(delta: float) -> void:
 	
@@ -69,3 +76,6 @@ func _on_interaction_range_body_exited(body: Node2D) -> void:
 	
 	if not interaction_queue.is_empty() and interaction_queue.front().has_method("show_control"):
 		interaction_queue.front().show_control()
+
+func _on_appearance_changed(new_appearance_data: AppearanceData):
+	hair.texture = new_appearance_data.hair.sprite_sheet

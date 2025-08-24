@@ -31,8 +31,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_hr6pr")
 
 [node name="CharacterCreationBook" parent="PanelContainer" instance=ExtResource("1_ukrle")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="DoneButton" type="Button" parent="."]
 layout_mode = 0
