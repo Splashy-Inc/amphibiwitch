@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://clo8pye461qpj"]
 
-[ext_resource type="Theme" uid="uid://fubb47r5kyma" path="res://SCENES/GUI/beige_button.tres" id="1_hhgke"]
+[ext_resource type="Theme" uid="uid://bclk05sd0fq2s" path="res://SCENES/GUI/beige_button.tres" id="1_hhgke"]
 [ext_resource type="Texture2D" uid="uid://okv2xwauatf3" path="res://ASSETS/Art/player/hair.png" id="2_aulxw"]
 [ext_resource type="Script" path="res://SCRIPTS/character_creator_button.gd" id="2_fs5ib"]
 
