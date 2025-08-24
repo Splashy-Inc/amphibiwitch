@@ -2,8 +2,8 @@ extends AttributeData
 
 class_name HairData
 
-@export var color : HairColor
-@export var type : int
+@export var color := HairColor.BROWN
+@export var type := 1
 
 enum HairColor {
 	NONE,

@@ -78,4 +78,8 @@ func _on_interaction_range_body_exited(body: Node2D) -> void:
 		interaction_queue.front().show_control()
 
 func _on_appearance_changed(new_appearance_data: AppearanceData):
-	hair.texture = new_appearance_data.hair.sprite_sheet
+	if new_appearance_data:
+		shoes.texture = new_appearance_data.get_shoes_sprite_sheet()
+		skin_tone.texture = new_appearance_data.get_skin_sprite_sheet()
+		hair.texture = new_appearance_data.get_hair_sprite_sheet()
+		accessories.texture = new_appearance_data.get_accessory_sprite_sheet()

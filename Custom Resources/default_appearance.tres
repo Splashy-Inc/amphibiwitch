@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AppearanceData" load_steps=6 format=3 uid="uid://bec2rqyu8g7wi"]
+
+[ext_resource type="Script" path="res://Custom Resources/AppearanceData.gd" id="1_j37pn"]
+[ext_resource type="Resource" uid="uid://7vb00vaarmwq" path="res://Custom Resources/accessories_1.tres" id="1_v8hfw"]
+[ext_resource type="Resource" uid="uid://2e4007v2gdnw" path="res://Custom Resources/hair_brown_1.tres" id="2_1cy86"]
+[ext_resource type="Resource" uid="uid://d3o3on6yuyifs" path="res://Custom Resources/shoes_basic.tres" id="4_ragjo"]
+[ext_resource type="Resource" uid="uid://rf163qo05lbq" path="res://Custom Resources/skintone_7.tres" id="5_n5ulk"]
+
+[resource]
+script = ExtResource("1_j37pn")
+shoes = ExtResource("4_ragjo")
+skin = ExtResource("5_n5ulk")
+hair = ExtResource("2_1cy86")
+accessory = ExtResource("1_v8hfw")
