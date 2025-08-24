@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://chd8q5gbhkuig"]
 
 [ext_resource type="TileSet" uid="uid://d0b5kyviocs6h" path="res://shop_tileset.tres" id="1_8oh4o"]
-[ext_resource type="PackedScene" uid="uid://dvfee8rgxpafc" path="res://SCENES/objects/mirror.tscn" id="1_81irv"]
+[ext_resource type="PackedScene" path="res://SCENES/objects/mirror.tscn" id="1_81irv"]
 [ext_resource type="Script" path="res://SCRIPTS/level.gd" id="1_gx7wi"]
 [ext_resource type="PackedScene" uid="uid://cd5tokqq2iyj8" path="res://SCENES/objects/cauldron.tscn" id="2_ii0jy"]
 [ext_resource type="PackedScene" uid="uid://cchqfrvn43tsq" path="res://SCENES/objects/door.tscn" id="3_h5as4"]

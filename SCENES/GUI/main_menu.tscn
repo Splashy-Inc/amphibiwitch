@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://di1ynwh6doxnf" path="res://ASSETS/Font/m5x7.ttf" id="3_mnfv6"]
 [ext_resource type="PackedScene" uid="uid://b7600w3ihvnlg" path="res://SCENES/MainMenu_tilemap_background.tscn" id="3_npyma"]
 [ext_resource type="StyleBox" uid="uid://b5bcx1v43ydd3" path="res://button_box_focus.tres" id="4_84i8b"]
-[ext_resource type="Theme" uid="uid://bw5ehvu3worsk" path="res://PurpleButton.tres" id="4_hfuk7"]
+[ext_resource type="Theme" uid="uid://dq415i7a2gwkg" path="res://PurpleButton.tres" id="4_hfuk7"]
 [ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/creatures/firefly.tscn" id="5_wju8h"]
 [ext_resource type="Texture2D" uid="uid://w1hpwnxyhxto" path="res://SCENES/passive_light.tres" id="6_3lo0l"]
 [ext_resource type="Shader" path="res://light.gdshader" id="6_4j71s"]
