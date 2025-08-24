@@ -9,7 +9,7 @@ extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	update_appearance(appearance_data)
+	update_appearance(AppearanceEvents.get_current_appearance())
 	AppearanceEvents.attribute_change_requested.connect(_on_attribute_change_requested)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

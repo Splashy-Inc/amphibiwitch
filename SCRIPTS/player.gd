@@ -55,7 +55,7 @@ func _input(event: InputEvent) -> void:
 			return
 		attacking = true
 		_use_net()
-	elif event.is_action_pressed("interact") and not interaction_queue.is_empty():
+	elif (event.is_action_pressed("interact") or event.is_action_pressed("light")) and not interaction_queue.is_empty():
 		if interaction_queue.front().has_method("interact"):
 			interaction_queue.front().interact()
 
