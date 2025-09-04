@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ctedc5thhssj2"]
+[gd_scene load_steps=19 format=3 uid="uid://ctedc5thhssj2"]
 
 [ext_resource type="Script" path="res://SCRIPTS/frog.gd" id="1_dr1ba"]
 [ext_resource type="Texture2D" uid="uid://bq34waevnhgm6" path="res://ASSETS/Art/Frogs/BasicFrogSpritesheet.png" id="2_71aqs"]
@@ -34,6 +34,10 @@ region = Rect2(640, 0, 128, 128)
 atlas = ExtResource("2_71aqs")
 region = Rect2(768, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebifn"]
+atlas = ExtResource("2_71aqs")
+region = Rect2(0, 128, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_fns6b"]
 animations = [{
 "frames": [{
@@ -61,6 +65,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebifn")
+}],
+"loop": true,
+"name": &"squish",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_14s52"]
@@ -90,8 +102,9 @@ script = ExtResource("1_dr1ba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fns6b")
+animation = &"squish"
 autoplay = "default"
-frame_progress = 0.928228
+frame_progress = 0.807722
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

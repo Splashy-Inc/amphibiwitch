@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddfgvtlq08rmt"]
+
+[ext_resource type="Texture2D" uid="uid://xth5d2m7m1ye" path="res://ASSETS/Art/Frogs/toungeSpritesheet.png" id="1_ee1qa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwvdt"]
+atlas = ExtResource("1_ee1qa")
+region = Rect2(0, 0, 128, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q50rg"]
+atlas = ExtResource("1_ee1qa")
+region = Rect2(128, 0, 128, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jy2y"]
+atlas = ExtResource("1_ee1qa")
+region = Rect2(256, 0, 128, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di834"]
+atlas = ExtResource("1_ee1qa")
+region = Rect2(384, 0, 128, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7vmy"]
+atlas = ExtResource("1_ee1qa")
+region = Rect2(512, 0, 128, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htx2v"]
+atlas = ExtResource("1_ee1qa")
+region = Rect2(640, 0, 128, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcgks"]
+atlas = ExtResource("1_ee1qa")
+region = Rect2(768, 0, 128, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka2sg"]
+atlas = ExtResource("1_ee1qa")
+region = Rect2(896, 0, 128, 642)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdq3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwvdt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q50rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jy2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di834")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7vmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htx2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcgks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka2sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcgks")
+}],
+"loop": false,
+"name": &"tongue",
+"speed": 9.0
+}]
+
+[node name="FrogAbility" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fdq3v")
+animation = &"tongue"
+autoplay = "idle"
+frame = 7
+frame_progress = 1.0
