@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ctedc5thhssj2"]
+[gd_scene load_steps=23 format=3 uid="uid://ctedc5thhssj2"]
 
 [ext_resource type="Script" path="res://SCRIPTS/frog.gd" id="1_dr1ba"]
 [ext_resource type="Texture2D" uid="uid://bq34waevnhgm6" path="res://ASSETS/Art/Frogs/BasicFrogSpritesheet.png" id="2_71aqs"]
@@ -34,9 +34,25 @@ region = Rect2(640, 0, 128, 128)
 atlas = ExtResource("2_71aqs")
 region = Rect2(768, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebifn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bltfj"]
 atlas = ExtResource("2_71aqs")
 region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1pgp"]
+atlas = ExtResource("2_71aqs")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6d00"]
+atlas = ExtResource("2_71aqs")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3r08"]
+atlas = ExtResource("2_71aqs")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo8tp"]
+atlas = ExtResource("2_71aqs")
+region = Rect2(512, 128, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fns6b"]
 animations = [{
@@ -68,11 +84,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ebifn")
+"texture": SubResource("AtlasTexture_bltfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1pgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6d00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3r08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo8tp")
 }],
-"loop": true,
+"loop": false,
 "name": &"squish",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_14s52"]
@@ -104,7 +132,8 @@ script = ExtResource("1_dr1ba")
 sprite_frames = SubResource("SpriteFrames_fns6b")
 animation = &"squish"
 autoplay = "default"
-frame_progress = 0.807722
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
