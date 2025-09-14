@@ -1,10 +1,39 @@
-[gd_scene load_steps=23 format=3 uid="uid://ctedc5thhssj2"]
+[gd_scene load_steps=31 format=3 uid="uid://ctedc5thhssj2"]
 
 [ext_resource type="Script" path="res://SCRIPTS/frog.gd" id="1_dr1ba"]
-[ext_resource type="Texture2D" uid="uid://bq34waevnhgm6" path="res://ASSETS/Art/Frogs/BasicFrogSpritesheet.png" id="2_71aqs"]
+[ext_resource type="Texture2D" uid="uid://crayrqqgr2ght" path="res://ASSETS/Art/Frogs/BasicFrogSpritesheet.png" id="2_71aqs"]
+[ext_resource type="Texture2D" uid="uid://cfbofevwqc46k" path="res://ASSETS/Art/Frogs/BalfrogSpritesheet.png" id="2_repl0"]
 [ext_resource type="PackedScene" uid="uid://cmiraoyeq5xh6" path="res://SCENES/sfx_manager.tscn" id="3_hx26s"]
 [ext_resource type="AudioStream" uid="uid://dhngdn2k5w7ku" path="res://ASSETS/Audio/frog_hit.ogg" id="4_unt8d"]
 [ext_resource type="AudioStream" uid="uid://dp0acn12lh2au" path="res://ASSETS/Audio/frog_idle.ogg" id="5_qgosp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkp78"]
+atlas = ExtResource("2_repl0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1vwp"]
+atlas = ExtResource("2_repl0")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovwyn"]
+atlas = ExtResource("2_repl0")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcdyw"]
+atlas = ExtResource("2_repl0")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0bc5"]
+atlas = ExtResource("2_repl0")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ramdj"]
+atlas = ExtResource("2_repl0")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo01g"]
+atlas = ExtResource("2_repl0")
+region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppfuq"]
 atlas = ExtResource("2_71aqs")
@@ -56,6 +85,32 @@ region = Rect2(512, 128, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fns6b"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkp78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1vwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovwyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcdyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0bc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ramdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo01g")
+}],
+"loop": true,
+"name": &"balfrog_default",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ppfuq")
@@ -130,10 +185,9 @@ script = ExtResource("1_dr1ba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fns6b")
-animation = &"squish"
+animation = &"balfrog_default"
 autoplay = "default"
-frame = 4
-frame_progress = 1.0
+frame_progress = 0.502601
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
