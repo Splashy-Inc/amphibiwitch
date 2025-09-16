@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ctedc5thhssj2"]
+[gd_scene load_steps=36 format=3 uid="uid://ctedc5thhssj2"]
 
 [ext_resource type="Script" path="res://SCRIPTS/frog.gd" id="1_dr1ba"]
 [ext_resource type="Texture2D" uid="uid://crayrqqgr2ght" path="res://ASSETS/Art/Frogs/BasicFrogSpritesheet.png" id="2_71aqs"]
@@ -34,6 +34,26 @@ region = Rect2(640, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo01g"]
 atlas = ExtResource("2_repl0")
 region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntcy4"]
+atlas = ExtResource("2_repl0")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppdlx"]
+atlas = ExtResource("2_repl0")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw605"]
+atlas = ExtResource("2_repl0")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shtkf"]
+atlas = ExtResource("2_repl0")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2jtw"]
+atlas = ExtResource("2_repl0")
+region = Rect2(512, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppfuq"]
 atlas = ExtResource("2_71aqs")
@@ -113,6 +133,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ntcy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppdlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw605")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shtkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2jtw")
+}],
+"loop": false,
+"name": &"balfrog_squish",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ppfuq")
 }, {
 "duration": 1.0,
@@ -185,9 +225,10 @@ script = ExtResource("1_dr1ba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fns6b")
-animation = &"balfrog_default"
+animation = &"balfrog_squish"
 autoplay = "default"
-frame_progress = 0.502601
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
