@@ -43,6 +43,7 @@ folder_colors={
 
 Player=""
 Frog=""
+moveable=""
 
 [gui]
 
@@ -168,6 +169,8 @@ interact={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Interactable"
+2d_physics/layer_5="Tongue Target"
+2d_physics/layer_6="Boundary"
 
 [physics]
 
