@@ -8,7 +8,7 @@
 [node name="ChimneyAcresMiniLevel" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_3acuy")]
-position = Vector2(1039, -3538)
+position = Vector2(1077, 497)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 

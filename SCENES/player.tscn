@@ -416,6 +416,7 @@ script = ExtResource("1_m7osi")
 [node name="Tool" type="Node2D" parent="."]
 
 [node name="Net" parent="Tool" instance=ExtResource("2_122k5")]
+z_index = 0
 position = Vector2(-66, -45)
 rotation = -0.0872665
 
