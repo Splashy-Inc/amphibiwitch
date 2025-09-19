@@ -410,12 +410,13 @@ radius = 192.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
-collision_mask = 5
+collision_mask = 37
 script = ExtResource("1_m7osi")
 
 [node name="Tool" type="Node2D" parent="."]
 
 [node name="Net" parent="Tool" instance=ExtResource("2_122k5")]
+z_index = 0
 position = Vector2(-66, -45)
 rotation = -0.0872665
 

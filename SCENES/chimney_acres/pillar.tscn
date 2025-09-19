@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgvhi55ay6fuy"]
+
+[ext_resource type="Script" path="res://SCRIPTS/pillar.gd" id="1_uha8a"]
+[ext_resource type="Texture2D" uid="uid://br8so3gxra31w" path="res://ASSETS/Art/chimney_acres/chimney_acres_tileset.png" id="1_wonmm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouwit"]
+atlas = ExtResource("1_wonmm")
+region = Rect2(0, 384, 512, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_be16n"]
+radius = 60.2993
+
+[node name="Pillar" type="StaticBody2D"]
+collision_layer = 17
+collision_mask = 0
+script = ExtResource("1_uha8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ouwit")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_be16n")

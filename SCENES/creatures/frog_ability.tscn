@@ -78,7 +78,6 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fdq3v")
-animation = &"tongue"
+animation = &"idle"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
+frame_progress = 0.902761
