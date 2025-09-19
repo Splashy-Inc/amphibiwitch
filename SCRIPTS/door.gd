@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export_file("*.tscn") var destination_screen : String
+@export var destination_location : LocationData.Name
 @onready var interaction_control: PanelContainer = $InteractionControl
 
 # Called when the node enters the scene tree for the first time.
@@ -18,5 +18,5 @@ func hide_control():
 	interaction_control.hide()
 
 func interact():
-	if destination_screen:
-		EventBus.screen_requested.emit(destination_screen)
+	if destination_location != null:
+		EventBus.screen_requested.emit(destination_location)

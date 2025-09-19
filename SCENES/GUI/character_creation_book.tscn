@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://deqbk4tj75c4j" path="res://SCENES/GUI/grid_page.tscn" id="2_i3myh"]
 [ext_resource type="PackedScene" uid="uid://ukf7mh4gam8n" path="res://SCENES/GUI/appearance_viewer.tscn" id="2_p674a"]
 [ext_resource type="Texture2D" uid="uid://dpojeqaxcn4mm" path="res://ASSETS/Art/MagicMirror.png" id="3_kus0u"]
-[ext_resource type="Resource" path="res://Custom Resources/shoes_list.tres" id="4_pbx4x"]
+[ext_resource type="Resource" uid="uid://qopx8gxu25ju" path="res://Custom Resources/Character/shoes_list.tres" id="4_pbx4x"]
 [ext_resource type="Theme" uid="uid://pmcqm2efgeou" path="res://SCENES/GUI/tab_basic.tres" id="4_w4lkt"]
-[ext_resource type="Resource" uid="uid://br7vja6f1k6lx" path="res://Custom Resources/skintone_list.tres" id="7_ck424"]
-[ext_resource type="Resource" uid="uid://dcs2qsqmbib88" path="res://Custom Resources/accessories_list.tres" id="8_dj55r"]
+[ext_resource type="Resource" uid="uid://br7vja6f1k6lx" path="res://Custom Resources/Character/skintone_list.tres" id="7_ck424"]
+[ext_resource type="Resource" uid="uid://dcs2qsqmbib88" path="res://Custom Resources/Character/accessories_list.tres" id="8_dj55r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sj88f"]
 

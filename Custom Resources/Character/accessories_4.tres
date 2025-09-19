@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AccessoryData" load_steps=4 format=3 uid="uid://dudkmnlcbe58n"]
+
+[ext_resource type="Script" path="res://Custom Resources/Character/AccessoryData.gd" id="1_evb33"]
+[ext_resource type="Texture2D" uid="uid://dieqju5u4yqui" path="res://ASSETS/Art/player/accessories.png" id="2_puutb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68vbl"]
+atlas = ExtResource("2_puutb")
+region = Rect2(0, 768, 512, 256)
+
+[resource]
+script = ExtResource("1_evb33")
+type = 4
+category = 3
+sprite_sheet = SubResource("AtlasTexture_68vbl")

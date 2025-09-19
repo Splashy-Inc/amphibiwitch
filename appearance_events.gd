@@ -3,7 +3,7 @@ extends Node
 signal appearance_changed(appearance_data: AppearanceData)
 signal attribute_change_requested(attribute_data: AttributeData)
 
-var current_appearance_data := preload("res://Custom Resources/default_appearance.tres")
+var current_appearance_data := preload("res://Custom Resources/Character/default_appearance.tres")
 
 func _ready() -> void:
 	appearance_changed.connect(_on_appearance_changed)
