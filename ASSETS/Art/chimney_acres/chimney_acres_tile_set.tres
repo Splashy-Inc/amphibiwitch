@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://ca53ago0l5xb"]
+[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://ca53ago0l5xb"]
 
 [ext_resource type="Texture2D" uid="uid://br8so3gxra31w" path="res://ASSETS/Art/chimney_acres/chimney_acres_tileset.png" id="1_4bm7v"]
 [ext_resource type="Texture2D" uid="uid://cxjogqxft3s6a" path="res://ASSETS/Art/chimney_acres/water.png" id="2_qyccg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b5w85xdamwtmp" path="res://ASSETS/Art/chimney_acres/lava_mix_4.png" id="7_ljx0s"]
 [ext_resource type="Texture2D" uid="uid://b7qdtkuewx5v8" path="res://ASSETS/Art/chimney_acres/lava_mix_5.png" id="8_mg8ou"]
 [ext_resource type="Texture2D" uid="uid://daob2prt4ycbc" path="res://ASSETS/Art/chimney_acres/lava_mix_6.png" id="9_ald03"]
+[ext_resource type="PackedScene" uid="uid://cgvhi55ay6fuy" path="res://SCENES/chimney_acres/pillar.tscn" id="10_d5qdj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sas1v"]
 texture = ExtResource("1_4bm7v")
@@ -125,6 +126,10 @@ texture_region_size = Vector2i(128, 128)
 0:0/animation_frame_3/duration = 0.2
 0:0/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wy1ie"]
+resource_name = "Pillars"
+scenes/1/scene = ExtResource("10_d5qdj")
+
 [resource]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
@@ -140,3 +145,4 @@ sources/5 = SubResource("TileSetAtlasSource_s2i7d")
 sources/6 = SubResource("TileSetAtlasSource_kds8s")
 sources/7 = SubResource("TileSetAtlasSource_u4qyl")
 sources/8 = SubResource("TileSetAtlasSource_8k2gw")
+sources/9 = SubResource("TileSetScenesCollectionSource_wy1ie")
