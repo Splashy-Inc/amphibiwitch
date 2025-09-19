@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=16 format=3 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
 [ext_resource type="Texture2D" uid="uid://c7m7yi0s42858" path="res://ASSETS/Art/SignCatchFrogs.png" id="11_24gsa"]
+[ext_resource type="Texture2D" uid="uid://cu8b4oj4xpn05" path="res://ASSETS/Art/chimney_acres/SignChimneyAcres.png" id="12_rbo2j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mwxo7"]
 shader = ExtResource("2_k1kh8")
@@ -152,3 +153,7 @@ texture = SubResource("PlaceholderTexture2D_ikir6")
 [node name="SignCatchFrogs" type="Sprite2D" parent="."]
 position = Vector2(691, 549)
 texture = ExtResource("11_24gsa")
+
+[node name="SignChimneyAcres" type="Sprite2D" parent="."]
+position = Vector2(2022, 256)
+texture = ExtResource("12_rbo2j")
