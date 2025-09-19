@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LocationData" load_steps=3 format=3 uid="uid://b63k4xmfb0m2t"]
+
+[ext_resource type="PackedScene" uid="uid://ufdmxyjfyoc6" path="res://SCENES/chimney_acres/chimney_acres_mini_level.tscn" id="1_sqrfr"]
+[ext_resource type="Script" path="res://Custom Resources/Locations/location_data.gd" id="2_6hs28"]
+
+[resource]
+script = ExtResource("2_6hs28")
+name = 2
+scene = ExtResource("1_sqrfr")

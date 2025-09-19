@@ -4,6 +4,8 @@ class_name ScreenManager
 
 @export var level_scene: PackedScene
 
+@export var locations : Array[LocationData]
+
 @onready var hud: HUD = $HUD
 
 var level: Level
@@ -115,5 +117,9 @@ func _on_menu_requested(menu_name: String):
 		_:
 			_resume_play()
 
-func _on_screen_requested(screen_path: String):
-	_set_level(load(screen_path))
+func _on_screen_requested(location_name: LocationData.Name):
+	for location in locations:
+		if location.name == location_name:
+			_set_level(location.scene)
+			return
+	print("Requested screen not found: ", location_name)

@@ -1,15 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxq56d6rma7gn"]
+[gd_scene load_steps=10 format=3 uid="uid://bxq56d6rma7gn"]
 
 [ext_resource type="Script" path="res://SCRIPTS/screen_manager.gd" id="1_7yicb"]
 [ext_resource type="PackedScene" uid="uid://do7dpbgd6ku6n" path="res://SCENES/GUI/hud.tscn" id="2_3khgq"]
 [ext_resource type="PackedScene" uid="uid://dhvgc0glasyim" path="res://SCENES/playground.tscn" id="2_ovxmg"]
+[ext_resource type="Script" path="res://Custom Resources/Locations/location_data.gd" id="3_ncl5n"]
+[ext_resource type="Resource" uid="uid://cmidjiv4f3mtt" path="res://Custom Resources/Locations/start_location.tres" id="4_5chj3"]
 [ext_resource type="PackedScene" uid="uid://cmiraoyeq5xh6" path="res://SCENES/sfx_manager.tscn" id="4_wgil8"]
+[ext_resource type="Resource" uid="uid://7w4hfxhd8gtv" path="res://Custom Resources/Locations/shop_location.tres" id="5_2wrab"]
 [ext_resource type="AudioStream" uid="uid://c8ncyyswf1n3j" path="res://ASSETS/Audio/background_theme.mp3" id="5_emujf"]
+[ext_resource type="Resource" uid="uid://b63k4xmfb0m2t" path="res://Custom Resources/Locations/chimney_acres_location.tres" id="6_kn5f2"]
 
 [node name="ScreenManager" type="Node"]
 process_mode = 3
 script = ExtResource("1_7yicb")
 level_scene = ExtResource("2_ovxmg")
+locations = Array[ExtResource("3_ncl5n")]([ExtResource("4_5chj3"), ExtResource("5_2wrab"), ExtResource("6_kn5f2")])
 
 [node name="HUD" parent="." instance=ExtResource("2_3khgq")]
 

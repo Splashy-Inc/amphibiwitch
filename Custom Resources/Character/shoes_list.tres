@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AttributeList" load_steps=7 format=3 uid="uid://qopx8gxu25ju"]
+
+[ext_resource type="Script" path="res://Custom Resources/Character/AttributeData.gd" id="1_yc2mx"]
+[ext_resource type="Resource" uid="uid://d3o3on6yuyifs" path="res://Custom Resources/Character/shoes_basic.tres" id="2_vgvph"]
+[ext_resource type="Resource" uid="uid://ct60tfcjehmtc" path="res://Custom Resources/Character/shoes_bow.tres" id="3_j5ee5"]
+[ext_resource type="Resource" uid="uid://by7stw1u8gql3" path="res://Custom Resources/Character/shoes_buckle.tres" id="4_rycey"]
+[ext_resource type="Resource" uid="uid://bmw4p25qq8nvw" path="res://Custom Resources/Character/shoes_lace.tres" id="5_i8gqc"]
+[ext_resource type="Script" path="res://Custom Resources/Character/AttributeList.gd" id="6_0wgih"]
+
+[resource]
+script = ExtResource("6_0wgih")
+list = Array[ExtResource("1_yc2mx")]([ExtResource("2_vgvph"), ExtResource("3_j5ee5"), ExtResource("4_rycey"), ExtResource("5_i8gqc")])

@@ -1,5 +1,6 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://kmm5yhihinxe"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://kmm5yhihinxe"]
 
+[ext_resource type="Texture2D" uid="uid://br8so3gxra31w" path="res://ASSETS/Art/chimney_acres/chimney_acres_tileset.png" id="2_4fj8m"]
 [ext_resource type="Texture2D" uid="uid://djk2qbh1bujxi" path="res://ASSETS/Art/Terrain.png" id="2_8yd4e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kitjf"]
@@ -294,9 +295,54 @@ texture_region_size = Vector2i(128, 128)
 7:1/0/terrains_peering_bit/top_left_corner = 0
 7:1/0/terrains_peering_bit/top_side = 0
 7:1/0/terrains_peering_bit/top_right_corner = 0
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1w8xx"]
+texture = ExtResource("2_4fj8m")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
 
 [resource]
 tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 32
+physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass 0"
 terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 0.886275, 1)
@@ -310,3 +356,4 @@ terrain_set_3/mode = 0
 terrain_set_3/terrain_0/name = "WalkAround 0"
 terrain_set_3/terrain_0/color = Color(0.501961, 0.752941, 0.25098, 1)
 sources/1 = SubResource("TileSetAtlasSource_kitjf")
+sources/3 = SubResource("TileSetAtlasSource_1w8xx")

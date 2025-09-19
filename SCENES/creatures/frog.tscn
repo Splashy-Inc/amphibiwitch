@@ -220,15 +220,12 @@ stream_0/stream = ExtResource("5_qgosp")
 
 [node name="Frog" type="CharacterBody2D" groups=["Frog"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 35
 script = ExtResource("1_dr1ba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fns6b")
-animation = &"balfrog_squish"
 autoplay = "default"
-frame = 4
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

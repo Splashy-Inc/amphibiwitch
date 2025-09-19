@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkinToneData" load_steps=4 format=3 uid="uid://c81vhy4gamnq4"]
+
+[ext_resource type="Script" path="res://Custom Resources/Character/SkinToneData.gd" id="1_he8l3"]
+[ext_resource type="Texture2D" uid="uid://imllclu4xesg" path="res://ASSETS/Art/player/SkinTone.png" id="2_6hgm5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p433"]
+atlas = ExtResource("2_6hgm5")
+region = Rect2(0, 256, 128, 128)
+
+[resource]
+script = ExtResource("1_he8l3")
+type = 7
+category = 1
+sprite_sheet = SubResource("AtlasTexture_2p433")

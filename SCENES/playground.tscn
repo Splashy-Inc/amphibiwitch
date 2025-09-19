@@ -48,6 +48,10 @@ position = Vector2(936, 264)
 position = Vector2(933, 524)
 
 [node name="Camera2D" type="Camera2D" parent="Player/Player"]
+limit_left = 0
+limit_top = -353
+limit_right = 2816
+limit_bottom = 2176
 
 [node name="Newt" type="Node" parent="."]
 
@@ -145,6 +149,7 @@ rotation = -0.459022
 [node name="LevelUI" parent="." instance=ExtResource("8_y8n3e")]
 
 [node name="WorldLightSprite" type="Sprite2D" parent="."]
+visible = false
 z_index = 10
 material = SubResource("ShaderMaterial_kkt2g")
 position = Vector2(1352, 1227)

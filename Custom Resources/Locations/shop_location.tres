@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LocationData" load_steps=3 format=3 uid="uid://7w4hfxhd8gtv"]
+
+[ext_resource type="PackedScene" uid="uid://chd8q5gbhkuig" path="res://SCENES/objects/shop_interiror.tscn" id="1_7jntw"]
+[ext_resource type="Script" path="res://Custom Resources/Locations/location_data.gd" id="2_18rk1"]
+
+[resource]
+script = ExtResource("2_18rk1")
+name = 1
+scene = ExtResource("1_7jntw")
