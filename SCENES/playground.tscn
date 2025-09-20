@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhvgc0glasyim"]
+[gd_scene load_steps=17 format=3 uid="uid://dhvgc0glasyim"]
 
 [ext_resource type="Script" path="res://SCRIPTS/playground.gd" id="1_5e8d0"]
 [ext_resource type="PackedScene" uid="uid://b3pegdwcapkhe" path="res://SCENES/tilemap_background.tscn" id="2_fetls"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://do6vv53psm4aw" path="res://SCENES/player.tscn" id="3_7v63e"]
 [ext_resource type="PackedScene" uid="uid://c280pc1eo204" path="res://SCENES/objects/shop_exterior.tscn" id="4_45g5f"]
 [ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/creatures/frog.tscn" id="4_vxm8d"]
-[ext_resource type="PackedScene" uid="uid://del3wbaurtdpc" path="res://SCENES/newt_pink.tscn" id="5_gu2hs"]
 [ext_resource type="PackedScene" uid="uid://dtrxpwxa5y3r" path="res://SCENES/creatures/firefly.tscn" id="5_svg8i"]
 [ext_resource type="PackedScene" uid="uid://b77mh17y84d50" path="res://SCENES/GUI/mobile_controls.tscn" id="7_uhrci"]
 [ext_resource type="PackedScene" uid="uid://bvp1lppkqj5qi" path="res://SCENES/GUI/level_ui.tscn" id="8_y8n3e"]
@@ -61,24 +60,6 @@ limit_bottom = 1592
 [node name="Player" parent="Player" instance=ExtResource("3_7v63e")]
 
 [node name="Newt" type="Node" parent="."]
-
-[node name="NewtPink" parent="Newt" instance=ExtResource("5_gu2hs")]
-position = Vector2(-427, 201)
-
-[node name="NewtPink2" parent="Newt" instance=ExtResource("5_gu2hs")]
-position = Vector2(-203, 929)
-
-[node name="NewtPink3" parent="Newt" instance=ExtResource("5_gu2hs")]
-position = Vector2(785, 1383)
-
-[node name="NewtPink4" parent="Newt" instance=ExtResource("5_gu2hs")]
-position = Vector2(-737, -82)
-
-[node name="NewtPink5" parent="Newt" instance=ExtResource("5_gu2hs")]
-position = Vector2(1139, 108)
-
-[node name="NewtPink6" parent="Newt" instance=ExtResource("5_gu2hs")]
-position = Vector2(339, 230)
 
 [node name="Frogs" type="Node" parent="."]
 
@@ -156,6 +137,7 @@ rotation = -0.459022
 [node name="LevelUI" parent="." instance=ExtResource("8_y8n3e")]
 
 [node name="WorldLightSprite" type="Sprite2D" parent="."]
+visible = false
 z_index = 10
 material = SubResource("ShaderMaterial_kkt2g")
 position = Vector2(1352, 1227)

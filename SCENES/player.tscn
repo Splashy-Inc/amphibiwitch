@@ -1,9 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://do6vv53psm4aw"]
+[gd_scene load_steps=39 format=3 uid="uid://do6vv53psm4aw"]
 
 [ext_resource type="Texture2D" uid="uid://du4s28sxwxp3o" path="res://ASSETS/Art/player_idle.png" id="1_4i36l"]
 [ext_resource type="Script" path="res://SCRIPTS/player.gd" id="1_m7osi"]
 [ext_resource type="PackedScene" uid="uid://dgoa58t7jc0uw" path="res://SCENES/net.tscn" id="2_122k5"]
 [ext_resource type="Texture2D" uid="uid://dgsbuu26cmimc" path="res://ASSETS/Art/player/shoes_basic.png" id="2_xo7uk"]
+[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/creatures/frog.tscn" id="4_0qw13"]
 [ext_resource type="PackedScene" uid="uid://vgklta6kvogj" path="res://SCENES/staff.tscn" id="4_3kr0a"]
 [ext_resource type="Texture2D" uid="uid://s3o1x51lqguu" path="res://ASSETS/Art/player_move.png" id="5_fwf0l"]
 [ext_resource type="PackedScene" uid="uid://cmiraoyeq5xh6" path="res://SCENES/sfx_manager.tscn" id="6_t1lfv"]
@@ -108,7 +109,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Tool/Net:position")
+tracks/0/path = NodePath("Tools/Net:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -120,7 +121,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Tool/Net:rotation")
+tracks/1/path = NodePath("Tools/Net:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -144,7 +145,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Tool/Net:active")
+tracks/3/path = NodePath("Tools/Net:active")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -208,7 +209,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Tool/Net:position")
+tracks/0/path = NodePath("Tools/Net:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -220,7 +221,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Tool/Net:rotation")
+tracks/1/path = NodePath("Tools/Net:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -258,7 +259,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Tool/Net:active")
+tracks/4/path = NodePath("Tools/Net:active")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -414,16 +415,21 @@ collision_layer = 2
 collision_mask = 37
 script = ExtResource("1_m7osi")
 
-[node name="Tool" type="Node2D" parent="."]
+[node name="Tools" type="Node2D" parent="."]
 
-[node name="Net" parent="Tool" instance=ExtResource("2_122k5")]
+[node name="Net" parent="Tools" instance=ExtResource("2_122k5")]
 z_index = 0
 position = Vector2(-66, -45)
 rotation = -0.0872665
 
-[node name="Staff" parent="Tool" instance=ExtResource("4_3kr0a")]
+[node name="Staff" parent="Tools" instance=ExtResource("4_3kr0a")]
 position = Vector2(70, -45)
 rotation = 0.225426
+
+[node name="Frog" parent="Tools" instance=ExtResource("4_0qw13")]
+visible = false
+position = Vector2(0, -44)
+is_equipped = true
 
 [node name="Shoes" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_olw21")

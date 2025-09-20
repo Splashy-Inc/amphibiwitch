@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=11 format=3 uid="uid://b4yweffy4ssjr"]
+
+[ext_resource type="Script" path="res://Custom Resources/Inventory/inventory_data.gd" id="2_sga87"]
+[ext_resource type="Resource" uid="uid://8kc415pcpf4q" path="res://Custom Resources/Inventory/basic_frog_item_data.tres" id="2_wvuf1"]
+[ext_resource type="Script" path="res://Custom Resources/Inventory/inventory_slot_data.gd" id="2_ys0ii"]
+[ext_resource type="Resource" uid="uid://c8eim8ym0pcny" path="res://Custom Resources/Inventory/net_item_data.tres" id="3_nvuyl"]
+[ext_resource type="Resource" uid="uid://me1vodmfpvt2" path="res://Custom Resources/Inventory/staff_item_data.tres" id="4_0ikoe"]
+[ext_resource type="Resource" uid="uid://biomm34tgrbuo" path="res://Custom Resources/Inventory/balfrog_frog_item_data.tres" id="4_b2lh8"]
+
+[sub_resource type="Resource" id="Resource_lurkt"]
+script = ExtResource("2_ys0ii")
+item = ExtResource("3_nvuyl")
+count = 1
+
+[sub_resource type="Resource" id="Resource_cb007"]
+script = ExtResource("2_ys0ii")
+item = ExtResource("4_0ikoe")
+count = 1
+
+[sub_resource type="Resource" id="Resource_akqls"]
+script = ExtResource("2_ys0ii")
+item = ExtResource("2_wvuf1")
+count = 1
+
+[sub_resource type="Resource" id="Resource_v5ha8"]
+script = ExtResource("2_ys0ii")
+item = ExtResource("4_b2lh8")
+count = 1
+
+[resource]
+script = ExtResource("2_sga87")
+slots = Array[ExtResource("2_ys0ii")]([SubResource("Resource_lurkt"), SubResource("Resource_cb007"), SubResource("Resource_akqls"), SubResource("Resource_v5ha8"), null])

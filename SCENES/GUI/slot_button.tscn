@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds4niei68clks"]
+
+[ext_resource type="Texture2D" uid="uid://crayrqqgr2ght" path="res://ASSETS/Art/Frogs/BasicFrogSpritesheet.png" id="1_3u6bw"]
+[ext_resource type="Theme" uid="uid://dewuwg0fatsyk" path="res://inventory_button.tres" id="2_jrmj2"]
+[ext_resource type="Script" path="res://SCRIPTS/slot_button.gd" id="2_x21qq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kxpp"]
+atlas = ExtResource("1_3u6bw")
+region = Rect2(0, 0, 128, 128)
+
+[node name="SlotButton" type="Control"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("2_x21qq")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 127.0
+offset_bottom = 119.0
+theme = ExtResource("2_jrmj2")
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_2kxpp")

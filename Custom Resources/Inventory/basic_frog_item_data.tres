@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FrogItemData" load_steps=5 format=3 uid="uid://8kc415pcpf4q"]
+
+[ext_resource type="Resource" uid="uid://b6eycrwmbbhee" path="res://Custom Resources/Frog/basic_frog_data.tres" id="1_ifbva"]
+[ext_resource type="Script" path="res://Custom Resources/Inventory/frog_item_data.gd" id="1_mu5lg"]
+[ext_resource type="Texture2D" uid="uid://crayrqqgr2ght" path="res://ASSETS/Art/Frogs/BasicFrogSpritesheet.png" id="2_vn7hg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7cq6"]
+atlas = ExtResource("2_vn7hg")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+script = ExtResource("1_mu5lg")
+frog_data = ExtResource("1_ifbva")
+name = "Basic Frog"
+icon = SubResource("AtlasTexture_h7cq6")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InventoryItemData" load_steps=5 format=3 uid="uid://b6xxvtu2wiabc"]
+
+[ext_resource type="Texture2D" uid="uid://cyp6wf6mc8qd" path="res://ASSETS/Art/newt_pink.png" id="1_xpget"]
+[ext_resource type="PackedScene" uid="uid://del3wbaurtdpc" path="res://SCENES/newt_pink.tscn" id="2_31ics"]
+[ext_resource type="Script" path="res://Custom Resources/Inventory/inventory_item_data.gd" id="3_cdoau"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i820"]
+atlas = ExtResource("1_xpget")
+region = Rect2(0, 0, 87, 46)
+
+[resource]
+script = ExtResource("3_cdoau")
+name = "Newt"
+scene = ExtResource("2_31ics")
+icon = SubResource("AtlasTexture_0i820")
