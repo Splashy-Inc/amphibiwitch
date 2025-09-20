@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("2_6hs28")
-name = 2
+name = 3
 scene = ExtResource("1_sqrfr")

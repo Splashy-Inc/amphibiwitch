@@ -3,6 +3,7 @@ extends Resource
 class_name LocationData
 
 enum Name {
+	NONE,
 	START,
 	SHOP,
 	CHIMNEY_ACRES,

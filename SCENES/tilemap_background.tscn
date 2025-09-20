@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://ca53ago0l5xb" path="res://ASSETS/Art/chimney_acres/chimney_acres_tile_set.tres" id="1_n4vje"]
 
 [node name="TileMapBackground" type="Node2D"]
+position = Vector2(0, -64)
 script = ExtResource("1_gtkbo")
 
 [node name="Terrain" type="Node2D" parent="."]

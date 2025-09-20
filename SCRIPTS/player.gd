@@ -84,3 +84,6 @@ func _on_appearance_changed(new_appearance_data: AppearanceData):
 		skin_tone.texture = new_appearance_data.get_skin_sprite_sheet()
 		hair.texture = new_appearance_data.get_hair_sprite_sheet()
 		accessories.texture = new_appearance_data.get_accessory_sprite_sheet()
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	EventBus.player_exited_screen.emit()

@@ -4,6 +4,7 @@ signal info_updated
 
 var screen_manager : ScreenManager
 var cur_level_scene: PackedScene
+var player_scene := preload("res://SCENES/player.tscn")
 
 var joypad_connected := false
 
@@ -53,3 +54,6 @@ func _on_frog_died():
 
 func _on_interactable_activated():
 	screen_manager
+
+func generate_player():
+	return player_scene.instantiate()

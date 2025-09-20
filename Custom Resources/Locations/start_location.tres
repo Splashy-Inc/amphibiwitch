@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("2_0nuk6")
-name = "Start"
+name = 1
 scene = ExtResource("1_qhyb6")
