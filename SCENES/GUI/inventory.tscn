@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch8vr0h4e48qw"]
+
+[ext_resource type="Theme" uid="uid://b0fg2vhi6dwrg" path="res://SCENES/GUI/pannel_container_basic.tres" id="1_ormmq"]
+[ext_resource type="Script" path="res://SCRIPTS/inventory.gd" id="1_y4o80"]
+[ext_resource type="PackedScene" uid="uid://ds4niei68clks" path="res://SCENES/GUI/slot_button.tscn" id="3_7sppk"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_y4o80")
+slot_scene = ExtResource("3_7sppk")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.0
+offset_right = 212.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme = ExtResource("1_ormmq")
+
+[node name="SlotsHBox" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="SlotButton" parent="PanelContainer/SlotsHBox" instance=ExtResource("3_7sppk")]
+layout_mode = 2
+
+[node name="SlotButton2" parent="PanelContainer/SlotsHBox" instance=ExtResource("3_7sppk")]
+layout_mode = 2
+
+[node name="SlotButton3" parent="PanelContainer/SlotsHBox" instance=ExtResource("3_7sppk")]
+layout_mode = 2
+
+[node name="SlotButton4" parent="PanelContainer/SlotsHBox" instance=ExtResource("3_7sppk")]
+layout_mode = 2
+
+[node name="SlotButton5" parent="PanelContainer/SlotsHBox" instance=ExtResource("3_7sppk")]
+layout_mode = 2
