@@ -1,16 +1,15 @@
-[gd_resource type="Resource" script_class="FrogItemData" load_steps=5 format=3 uid="uid://dxe1g2vwy1f1c"]
+[gd_resource type="Resource" script_class="FrogItemData" load_steps=5 format=3 uid="uid://biomm34tgrbuo"]
 
-[ext_resource type="Script" path="res://Custom Resources/Inventory/frog_item_data.gd" id="1_4b87y"]
-[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/creatures/frog.tscn" id="1_7np1q"]
-[ext_resource type="Texture2D" uid="uid://cfbofevwqc46k" path="res://ASSETS/Art/Frogs/BalfrogSpritesheet.png" id="1_44eqs"]
+[ext_resource type="Resource" uid="uid://ylqrs3qfjm4l" path="res://Custom Resources/Frog/balfrog_frog_data.tres" id="1_57ts1"]
+[ext_resource type="Texture2D" uid="uid://cfbofevwqc46k" path="res://ASSETS/Art/Frogs/BalfrogSpritesheet.png" id="2_l031v"]
+[ext_resource type="Script" path="res://Custom Resources/Inventory/frog_item_data.gd" id="4_ss5dn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0amqp"]
-atlas = ExtResource("1_44eqs")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lh2i"]
+atlas = ExtResource("2_l031v")
 region = Rect2(0, 0, 128, 128)
 
 [resource]
-script = ExtResource("1_4b87y")
-type = 1
+script = ExtResource("4_ss5dn")
+frog_data = ExtResource("1_57ts1")
 name = "Balfrog"
-scene = ExtResource("1_7np1q")
-icon = SubResource("AtlasTexture_0amqp")
+icon = SubResource("AtlasTexture_2lh2i")

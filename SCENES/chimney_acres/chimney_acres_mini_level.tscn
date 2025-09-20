@@ -51,21 +51,27 @@ position = Vector2(-1088, -512)
 
 [node name="Frog" parent="Frogs" instance=ExtResource("3_ucm1a")]
 position = Vector2(727, -3745)
+type = 1
 
 [node name="Frog2" parent="Frogs" instance=ExtResource("3_ucm1a")]
 position = Vector2(1112, -3757)
+type = 1
 
 [node name="Frog3" parent="Frogs" instance=ExtResource("3_ucm1a")]
 position = Vector2(1302, -3395)
+type = 1
 
 [node name="Frog4" parent="Frogs" instance=ExtResource("3_ucm1a")]
 position = Vector2(1595, -3641)
+type = 1
 
 [node name="Frog5" parent="Frogs" instance=ExtResource("3_ucm1a")]
-position = Vector2(863, -3406)
+position = Vector2(1264, 320)
+type = 1
 
 [node name="Frog6" parent="Frogs" instance=ExtResource("3_ucm1a")]
-position = Vector2(475, -3561)
+position = Vector2(832, 360)
+type = 1
 
 [node name="FrogTongueStatue" parent="." instance=ExtResource("4_jrq87")]
 position = Vector2(-507, -12)

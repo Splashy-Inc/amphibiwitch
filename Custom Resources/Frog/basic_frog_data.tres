@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FrogData" load_steps=3 format=3 uid="uid://b6eycrwmbbhee"]
+
+[ext_resource type="Script" path="res://Custom Resources/Frog/frog_data.gd" id="1_8587h"]
+[ext_resource type="SpriteFrames" uid="uid://cpf4h6g8qq4jr" path="res://SCENES/creatures/basic_frog_spriteframes.tres" id="2_losfs"]
+
+[resource]
+script = ExtResource("1_8587h")
+type = 0
+sprite_frames = ExtResource("2_losfs")
