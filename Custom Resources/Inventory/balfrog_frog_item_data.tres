@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FrogItemData" load_steps=5 format=3 uid="uid://dxe1g2vwy1f1c"]
+
+[ext_resource type="Script" path="res://Custom Resources/Inventory/frog_item_data.gd" id="1_4b87y"]
+[ext_resource type="PackedScene" uid="uid://ctedc5thhssj2" path="res://SCENES/creatures/frog.tscn" id="1_7np1q"]
+[ext_resource type="Texture2D" uid="uid://cfbofevwqc46k" path="res://ASSETS/Art/Frogs/BalfrogSpritesheet.png" id="1_44eqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0amqp"]
+atlas = ExtResource("1_44eqs")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+script = ExtResource("1_4b87y")
+type = 1
+name = "Balfrog"
+scene = ExtResource("1_7np1q")
+icon = SubResource("AtlasTexture_0amqp")

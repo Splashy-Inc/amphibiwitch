@@ -4,6 +4,11 @@ class_name Frog
 
 signal died
 
+enum Type {
+	BASIC,
+	BALFROG,
+}
+
 const SPEED = 300.0
 
 var is_lit := false
