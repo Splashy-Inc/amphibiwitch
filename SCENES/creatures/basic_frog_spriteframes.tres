@@ -1,6 +1,10 @@
-[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://cpf4h6g8qq4jr"]
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://cpf4h6g8qq4jr"]
 
 [ext_resource type="Texture2D" uid="uid://crayrqqgr2ght" path="res://ASSETS/Art/Frogs/BasicFrogSpritesheet.png" id="2_2n6rx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_721qg"]
+atlas = ExtResource("2_2n6rx")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppfuq"]
 atlas = ExtResource("2_2n6rx")
@@ -52,6 +56,14 @@ region = Rect2(512, 128, 128, 128)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_721qg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ppfuq")

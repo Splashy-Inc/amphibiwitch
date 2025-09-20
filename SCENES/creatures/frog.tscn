@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctedc5thhssj2"]
+[gd_scene load_steps=14 format=3 uid="uid://ctedc5thhssj2"]
 
 [ext_resource type="Script" path="res://SCRIPTS/frog.gd" id="1_dr1ba"]
 [ext_resource type="SpriteFrames" uid="uid://cpf4h6g8qq4jr" path="res://SCENES/creatures/basic_frog_spriteframes.tres" id="2_bleou"]
@@ -29,6 +29,9 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("5_qgosp")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ylhm"]
+radius = 192.0
+
 [node name="Frog" type="CharacterBody2D" groups=["Frog"]]
 collision_layer = 4
 collision_mask = 35
@@ -38,8 +41,8 @@ item_data = ExtResource("3_qn1ys")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_bleou")
-animation = &"move"
-autoplay = "move"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -69,4 +72,13 @@ attenuation = 2.75
 [node name="RibbitTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="PlayerAvoidanceArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAvoidanceArea"]
+shape = SubResource("CircleShape2D_2ylhm")
+
 [connection signal="timeout" from="RibbitTimer" to="." method="_on_ribbit_timer_timeout"]
+[connection signal="body_entered" from="PlayerAvoidanceArea" to="." method="_on_player_avoidance_area_body_entered"]
+[connection signal="body_exited" from="PlayerAvoidanceArea" to="." method="_on_player_avoidance_area_body_exited"]

@@ -1,6 +1,10 @@
-[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://lc7lk3oy2cq5"]
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://lc7lk3oy2cq5"]
 
 [ext_resource type="Texture2D" uid="uid://cfbofevwqc46k" path="res://ASSETS/Art/Frogs/BalfrogSpritesheet.png" id="1_0r41r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqvri"]
+atlas = ExtResource("1_0r41r")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkp78"]
 atlas = ExtResource("1_0r41r")
@@ -52,6 +56,14 @@ region = Rect2(512, 128, 128, 128)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqvri")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nkp78")
