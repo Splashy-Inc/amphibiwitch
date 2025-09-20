@@ -19,6 +19,8 @@ var direction := Vector2.ZERO
 
 var interaction_queue : Array[Node2D]
 
+var grappling_target : Node2D
+
 func _ready() -> void:
 	AppearanceEvents.appearance_changed.connect(_on_appearance_changed)
 	_on_appearance_changed(AppearanceEvents.get_current_appearance())
@@ -26,32 +28,37 @@ func _ready() -> void:
 		equipment.ability.target_hit.connect(_on_frog_target_hit)
 
 func _physics_process(delta: float) -> void:
-	
-	staff.active = Input.is_action_pressed("light")
-	
-	if not attacking:
-		var new_direction = Vector2.ZERO
-		if Globals.is_mobile and Globals.joystick:
-			new_direction = Globals.joystick.direction
-		else:
-			new_direction = Input.get_vector("left", "right", "up", "down") + Input.get_vector("stick_left", "stick_right", "stick_up", "stick_down")
+	if not grappling_target:
+		staff.active = Input.is_action_pressed("light")
 		
-		if new_direction and new_direction != Vector2.ZERO:
-			speed_mod = 1.0
-			if Globals.is_mobile:
-				direction = new_direction.normalized()
+		if not attacking:
+			var new_direction = Vector2.ZERO
+			if Globals.is_mobile and Globals.joystick:
+				new_direction = Globals.joystick.direction
 			else:
-				direction = direction.lerp(new_direction.normalized(), .1)
-			animation_player.play("move")
+				new_direction = Input.get_vector("left", "right", "up", "down") + Input.get_vector("stick_left", "stick_right", "stick_up", "stick_down")
+			
+			if new_direction and new_direction != Vector2.ZERO:
+				speed_mod = 1.0
+				if Globals.is_mobile:
+					direction = new_direction.normalized()
+				else:
+					direction = direction.lerp(new_direction.normalized(), .1)
+				animation_player.play("move")
+			else:
+				speed_mod = 0.0
+				animation_player.play("idle")
+			
+			rotation = -direction.angle_to(Vector2.UP)
+			#rotation = -global_position.direction_to(get_global_mouse_position()).angle_to(Vector2.UP)
+		velocity = direction * SPEED * speed_mod
+			
+		move_and_slide()
+	else:
+		if global_position.distance_to(grappling_target.global_position) > 64:
+			global_position = global_position.lerp(grappling_target.global_position, 0.1)
 		else:
-			speed_mod = 0.0
-			animation_player.play("idle")
-		
-		rotation = -direction.angle_to(Vector2.UP)
-		#rotation = -global_position.direction_to(get_global_mouse_position()).angle_to(Vector2.UP)
-	velocity = direction * SPEED * speed_mod
-		
-	move_and_slide()
+			grappling_target = null
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("net") and attacking == false:
@@ -105,4 +112,4 @@ func _on_frog_target_hit(body: Node2D):
 	if body.is_in_group("moveable") and body.has_method("on_hit"):
 		body.on_hit()
 	else:
-		global_position = body.global_position
+		grappling_target = body
