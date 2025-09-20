@@ -43,6 +43,7 @@ limit_left = -1728
 limit_top = -5120
 limit_right = 1600
 limit_bottom = 1664
+position_smoothing_enabled = true
 
 [node name="Player" parent="PlayerContainer" instance=ExtResource("1_3acuy")]
 position = Vector2(104, 720)

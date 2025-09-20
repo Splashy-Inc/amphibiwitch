@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		if global_position.distance_to(grappling_target.global_position) > 64:
-			global_position = global_position.lerp(grappling_target.global_position, 0.1)
+			global_position = global_position.lerp(grappling_target.global_position - global_position.direction_to(grappling_target.global_position) * equipment.ability.grapple_distance, .5)
 		else:
 			grappling_target = null
 
