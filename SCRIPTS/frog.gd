@@ -16,6 +16,7 @@ enum Type {
 @export var is_camoflauged := false
 var player : Player
 
+@export var is_equipped := false
 
 const SPEED = 300.0
 
@@ -24,33 +25,38 @@ var is_lit := false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var eye_shine: Node2D = $EyeShine
 @onready var sfx_manager: SFXManager = $SFXManager
+@onready var avoidance_collision_shape_2d: CollisionShape2D = $PlayerAvoidanceArea/CollisionShape2D
+@onready var ability: FrogAbility = $Ability
 
 func _ready() -> void:
 	$RibbitTimer.wait_time = randf_range(0.5, 1.0)
 	died.connect(Globals._on_frog_died)
-	initialize(type)
+	initialize(type, is_equipped)
 
 func _physics_process(delta: float) -> void:
-	if is_camoflauged:
-		animated_sprite_2d.modulate.a = move_toward(animated_sprite_2d.modulate.a, float(is_lit), delta)
-	
-	if player and (not is_camoflauged or is_lit):
-		var direction := -global_position.direction_to(player.global_position)
-		if direction:
-			velocity = direction * SPEED
-			rotation = -direction.angle_to(Vector2.UP)
-	else:
-		velocity = Vector2.ZERO
-	
-	if velocity == Vector2.ZERO:
-		animated_sprite_2d.play("idle")
-	else:
-		animated_sprite_2d.play("move")
+	if not is_equipped:
+		if is_camoflauged:
+			animated_sprite_2d.modulate.a = move_toward(animated_sprite_2d.modulate.a, float(is_lit), delta)
+		
+		if player and (not is_camoflauged or is_lit):
+			var direction := -global_position.direction_to(player.global_position)
+			if direction:
+				velocity = direction * SPEED
+				rotation = -direction.angle_to(Vector2.UP)
+		else:
+			velocity = Vector2.ZERO
+		
+		if velocity == Vector2.ZERO:
+			animated_sprite_2d.play("idle")
+		else:
+			animated_sprite_2d.play("move")
 
-	move_and_slide()
+		move_and_slide()
 
-func initialize(new_type: Type):
+func initialize(new_type: Type, new_is_equipped: bool = false):
 	set_type(new_type)
+	collision_shape_2d.disabled = is_equipped
+	avoidance_collision_shape_2d.disabled = is_equipped
 
 func set_type(new_type: Type):
 	type = new_type
@@ -87,3 +93,7 @@ func _on_player_avoidance_area_body_entered(body: Node2D) -> void:
 func _on_player_avoidance_area_body_exited(body: Node2D) -> void:
 	if body == player:
 		player = null
+
+func use_ability():
+	animated_sprite_2d.play("squish")
+	ability.activate()

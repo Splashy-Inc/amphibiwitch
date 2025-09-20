@@ -3,12 +3,13 @@ extends CharacterBody2D
 class_name Player
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var net: Node2D = $Tool/Net
-@onready var staff: Staff = $Tool/Staff
+@onready var net: Node2D = $Tools/Net
+@onready var staff: Staff = $Tools/Staff
 @onready var shoes: Sprite2D = $Shoes
 @onready var skin_tone:Sprite2D = $SkinTone
 @onready var hair: Sprite2D = $Hair
 @onready var accessories: Sprite2D = $Accessories
+@onready var equipment: Node2D = $Tools/Frog
 
 const SPEED = 500.0
 @export var speed_mod := 1.0
@@ -21,6 +22,8 @@ var interaction_queue : Array[Node2D]
 func _ready() -> void:
 	AppearanceEvents.appearance_changed.connect(_on_appearance_changed)
 	_on_appearance_changed(AppearanceEvents.get_current_appearance())
+	if equipment is Frog:
+		equipment.ability.target_hit.connect(_on_frog_target_hit)
 
 func _physics_process(delta: float) -> void:
 	
@@ -54,11 +57,21 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("net") and attacking == false:
 		if (OS.has_feature("web_android") or OS.has_feature("web_ios")) and event is InputEventMouse:
 			return
+		net.show()
+		staff.show()
+		equipment.hide()
 		attacking = true
 		_use_net()
 	elif (event.is_action_pressed("interact") or event.is_action_pressed("light")) and not interaction_queue.is_empty():
 		if interaction_queue.front().has_method("interact"):
 			interaction_queue.front().interact()
+	elif event.is_action_pressed("use_equipment"):
+		if equipment is Frog:
+			net.hide()
+			staff.hide()
+			equipment.show()
+			equipment.use_ability()
+			# TODO: Properly handle disabling other actions while frog ability being used
 
 func _use_net():
 	animation_player.play("attack")
@@ -87,3 +100,9 @@ func _on_appearance_changed(new_appearance_data: AppearanceData):
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	EventBus.player_exited_screen.emit()
+
+func _on_frog_target_hit(body: Node2D):
+	if body.is_in_group("moveable") and body.has_method("on_hit"):
+		body.on_hit()
+	else:
+		global_position = body.global_position

@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemData" load_steps=4 format=3 uid="uid://c8eim8ym0pcny"]
+[gd_resource type="Resource" script_class="InventoryItemData" load_steps=3 format=3 uid="uid://c8eim8ym0pcny"]
 
 [ext_resource type="Texture2D" uid="uid://deh8yo5rb27x0" path="res://ASSETS/Art/net.png" id="1_08e16"]
-[ext_resource type="PackedScene" uid="uid://dgoa58t7jc0uw" path="res://SCENES/net.tscn" id="2_8vqvx"]
 [ext_resource type="Script" path="res://Custom Resources/Inventory/inventory_item_data.gd" id="3_167w5"]
 
 [resource]
 script = ExtResource("3_167w5")
 name = "Net"
-scene = ExtResource("2_8vqvx")
 icon = ExtResource("1_08e16")
