@@ -24,4 +24,4 @@ shape = SubResource("RectangleShape2D_u2gry")
 
 [node name="Door" parent="." instance=ExtResource("2_6uft2")]
 position = Vector2(64, 64)
-destination_screen = "res://SCENES/objects/shop_interiror.tscn"
+destination_location = 2

@@ -410,6 +410,7 @@ radius = 192.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
+collision_layer = 2
 collision_mask = 37
 script = ExtResource("1_m7osi")
 
@@ -475,5 +476,10 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
 shape = SubResource("CircleShape2D_yj8sq")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(5.4, 5.52)
+
 [connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
 [connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

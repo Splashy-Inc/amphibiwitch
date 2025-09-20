@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ukf7mh4gam8n"]
 
 [ext_resource type="Script" path="res://SCRIPTS/appearance_viewer.gd" id="1_j8hyk"]
-[ext_resource type="Resource" uid="uid://bec2rqyu8g7wi" path="res://Custom Resources/default_appearance.tres" id="2_pvfu8"]
+[ext_resource type="Resource" uid="uid://bec2rqyu8g7wi" path="res://Custom Resources/Character/default_appearance.tres" id="2_pvfu8"]
 [ext_resource type="Texture2D" uid="uid://dgsbuu26cmimc" path="res://ASSETS/Art/player/shoes_basic.png" id="4_fddm6"]
 [ext_resource type="Texture2D" uid="uid://imllclu4xesg" path="res://ASSETS/Art/player/SkinTone.png" id="5_vf4pm"]
 [ext_resource type="Texture2D" uid="uid://okv2xwauatf3" path="res://ASSETS/Art/player/hair.png" id="6_mp4ws"]

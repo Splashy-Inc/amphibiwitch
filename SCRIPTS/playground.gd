@@ -1,5 +1,7 @@
 extends Level
 
+class_name Playground
+
 @onready var world_light: DirectionalLight2D = $WorldLight
 
 func _level_ready():

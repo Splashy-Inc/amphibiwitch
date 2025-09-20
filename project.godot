@@ -44,6 +44,7 @@ folder_colors={
 Player=""
 Frog=""
 moveable=""
+location_transition_area=""
 
 [gui]
 
@@ -171,6 +172,7 @@ interact={
 2d_physics/layer_4="Interactable"
 2d_physics/layer_5="Tongue Target"
 2d_physics/layer_6="Boundary"
+2d_physics/layer_7="Location Transition Area"
 
 [physics]
 

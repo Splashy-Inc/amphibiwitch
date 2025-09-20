@@ -15,7 +15,7 @@ size = Vector2(128, 128)
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_s8uhm")
-destination_screen = "res://SCENES/playground.tscn"
+destination_location = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_wotkh")

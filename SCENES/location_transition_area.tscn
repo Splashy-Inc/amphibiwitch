@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://deriwbxg8n2uf"]
+
+[ext_resource type="Script" path="res://SCRIPTS/location_transition_area.gd" id="1_qm2u5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep2td"]
+size = Vector2(640, 768)
+
+[node name="LocationTransitionArea" type="Area2D" groups=["location_transition_area"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_qm2u5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ep2td")
