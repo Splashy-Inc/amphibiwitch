@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 			velocity = direction * SPEED
 			rotation = -direction.angle_to(Vector2.UP)
 	else:
-		velocity = velocity.lerp(Vector2.ZERO, delta * 3)
+		velocity = Vector2.ZERO
 	
 	if velocity == Vector2.ZERO:
 		animated_sprite_2d.play("idle")
