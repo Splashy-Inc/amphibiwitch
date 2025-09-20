@@ -8,6 +8,7 @@ class_name Inventory
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventBus.inventory_updated.connect(_on_inventory_updated)
+	_on_inventory_updated(EventBus.get_current_inventory())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

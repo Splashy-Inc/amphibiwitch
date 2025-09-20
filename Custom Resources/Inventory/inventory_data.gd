@@ -7,8 +7,9 @@ class_name InventoryData
 func add_item(new_item: InventoryItemData):
 	# Attempt to add item to existing slot with that item in it
 	for slot in slots:
-		if slot.item.name == new_item.name:
-			return slot.add_item(new_item)
+		if slot != null and slot.item != null:
+			if slot.item.name == new_item.name:
+				return slot.add_item(new_item)
 	
 	# If the above doesn't work, attempt to add item to next open slot
 	for slot in slots:

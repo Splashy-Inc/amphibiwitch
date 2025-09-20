@@ -11,4 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func load_data(new_data: InventorySlotData):
-	texture_normal = new_data.item.icon
+	if new_data and new_data.item:
+		texture_normal = new_data.item.icon
+	else:
+		texture_normal = null

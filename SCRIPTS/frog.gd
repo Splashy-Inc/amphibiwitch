@@ -64,6 +64,7 @@ func set_type(new_type: Type):
 func on_hit():
 	if animated_sprite_2d.modulate.a > 0.0:
 		died.emit()
+		EventBus.frog_caught.emit(self)
 		visible = false
 		collision_shape_2d.disabled = true
 		sfx_manager.play("Hit")
