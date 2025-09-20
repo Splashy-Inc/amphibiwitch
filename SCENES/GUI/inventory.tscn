@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch8vr0h4e48qw"]
+[gd_scene load_steps=7 format=3 uid="uid://ch8vr0h4e48qw"]
 
 [ext_resource type="Script" path="res://SCRIPTS/inventory.gd" id="1_y4o80"]
 [ext_resource type="PackedScene" uid="uid://ds4niei68clks" path="res://SCENES/GUI/slot_button.tscn" id="3_7sppk"]
@@ -12,10 +12,6 @@ region = Rect2(0, 256, 640, 128)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_871ut"]
 texture = SubResource("AtlasTexture_6trdh")
-
-[sub_resource type="Theme" id="Theme_0m8nj"]
-
-[sub_resource type="Theme" id="Theme_3qfn1"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -47,11 +43,9 @@ alignment = 1
 
 [node name="SlotButton" parent="PanelContainer/SlotsHBox" instance=ExtResource("3_7sppk")]
 layout_mode = 2
-theme = SubResource("Theme_0m8nj")
 
 [node name="SlotButton2" parent="PanelContainer/SlotsHBox" instance=ExtResource("3_7sppk")]
 layout_mode = 2
-theme = SubResource("Theme_3qfn1")
 
 [node name="SlotButton3" parent="PanelContainer/SlotsHBox" instance=ExtResource("3_7sppk")]
 layout_mode = 2

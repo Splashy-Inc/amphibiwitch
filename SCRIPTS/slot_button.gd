@@ -1,6 +1,8 @@
-extends TextureButton
+extends Control
 
 class_name InventorySlot
+
+@onready var texture_rect: TextureRect = $Button/TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +14,6 @@ func _process(delta: float) -> void:
 
 func load_data(new_data: InventorySlotData):
 	if new_data and new_data.item:
-		texture_normal = new_data.item.icon
+		texture_rect.texture = new_data.item.icon
 	else:
-		texture_normal = null
+		texture_rect.texture = null
