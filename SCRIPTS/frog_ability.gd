@@ -22,6 +22,5 @@ func activate():
 	animation_player.play("tongue")
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	animation_player.pause()
 	animation_player.play("tongue", -1, -1.0, false)
 	target_hit.emit(body)
