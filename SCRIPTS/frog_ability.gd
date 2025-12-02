@@ -9,7 +9,8 @@ signal target_hit(body: Node2D)
 
 @export var ability_origin: Node2D
 @export var max_distance := 256
-@export var speed := 1000
+@export var extend_speed := 2000
+@export var retract_speed := 1000
 
 enum State {
 	NONE,
@@ -44,11 +45,7 @@ func extending_state(delta: float):
 
 func retracting_state(delta: float):
 	if ability_origin:
-		if global_position.distance_to(ability_origin.global_position) > max_distance:
-			linear_velocity = Vector2.ZERO
-			apply_impulse(global_position.direction_to(ability_origin.global_position) * speed)
-		else:
-			apply_force(global_position.direction_to(ability_origin.global_position) * speed)
+		linear_velocity  = global_position.direction_to(ability_origin.global_position) * retract_speed
 		tongue_body.points[0] = to_local(ability_origin.global_position)
 		if global_position.distance_to(ability_origin.global_position) < 10:
 			deactivate()
@@ -68,7 +65,7 @@ func deactivate():
 
 func extend():
 	linear_velocity = Vector2.ZERO
-	apply_impulse(Vector2.UP.rotated(ability_origin.global_rotation) * speed)
+	apply_impulse(Vector2.UP.rotated(ability_origin.global_rotation) * extend_speed)
 	state = State.EXTENDING
 
 func retract():
