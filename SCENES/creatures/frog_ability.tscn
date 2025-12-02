@@ -1,240 +1,39 @@
-[gd_scene load_steps=16 format=3 uid="uid://ddfgvtlq08rmt"]
+[gd_scene load_steps=6 format=3 uid="uid://ddfgvtlq08rmt"]
 
 [ext_resource type="Script" path="res://SCRIPTS/frog_ability.gd" id="1_5fk6t"]
-[ext_resource type="Texture2D" uid="uid://xth5d2m7m1ye" path="res://ASSETS/Art/Frogs/toungeSpritesheet.png" id="1_ee1qa"]
+[ext_resource type="Texture2D" uid="uid://xth5d2m7m1ye" path="res://ASSETS/Art/Frogs/tongueSpritesheet.png" id="2_edimv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dwvdt"]
-atlas = ExtResource("1_ee1qa")
-region = Rect2(0, 0, 128, 642)
+[sub_resource type="CircleShape2D" id="CircleShape2D_665ub"]
+radius = 8.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q50rg"]
-atlas = ExtResource("1_ee1qa")
-region = Rect2(128, 0, 128, 642)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxsvu"]
+atlas = ExtResource("2_edimv")
+region = Rect2(55, 312, 18, 17)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6jy2y"]
-atlas = ExtResource("1_ee1qa")
-region = Rect2(256, 0, 128, 642)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mt2eo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_di834"]
-atlas = ExtResource("1_ee1qa")
-region = Rect2(384, 0, 128, 642)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h7vmy"]
-atlas = ExtResource("1_ee1qa")
-region = Rect2(512, 0, 128, 642)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_htx2v"]
-atlas = ExtResource("1_ee1qa")
-region = Rect2(640, 0, 128, 642)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wcgks"]
-atlas = ExtResource("1_ee1qa")
-region = Rect2(768, 0, 128, 642)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ka2sg"]
-atlas = ExtResource("1_ee1qa")
-region = Rect2(896, 0, 128, 642)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fdq3v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dwvdt")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q50rg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6jy2y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_di834")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h7vmy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_htx2v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wcgks")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ka2sg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wcgks")
-}],
-"loop": false,
-"name": &"tongue",
-"speed": 12.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgc5q"]
-size = Vector2(24, 32)
-
-[sub_resource type="Animation" id="Animation_4k874"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StickPoint:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -64)]
-}
-
-[sub_resource type="Animation" id="Animation_h3g00"]
-resource_name = "tongue"
-length = 1.16668
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"tongue"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1, 0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(0, -49), Vector2(0, -103), Vector2(0, -157), Vector2(0, -211), Vector2(0, -265), Vector2(0, -305), Vector2(0, -305), Vector2(0, -265), Vector2(1, -211), Vector2(0, -157), Vector2(0, -103), Vector2(0, -49)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.75),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StickPoint:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.75, 0.833333, 0.916666, 1, 1.08333, 1.16667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(0, -64), Vector2(0, -118), Vector2(0, -172), Vector2(0, -226), Vector2(0, -280), Vector2(0, -320), Vector2(0, -320), Vector2(0, -280), Vector2(0, -226), Vector2(0, -172), Vector2(0, -118), Vector2(0, -64)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ei7li"]
-_data = {
-"RESET": SubResource("Animation_4k874"),
-"tongue": SubResource("Animation_h3g00")
-}
-
-[node name="FrogAbility" type="Node2D"]
+[node name="FrogAbility" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+freeze = true
 script = ExtResource("1_5fk6t")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_fdq3v")
-animation = &"idle"
-autoplay = "idle"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_665ub")
+
+[node name="TongueBody" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(0.815686, 0.407843, 0.454902, 1)
+
+[node name="TongueTip" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_mxsvu")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_hgc5q")
-disabled = true
-
-[node name="StickPoint" type="Marker2D" parent="."]
-position = Vector2(0, -64)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ei7li")
-}
-autoplay = "RESET"
+shape = SubResource("CircleShape2D_mt2eo")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

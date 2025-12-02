@@ -5,6 +5,7 @@ signal screen_requested(location_name: LocationData.Name)
 signal player_exited_screen
 signal inventory_updated(data: InventoryData)
 signal frog_caught(frog: Frog)
+signal frog_ability_used(ability: FrogAbility)
 
 var current_inventory_data := preload("res://Custom Resources/Inventory/player_inventory.tres")
 

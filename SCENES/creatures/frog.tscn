@@ -40,7 +40,12 @@ script = ExtResource("1_dr1ba")
 item_data_options = Array[ExtResource("2_vkuoa")]([ExtResource("3_qn1ys"), ExtResource("4_wmjig")])
 item_data = ExtResource("3_qn1ys")
 
-[node name="Ability" parent="." instance=ExtResource("5_ver7u")]
+[node name="AbilityOrigin" type="Node2D" parent="."]
+position = Vector2(0, -23)
+
+[node name="Ability" parent="AbilityOrigin" node_paths=PackedStringArray("ability_origin") instance=ExtResource("5_ver7u")]
+position = Vector2(0, 3)
+ability_origin = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_bleou")

@@ -73,7 +73,6 @@ type = 1
 
 [node name="Frog6" parent="Frogs" instance=ExtResource("3_ucm1a")]
 position = Vector2(832, 360)
-type = 1
 
 [node name="FrogTongueStatue" parent="." instance=ExtResource("4_jrq87")]
 position = Vector2(-781, 903)
