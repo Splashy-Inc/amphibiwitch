@@ -65,10 +65,9 @@ func retracting_state(delta: float):
 		deactivate()
 
 func activate():
-	if state == State.NONE:
-		global_position = ability_origin.global_position
-		freeze = false
-		extend()
+	global_position = ability_origin.global_position
+	freeze = false
+	extend()
 
 func deactivate():
 	freeze = true
