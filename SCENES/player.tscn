@@ -428,6 +428,7 @@ rotation = 0.225426
 
 [node name="Frog" parent="Tools" instance=ExtResource("4_0qw13")]
 visible = false
+z_index = 0
 position = Vector2(0, -44)
 is_equipped = true
 

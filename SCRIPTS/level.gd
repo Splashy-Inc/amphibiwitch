@@ -4,6 +4,8 @@ class_name Level
 
 signal won
 
+@onready var frogs_container: Node = $Frogs
+
 @export var location_name : LocationData.Name
 
 @export var dialog_box: DialogBox
@@ -23,6 +25,9 @@ func _ready() -> void:
 	
 	spawn_player()
 	_level_ready()
+	
+	EventBus.frog_ability_used.connect(_on_frog_ability_used)
+	EventBus.release_to_level.connect(_on_node_released_to_level)
 
 func _level_ready():
 	pass
@@ -64,6 +69,7 @@ func spawn_player(origin_name: LocationData.Name = LocationData.Name.NONE):
 	
 	var new_player = Globals.generate_player() as Player
 	player_container.add_child(new_player)
+	
 	camera.reparent(new_player)
 	
 	if origin_name != LocationData.Name.NONE:
@@ -71,3 +77,12 @@ func spawn_player(origin_name: LocationData.Name = LocationData.Name.NONE):
 			if location_transition is LocationTransitionArea:
 				if location_transition.destination_name == origin_name:
 					new_player.global_position = location_transition.global_position
+
+func _on_frog_ability_used(ability: FrogAbility):
+	ability.reparent(player_container)
+	ability.activate()
+
+func _on_node_released_to_level(node: Node2D):
+	if node is Frog:
+		node.reparent(frogs_container)
+	node.reparent(self)

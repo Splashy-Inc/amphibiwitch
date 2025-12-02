@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name Frog
 
+signal ability_used(ability: FrogAbility)
 signal died
 
 enum Type {
@@ -26,7 +27,7 @@ var is_lit := false
 @onready var eye_shine: Node2D = $EyeShine
 @onready var sfx_manager: SFXManager = $SFXManager
 @onready var avoidance_collision_shape_2d: CollisionShape2D = $PlayerAvoidanceArea/CollisionShape2D
-@onready var ability: FrogAbility = $Ability
+@onready var ability: FrogAbility = $AbilityOrigin/Ability
 
 func _ready() -> void:
 	$RibbitTimer.wait_time = randf_range(0.5, 1.0)
@@ -57,6 +58,9 @@ func initialize(new_type: Type, new_is_equipped: bool = false):
 	set_type(new_type)
 	collision_shape_2d.disabled = is_equipped
 	avoidance_collision_shape_2d.disabled = is_equipped
+	ability.toggle_enabled(is_equipped)
+	ability.extended.connect(_on_ability_use)
+	ability.retracted.connect(_on_ability_recover)
 
 func set_type(new_type: Type):
 	type = new_type
@@ -95,5 +99,11 @@ func _on_player_avoidance_area_body_exited(body: Node2D) -> void:
 		player = null
 
 func use_ability():
+	if ability.is_usable():
+		EventBus.frog_ability_used.emit(ability)
+
+func _on_ability_use():
 	animated_sprite_2d.play("squish")
-	ability.activate()
+
+func _on_ability_recover():
+	animated_sprite_2d.play_backwards("squish")
