@@ -48,31 +48,30 @@ position_smoothing_enabled = true
 [node name="Player" parent="PlayerContainer" instance=ExtResource("1_3acuy")]
 position = Vector2(104, 720)
 
-[node name="Frogs" type="Node2D" parent="."]
-position = Vector2(-1088, -512)
+[node name="Frogs" type="Node" parent="."]
 
 [node name="Frog" parent="Frogs" instance=ExtResource("3_ucm1a")]
-position = Vector2(727, -3745)
+position = Vector2(-520, -4352)
 type = 1
 
 [node name="Frog2" parent="Frogs" instance=ExtResource("3_ucm1a")]
-position = Vector2(1112, -3757)
+position = Vector2(552, -4400)
 type = 1
 
 [node name="Frog3" parent="Frogs" instance=ExtResource("3_ucm1a")]
-position = Vector2(1302, -3395)
+position = Vector2(48, -3248)
 type = 1
 
 [node name="Frog4" parent="Frogs" instance=ExtResource("3_ucm1a")]
-position = Vector2(1595, -3641)
+position = Vector2(32, -3984)
 type = 1
 
 [node name="Frog5" parent="Frogs" instance=ExtResource("3_ucm1a")]
-position = Vector2(1328, 400)
+position = Vector2(392, -64)
 type = 1
 
 [node name="Frog6" parent="Frogs" instance=ExtResource("3_ucm1a")]
-position = Vector2(832, 360)
+position = Vector2(-320, -32)
 
 [node name="FrogTongueStatue" parent="." instance=ExtResource("4_jrq87")]
 position = Vector2(-781, 903)

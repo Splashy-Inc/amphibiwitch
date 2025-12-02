@@ -58,6 +58,7 @@ func initialize(new_type: Type, new_is_equipped: bool = false):
 	set_type(new_type)
 	collision_shape_2d.disabled = is_equipped
 	avoidance_collision_shape_2d.disabled = is_equipped
+	ability.toggle_enabled(is_equipped)
 
 func set_type(new_type: Type):
 	type = new_type

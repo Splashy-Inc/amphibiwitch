@@ -4,6 +4,8 @@ class_name Level
 
 signal won
 
+@onready var frogs_container: Node = $Frogs
+
 @export var location_name : LocationData.Name
 
 @export var dialog_box: DialogBox
@@ -25,6 +27,7 @@ func _ready() -> void:
 	_level_ready()
 	
 	EventBus.frog_ability_used.connect(_on_frog_ability_used)
+	EventBus.release_to_level.connect(_on_node_released_to_level)
 
 func _level_ready():
 	pass
@@ -78,3 +81,8 @@ func spawn_player(origin_name: LocationData.Name = LocationData.Name.NONE):
 func _on_frog_ability_used(ability: FrogAbility):
 	ability.reparent(self)
 	ability.activate()
+
+func _on_node_released_to_level(node: Node2D):
+	if node is Frog:
+		node.reparent(frogs_container)
+	node.reparent(self)

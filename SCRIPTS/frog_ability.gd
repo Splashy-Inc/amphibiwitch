@@ -2,10 +2,12 @@ extends RigidBody2D
 
 class_name FrogAbility
 
-signal target_hit(body: Node2D)
+signal anchor_hit(body: Node2D)
+signal anchor_reached(body: Node2D)
 
 @onready var tongue_body: Line2D = $TongueBody
 @onready var tongue_tip: Sprite2D = $TongueTip
+@onready var hitbox: Area2D = $Hitbox
 
 @export var ability_origin: Node2D
 @export var max_distance := 256
@@ -19,6 +21,9 @@ enum State {
 }
 
 var state := State.NONE
+
+var moveable : Node2D
+var anchor : Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,11 +49,20 @@ func extending_state(delta: float):
 			retract()
 
 func retracting_state(delta: float):
-	if ability_origin:
+	if ability_origin and not freeze:
 		linear_velocity  = global_position.direction_to(ability_origin.global_position) * retract_speed
-		tongue_body.points[0] = to_local(ability_origin.global_position)
-		if global_position.distance_to(ability_origin.global_position) < 10:
-			deactivate()
+	tongue_body.points[0] = to_local(ability_origin.global_position)
+	
+	if global_position.distance_to(ability_origin.global_position) < 30:
+		if is_instance_valid(moveable):
+			if moveable.has_method("on_hit"):
+				moveable.on_hit()
+				moveable = null
+			else:
+				EventBus.release_to_level.emit(moveable)
+		elif anchor:
+			anchor_reached.emit(anchor)
+		deactivate()
 
 func activate():
 	if state == State.NONE:
@@ -73,5 +87,20 @@ func retract():
 	state = State.RETRACTING
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	#target_hit.emit(body)
+	if body.is_in_group("moveable"):
+		body.reparent(self)
+		moveable = body
+	else:
+		linear_velocity = Vector2.ZERO
+		freeze = true
+		anchor = body
+		anchor_hit.emit(body)
 	retract()
+
+func toggle_enabled(is_enabled: bool):
+	if is_enabled:
+		show()
+	else:
+		hide()
+	hitbox.monitoring = is_enabled
+	hitbox.monitorable = is_enabled

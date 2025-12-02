@@ -25,7 +25,8 @@ func _ready() -> void:
 	AppearanceEvents.appearance_changed.connect(_on_appearance_changed)
 	_on_appearance_changed(AppearanceEvents.get_current_appearance())
 	if equipment is Frog:
-		equipment.ability.target_hit.connect(_on_frog_target_hit)
+		equipment.ability.anchor_hit.connect(_on_frog_anchor_hit)
+		equipment.ability.anchor_reached.connect(_on_frog_anchor_reached)
 
 func _physics_process(delta: float) -> void:
 	if not grappling_target:
@@ -55,8 +56,8 @@ func _physics_process(delta: float) -> void:
 			
 		move_and_slide()
 	else:
-		if global_position.distance_to(grappling_target.global_position) > 64:
-			global_position = global_position.lerp(grappling_target.global_position - global_position.direction_to(grappling_target.global_position) * equipment.ability.grapple_distance, .5)
+		if global_position.distance_to(grappling_target.global_position) > global_position.distance_to(equipment.global_position):
+			global_position = global_position.lerp(grappling_target.global_position, delta * 5)
 		else:
 			grappling_target = null
 
@@ -108,8 +109,8 @@ func _on_appearance_changed(new_appearance_data: AppearanceData):
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	EventBus.player_exited_screen.emit()
 
-func _on_frog_target_hit(body: Node2D):
-	if body.is_in_group("moveable") and body.has_method("on_hit"):
-		body.on_hit()
-	else:
-		grappling_target = body
+func _on_frog_anchor_hit(body: Node2D):
+	grappling_target = body
+
+func _on_frog_anchor_reached(anchor: Node2D):
+	grappling_target = null
