@@ -79,7 +79,7 @@ func spawn_player(origin_name: LocationData.Name = LocationData.Name.NONE):
 					new_player.global_position = location_transition.global_position
 
 func _on_frog_ability_used(ability: FrogAbility):
-	ability.reparent(self)
+	ability.reparent(player_container)
 	ability.activate()
 
 func _on_node_released_to_level(node: Node2D):

@@ -44,9 +44,11 @@ visible = false
 energy = 0.1
 
 [node name="TileMapBackground" parent="." instance=ExtResource("2_fetls")]
+z_index = -2
 position = Vector2(-928, -584)
 
 [node name="ShopExterior" parent="." instance=ExtResource("4_45g5f")]
+z_index = -1
 position = Vector2(8, -256)
 
 [node name="Player" type="Node" parent="."]
@@ -145,10 +147,12 @@ scale = Vector2(2.4, 1.96)
 texture = SubResource("PlaceholderTexture2D_ikir6")
 
 [node name="SignCatchFrogs" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-237, 29)
 texture = ExtResource("11_24gsa")
 
 [node name="SignChimneyAcres" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(1094, -264)
 texture = ExtResource("12_rbo2j")
 
