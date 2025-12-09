@@ -1,6 +1,35 @@
-[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://cpf4h6g8qq4jr"]
+[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://cpf4h6g8qq4jr"]
 
+[ext_resource type="Texture2D" uid="uid://bxk8k35vidcyx" path="res://ASSETS/Art/Frogs/FrostFrogSpritesheet.png" id="1_wbwp4"]
 [ext_resource type="Texture2D" uid="uid://crayrqqgr2ght" path="res://ASSETS/Art/Frogs/BasicFrogSpritesheet.png" id="2_2n6rx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fejr"]
+atlas = ExtResource("1_wbwp4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftneo"]
+atlas = ExtResource("1_wbwp4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hef4"]
+atlas = ExtResource("1_wbwp4")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh2an"]
+atlas = ExtResource("1_wbwp4")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyskg"]
+atlas = ExtResource("1_wbwp4")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj4ie"]
+atlas = ExtResource("1_wbwp4")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20fyd"]
+atlas = ExtResource("1_wbwp4")
+region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_721qg"]
 atlas = ExtResource("2_2n6rx")
@@ -56,6 +85,32 @@ region = Rect2(512, 128, 128, 128)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fejr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftneo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hef4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh2an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyskg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj4ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20fyd")
+}],
+"loop": true,
+"name": &"Test_FrostFrog_Jump",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_721qg")

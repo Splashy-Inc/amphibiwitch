@@ -41,11 +41,13 @@ item_data_options = Array[ExtResource("2_vkuoa")]([ExtResource("3_qn1ys"), ExtRe
 item_data = ExtResource("3_qn1ys")
 
 [node name="Ability" parent="." instance=ExtResource("5_ver7u")]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_bleou")
-animation = &"squish"
+animation = &"Test_FrostFrog_Jump"
 autoplay = "idle"
+frame_progress = 0.652656
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -76,6 +78,7 @@ attenuation = 2.75
 autostart = true
 
 [node name="PlayerAvoidanceArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 

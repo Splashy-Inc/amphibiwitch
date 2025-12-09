@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b5w85xdamwtmp" path="res://ASSETS/Art/chimney_acres/lava_mix_4.png" id="7_ljx0s"]
 [ext_resource type="Texture2D" uid="uid://b7qdtkuewx5v8" path="res://ASSETS/Art/chimney_acres/lava_mix_5.png" id="8_mg8ou"]
 [ext_resource type="Texture2D" uid="uid://daob2prt4ycbc" path="res://ASSETS/Art/chimney_acres/lava_mix_6.png" id="9_ald03"]
-[ext_resource type="PackedScene" path="res://SCENES/chimney_acres/pillar.tscn" id="10_d5qdj"]
+[ext_resource type="PackedScene" uid="uid://cgvhi55ay6fuy" path="res://SCENES/chimney_acres/pillar.tscn" id="10_d5qdj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sas1v"]
 texture = ExtResource("1_4bm7v")
