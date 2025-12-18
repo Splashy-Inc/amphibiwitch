@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctedc5thhssj2"]
+[gd_scene load_steps=16 format=3 uid="uid://ctedc5thhssj2"]
 
 [ext_resource type="Script" path="res://SCRIPTS/frog.gd" id="1_dr1ba"]
 [ext_resource type="SpriteFrames" uid="uid://cpf4h6g8qq4jr" path="res://SCENES/creatures/basic_frog_spriteframes.tres" id="2_bleou"]
@@ -9,6 +9,9 @@
 [ext_resource type="Resource" uid="uid://biomm34tgrbuo" path="res://Custom Resources/Inventory/balfrog_frog_item_data.tres" id="4_wmjig"]
 [ext_resource type="AudioStream" uid="uid://dp0acn12lh2au" path="res://ASSETS/Audio/frog_idle.ogg" id="5_qgosp"]
 [ext_resource type="PackedScene" uid="uid://ddfgvtlq08rmt" path="res://SCENES/creatures/frog_ability.tscn" id="5_ver7u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jq5u4"]
+animations = []
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_14s52"]
 radius = 48.0
@@ -43,11 +46,17 @@ item_data = ExtResource("3_qn1ys")
 [node name="Ability" parent="." instance=ExtResource("5_ver7u")]
 visible = false
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -171)
+sprite_frames = SubResource("SpriteFrames_jq5u4")
+animation = &""
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_bleou")
-animation = &"Test_frostfrog_squish"
+animation = &"squish"
 autoplay = "idle"
-frame_progress = 0.231925
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
